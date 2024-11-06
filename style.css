@@ -26,13 +26,14 @@ body {
   --secondry-bg-color: #232323;
   --nav-hover-color: rgb(55, 55, 55);
   --nav-color: #232323;
+  --home-text-color: #fff;
 }
 
 /* mode change */
 
 .light-mode {
   --bg-img: url(images/bg.png);
-  --home-bg: url(images/lightBg.jpg);
+  --home-bg: url(images/lightbg3.jpg);
   --text-color: #151515;
   /* --main-color: purple; */
   --main-color: crimson;
@@ -41,6 +42,7 @@ body {
   --secondry-bg-color: #f2f2f2;
   --nav-hover-color: #ccccff;
   --nav-color: #ffcccc;
+  --home-text-color: #ef5555;
 }
 
 /* light mode and dark mode btn styling */
@@ -321,6 +323,7 @@ body {
   font-family: "Anonymous Pro", monospace;
   font-weight: 500;
   font-style: normal;
+  color: var(--home-text-color);
 }
 
 .home .home-content .text-2 {
@@ -329,6 +332,7 @@ body {
   font-family: sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: var(--home-text-color);
 }
 
 .home .home-content .text-2 span {
@@ -336,6 +340,7 @@ body {
   transition: all 0.3s ease;
   margin: -5px;
   font-weight: 600;
+
 }
 
 .home .home-content .text-3 {
@@ -344,6 +349,7 @@ body {
   font-family: "Anonymous Pro", monospace;
   font-weight: 800;
   font-style: normal;
+  color: var(--home-text-color);
 }
 
 .home .home-content .text-3 span {
