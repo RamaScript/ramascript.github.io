@@ -338,7 +338,6 @@ body {
 .home .home-content .text-2 span {
   color: var(--main-color);
   transition: all 0.3s ease;
-  margin: -5px;
   font-weight: 600;
 
 }
@@ -1364,6 +1363,24 @@ body {
   .projects .projects-content {
     margin: 0;
   }
+}
+
+@media only screen and (max-width: 560px) {
+  .home .home-content .text-1,
+  .home .home-content .text-3,
+  .home .home-content .text-3 span{
+    font-size: 1.5rem;
+  }
+  .home .home-content .text-2,
+  .home .home-content .text-2 span{
+    font-size: 2rem;
+  }
+
+  .home .home-content a{
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
 }
 
 /* ========== Mobile Menu Responsivenesss END ========== */
