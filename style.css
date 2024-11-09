@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* variables */
@@ -42,7 +43,7 @@ body {
   --secondry-bg-color: #f2f2f2;
   --nav-hover-color: #ccccff;
   --nav-color: #ffcccc;
-  --home-text-color: #ef5555;
+  --home-text-color: rgb(104, 78, 83);
 }
 
 /* light mode and dark mode btn styling */
