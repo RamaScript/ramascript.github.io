@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto&family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -321,14 +321,13 @@ body {
 
 .home .home-content .text-1 {
   font-size: 2rem;
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 500;
+  font-family: "Doto";
+    font-weight: 500;
   font-style: normal;
   color: var(--home-text-color);
 }
 
 .home .home-content .text-2 {
-  margin-top: 10px;
   font-size: 4rem;
   font-family: "Poppins", serif;
   font-weight: 400;
@@ -340,20 +339,20 @@ body {
   color: var(--main-color);
   transition: all 0.3s ease;
   font-weight: 600;
-
 }
 
 .home .home-content .text-3 {
   font-size: 2rem;
-  margin: 10px 0;
-  font-family: "Anonymous Pro", monospace;
+  font-family: "Doto", sans-serif;
   font-weight: 800;
   font-style: normal;
+  font-weight: 100;
   color: var(--home-text-color);
 }
 
 .home .home-content .text-3 span {
   color: var(--main-color);
+  font-weight: bold;
 }
 
 .home .home-content a {
