@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 /* variables */
 
 body {
-  font-family: "Baloo 2", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
   user-select: none;
@@ -102,7 +102,7 @@ body {
   /* box-shadow: 0px 0px 50px -25px var(--text-color); */
   box-shadow: -2px 0 10px 0 var(--text-color);
   width: 30%;
-  max-width: 10rem;
+  max-width: 10.5rem;
   height: 100vh;
   position: relative;
   transition: all 0.8s ease;
@@ -330,7 +330,7 @@ body {
 .home .home-content .text-2 {
   margin-top: 10px;
   font-size: 4rem;
-  font-family: sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
   color: var(--home-text-color);
@@ -1333,7 +1333,7 @@ body {
 
   .nav {
     position: absolute;
-    left: -162px;
+    left: -170px;
     width: 50%;
     transition: all 0.8s ease;
     z-index: 5;
