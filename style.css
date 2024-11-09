@@ -1370,7 +1370,7 @@ body {
   .home .home-content .text-1,
   .home .home-content .text-3,
   .home .home-content .text-3 span{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .home .home-content .text-2,
   .home .home-content .text-2 span{
@@ -1378,8 +1378,8 @@ body {
   }
 
   .home .home-content a{
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.25rem;
+    width: 1.25rem;
   }
 
 }
