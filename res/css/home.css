@@ -100,7 +100,8 @@
 #leetcode-card:hover {
   transition: all 0.3s ease;
   transform: scale(0.9);
-  filter: drop-shadow(0 0 240px var(--main-color));
+  /* filter: drop-shadow(0 0 240px var(--main-color)); */
+  filter: drop-shadow(8px 8px 8px var(--main-color));
   transition: 1s;
 }
 
