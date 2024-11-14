@@ -1,0 +1,152 @@
+/* home page designing */
+
+.home {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  background: var(--home-bg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  /* min-height: 500px; */
+  color: var(--home-color);
+  background-attachment: fixed;
+}
+
+.home-content {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home-left-content {
+  position: relative;
+  margin-right: 4rem;
+}
+
+.home .home-content .text-1 {
+  font-size: 2rem;
+  font-family: "Doto";
+  font-weight: 500;
+  font-style: normal;
+  color: var(--home-text-color);
+}
+
+.home .home-content .text-2 {
+  font-size: 4rem;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--home-text-color);
+}
+
+.home .home-content .text-2 span {
+  color: var(--main-color);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.home .home-content .text-3 {
+  font-size: 2rem;
+  font-family: "Doto", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-weight: 100;
+  color: var(--home-text-color);
+}
+
+.home .home-content .text-3 span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.home .home-content a {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--main-color);
+  color: var(--secondry-bg-color);
+  transition: all 0.3s ease;
+  border: 2px solid var(--main-color);
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 1rem;
+  height: 2rem;
+  width: 2rem;
+  margin: 15px 20px 0px 0px;
+  transition: 0.3s;
+}
+
+.home .home-content a:hover {
+  color: var(--main-color);
+  background: none;
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+  /* filter: drop-shadow(5px 5px 180px var(--main-color)); */
+  /* transition: 1s; */
+}
+
+#leetcode-card {
+  cursor: pointer;
+  transition: 1s;
+  
+  filter: drop-shadow(0 0 4px var(--main-color));
+}
+
+#leetcode-card:hover {
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+  filter: drop-shadow(0 0 240px var(--main-color));
+  transition: 1s;
+}
+
+#leetcode-card img {
+  user-select: none;
+  pointer-events: none;
+  width: 32rem;
+  height: auto;
+}
+
+.achievements {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  /* background-color: var(--main-color); */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.ach-box {
+  width: 8rem;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.ach-box:hover {
+  .ach-number {
+    background-color: var(--main-color);
+    transition: 0.3s;
+    color: var(--nav-color);
+  }
+}
+
+.ach-number {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  border: 2px solid var(--main-color);
+  border-radius: 1rem;
+  transition: 0.3s;
+  color: var(--main-color);
+}
+
+.ach-box > p {
+  font-size: medium;
+  color: var(--main-color);
+}

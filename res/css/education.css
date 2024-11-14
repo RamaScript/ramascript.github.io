@@ -1,0 +1,72 @@
+/* education section styling */
+
+.education {
+  min-height: 100vh;
+}
+
+.education .education-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem;
+  margin-right: 2rem;
+  padding: 0.5rem;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.education .education-content .card {
+  min-width: 17rem;
+  width: 30%;
+  margin: 1rem;
+  text-align: center;
+  padding: 40px 15px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background: var(--bg-noise-img);
+  /* background-color: var(--nav-color); */
+  border: 5px dotted var(--main-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  /* box-shadow: 0 0 20px var(--main-color) inset; */
+  /* background-image: linear-gradient(var(--nav-color) , var(--main-color)); */
+}
+
+.education .education-content .card:hover {
+  background: var(--bg-img);
+  background-color: var(--secondry-bg-color);
+  box-shadow: 0 0 30px var(--main-color), 0 0 20px var(--main-color) inset;
+  border: 5px solid var(--main-color);
+  border-radius: 2rem;
+  transition: all 1s ease;
+  /* i {
+      color: var(--nav-color);
+    } */
+  .box {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
+
+.education .education-content .card .box {
+  transition: all 0.5s ease;
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+}
+
+.education .education-content .card i {
+  font-size: 50px;
+  color: var(--main-color);
+  transition: color 0.3s ease;
+}
+
+.education .education-content .card .text {
+  font-weight: 500;
+  margin: 10px 0 7px;
+  font-size: 1.5rem;
+  background-color: var(--main-color);
+  text-align: center;
+  color: var(--primary-bg-color);
+}

@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Doto&family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* variables */
+
+body {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  user-select: none;
+}
+
+:root {
+  --home-color: #ffffff;
+  --bg-noise-img: url(../images/bg_noise.png);
+  --bg-img: url(../images/bg_noise.png);
+  --home-bg: url(../images/bg_main.jpg);
+  --text-color: #ffffff;
+  --main-color: #ef6c00;
+
+  --primary-bg-color: #0b0b0b;
+  --secondry-bg-color: #232323;
+  --nav-hover-color: rgb(55, 55, 55);
+  --nav-color: #232323;
+  --home-text-color: #fff;
+}
+
+/* mode change */
+
+.light-mode {
+  --bg-img: url(images/bg.png);
+  --home-bg: url(images/lightbg3.jpg);
+  --text-color: #151515;
+  /* --main-color: purple; */
+  --main-color: crimson;
+  /* --primary-bg-color: #ffcccc; */
+  --primary-bg-color: #ebf4fa;
+  --secondry-bg-color: #f2f2f2;
+  --nav-hover-color: #ccccff;
+  --nav-color: #ffcccc;
+  --home-text-color: rgb(104, 78, 83);
+}
+
+/* light mode and dark mode btn styling */
+
+.day-night-mode {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+/* main container styling */
+
+.main {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Prevents the container from scrolling */
+}
+
+/* Common css */
+
+.top-icons {
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 50px;
+  color: var(--main-color);
+  background-color: var(--primary-bg-color);
+  transition: all 0.8s ease;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.top-icons:hover {
+  color: var(--secondry-bg-color);
+  background: var(--main-color);
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px var(--main-color));
+}
+
+/* sections side of the web */
+
+/* styling for all sections */
+
+.sections {
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.home,
+.about,
+.projects,
+.skills,
+.education,
+.certificates,
+.contact {
+  background: var(--bg-img) repeat;
+  background-attachment: fixed;
+}
+
+/* banner styling for each section */
+
+.section-banner {
+  background-color: var(--main-color);
+  height: 5rem;
+  color: var(--secondry-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  border-radius: 0 0 1rem 1rem;
+  z-index: 3;
+}

@@ -28,6 +28,11 @@ startTypingAnimation(".typing", ["Student", "Web Developer", "Programmer"]);
 
 // ====================== Typing Text Animation END ==============================
 
+let leetcodeImg = document.querySelector("#leetcode-card");
+leetcodeImg.addEventListener("click", () => {
+  window.open("https://leetcode.com/u/ramanand7/", "_blank");
+});
+
 // 3. ========================== Age Timer start ==========================
 
 function calculateAge(dob) {
