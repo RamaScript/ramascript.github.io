@@ -283,6 +283,10 @@
   #leetcode-card img{
     width: 18rem;
   }
+
+  .right form{
+    transform: scale(0.9);
+  }
 }
 
 /* ========== Mobile Menu Responsivenesss END ========== */

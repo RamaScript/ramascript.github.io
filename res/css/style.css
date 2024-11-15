@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 /* variables */
@@ -33,8 +34,8 @@ body {
 /* mode change */
 
 .light-mode {
-  --bg-img: url(images/bg.png);
-  --home-bg: url(images/lightbg3.jpg);
+  --bg-img: url(../images/bg.png);
+  --home-bg: url(../images/lightbg3.jpg);
   --text-color: #151515;
   /* --main-color: purple; */
   --main-color: crimson;
