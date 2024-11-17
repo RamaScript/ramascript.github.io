@@ -155,10 +155,14 @@ function appScript() {
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbz9R81FxlG-ZtVzllIdXvR9v3Jp4vBOeENBBGHMMsKqIoKHRbBTCuch0GAXJnulbYYyyw/exec";
   const form = document.forms["contact"];
+  
+  // Create a new FormData object and append the "to" field
+  const formData = new FormData(form);
+  formData.append("to", "Ramanand"); // Add the hardcoded "to" field
 
-  fetch(scriptURL, { method: "POST", body: new FormData(form) }).catch(
-    (error) => console.error("Error!", error.message)
-  );
+  // Send the form data using fetch
+  fetch(scriptURL, { method: "POST", body: formData })
+    .catch((error) => console.error("Error!", error.message));
 }
 
 function validateEmail(email) {
