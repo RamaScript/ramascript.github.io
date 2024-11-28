@@ -63,6 +63,69 @@ body {
   overflow: hidden; /* Prevents the container from scrolling */
 }
 
+/* custom curser */
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim .5s infinite alternate;
+  pointer-events: none;
+}
+
+.cursor::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 8px solid var(--main-color);
+  border-radius: 50%;
+  opacity: .5;
+  top: -8px;
+  left: -8px;
+  animation: cursorAnim2 .5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(.4);
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(3);
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+
+.expand {
+  animation: cursorAnim3 .5s forwards;
+  border: 2px solid var(--main-color);
+}
+
 /* Common css */
 
 .top-icons {
@@ -125,7 +188,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   border-radius: 0 0 1rem 1rem;
   z-index: 3;
 }
