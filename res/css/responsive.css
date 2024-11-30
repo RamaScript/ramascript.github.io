@@ -83,10 +83,8 @@
 /* ========== Age Timer Responsiveness END ========== */
 
 /* ======== Home section responiveness starts ================ */
-@media only screen and (max-width: 1450px) {
-  .home-content {
-    flex-direction: column;
-  }
+@media only screen and (max-width: 950px) {
+  
   #leetcode-card{
     margin-top: 4rem;
    
@@ -94,6 +92,44 @@
   #leetcode-card:hover{
     transform: scale(0.95);
     filter: drop-shadow(8px 8px 8px var(--main-color));
+  }
+}
+
+@media only screen and (max-width: 1450px){
+  .home .home-content .text-1,
+  .home .home-content .text-3{
+    font-size: 1.5rem;
+  }
+  .home .home-content .text-2{
+    font-size: 3rem;
+  }
+  .home .home-content a
+  {
+    height: 1.5rem;
+  width: 1.5rem;
+  font-size: 1.75rem;
+  }
+  #leetcode-card img{
+    width: 24rem;
+  }
+}
+
+@media only screen and (max-width: 1150px){
+  .home .home-content .text-1,
+  .home .home-content .text-3{
+    font-size: 1.25rem;
+  }
+  .home .home-content .text-2{
+    font-size: 2.5rem;
+  }
+  .home .home-content a
+  {
+    height: 1rem;
+    width: 1rem;
+    font-size: 1.5rem;
+    }
+  #leetcode-card img{
+    width: 20rem;
   }
 }
 /* ======== Home section responiveness ends ================ */
@@ -140,7 +176,6 @@
   }
   .certificate-section-banner h2 {
     /* color: red; */
-    font-size: 1.25rem;
   }
   .frame {
     margin-right: 0;
