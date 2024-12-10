@@ -153,8 +153,8 @@ body {
   background: var(--main-color);
   transition: all 0.3s ease;
   border-radius: 8px;
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 5px var(--main-color));
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 2px var(--main-color));
 }
 
 /* sections side of the web */

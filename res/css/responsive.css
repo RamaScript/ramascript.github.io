@@ -36,6 +36,7 @@
   .contact-content {
     flex-direction: column;
     margin: 0.5rem;
+    padding-right: 2rem;
   }
   .contact .contact-content .column {
     width: 90%;
@@ -78,7 +79,7 @@
   .age .a-box > p {
     font-size: 0.75rem;
   }
-}
+} 
 
 /* ========== Age Timer Responsiveness END ========== */
 
@@ -321,9 +322,9 @@
     width: 18rem;
   }
 
-  .right form{
+  /* .right form{
     transform: scale(0.9);
-  }
+  } */
 }
 
 /* ========== Mobile Menu Responsivenesss END ========== */
