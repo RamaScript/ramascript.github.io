@@ -225,3 +225,28 @@ function thank(event) {
 }
 
 // ======================== Contact Section END===================
+
+
+
+// chatbot 
+
+// https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=GEMINI_API_KEY
+
+//  AIzaSyCUQy4dCY1Pv9FtjiyxYw5gm0zJyKFP0N0
+
+// https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCUQy4dCY1Pv9FtjiyxYw5gm0zJyKFP0N0
+
+
+let btn = document.querySelector(".cBtn");
+
+let url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCUQy4dCY1Pv9FtjiyxYw5gm0zJyKFP0N0";
+
+try{
+  let r1 = await fetch(url);
+  let data1 = await r1.json();
+  console.log(data1.fact)
+  // return data1.fact;
+}catch(e){
+  console.log("Error : ",e);
+  return 0;
+}
