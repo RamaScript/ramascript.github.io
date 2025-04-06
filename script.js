@@ -15,19 +15,22 @@ mode.addEventListener("click", () => {
 
 // custom curser
 
-const cursor = document.querySelector('.cursor');
+const cursor = document.querySelector(".cursor");
 
-document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-})
+document.addEventListener("mousemove", (e) => {
+  cursor.setAttribute(
+    "style",
+    "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+  );
+});
 
-document.addEventListener('click', () => {
-    cursor.classList.add("expand");
+document.addEventListener("click", () => {
+  cursor.classList.add("expand");
 
-    setTimeout(() => {
-        cursor.classList.remove("expand");
-    }, 500)
-})
+  setTimeout(() => {
+    cursor.classList.remove("expand");
+  }, 500);
+});
 
 // 2. ====================== Typing Text Animation Start ==============================
 
@@ -171,14 +174,15 @@ function appScript() {
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbz9R81FxlG-ZtVzllIdXvR9v3Jp4vBOeENBBGHMMsKqIoKHRbBTCuch0GAXJnulbYYyyw/exec";
   const form = document.forms["contact"];
-  
+
   // Create a new FormData object and append the "to" field
   const formData = new FormData(form);
   formData.append("to", "Ramanand"); // Add the hardcoded "to" field
 
   // Send the form data using fetch
-  fetch(scriptURL, { method: "POST", body: formData })
-    .catch((error) => console.error("Error!", error.message));
+  fetch(scriptURL, { method: "POST", body: formData }).catch((error) =>
+    console.error("Error!", error.message)
+  );
 }
 
 function validateEmail(email) {
