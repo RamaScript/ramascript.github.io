@@ -27,7 +27,7 @@ const skillsData = {
   ],
   "Frameworks & Libraries": [
     {
-      image: "res/images/logo/react.png",
+      image: "res/images/logo/reactjs.png",
       name: "React JS",
     },
     {
