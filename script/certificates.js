@@ -71,7 +71,6 @@ function generateCertificatesSection() {
                 </div>
                 <div class="cer-details">
                     <p>${cert.description}</p>
-                    <p>Issue Date: ${cert.date}</p>
                     <p>Issuer: <a href="${cert.issuerUrl}" target="_blank">${cert.issuer}</a></p>
                 </div>
                 <div class="btns">
