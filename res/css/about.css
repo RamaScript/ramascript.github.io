@@ -52,27 +52,33 @@
   margin-bottom: 1rem;
 }
 
-.about .about-content .right a {
+.about .about-content .right a#btn-new {
+  display: inline-block;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  color: var(--secondry-bg-color);
-  background-color: var(--main-color);
-  border: 0.15rem solid var(--main-color);
-  border-radius: 10px 10px 40px 10px;
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
-  transition: all 0.8s ease;
+  background: linear-gradient(
+    to right,
+    var(--glass-primary),
+    var(--glass-secondary),
+    var(--glass-primary)
+  );
+  background-size: 200% auto;
+  background-position: left center;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 0.75rem;
+  border: 0px;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.5s ease;
 }
 
-.about .about-content .right a:hover {
-  color: var(--main-color);
-  background: none;
-  transition: all 0.5s ease;
-  box-shadow: 0px 0px 15px var(--main-color),
-    0px 0px 5px var(--main-color) inset;
-  /* filter: drop-shadow(5px 5px 20px var(--main-color)); */
-  transition: 1s;
+.about .about-content .right a#btn-new:hover {
+  background-position: right center;
+  box-shadow: 0px 0px 12px 1px var(--glass-primary);
+  transform: scale(0.95);
+  transition: 0.3s;
 }
 
 /* age section styling */

@@ -62,7 +62,7 @@ function generateCertificatesSection() {
       const viewCer = document.createElement("div");
       viewCer.className = "view-cer";
 
-      viewCer.innerHTML = `
+      const cardHTML = `
                 <div class="details">
                     <h3>${cert.title}</h3>
                 </div>
@@ -78,6 +78,8 @@ function generateCertificatesSection() {
                     <a href="${cert.image}" download class="btn">Download</a>
                 </div>
             `;
+      console.log("Certificate card HTML:", cardHTML);
+      viewCer.innerHTML = cardHTML;
 
       fview.appendChild(viewCer);
     });

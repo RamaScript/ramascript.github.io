@@ -5,7 +5,6 @@
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
-  
 }
 
 /* variables */
@@ -25,7 +24,7 @@ body {
   --home-bg: url(../images/bg_main.jpg);
   --text-color: #ffffff;
   /* --main-color: #ef6c00; */
-  --main-color:#08E8DE;
+  --main-color: #08e8de;
   --main-color-alpha50: #08e8dd7f;
 
   --primary-bg-color: #0b0b0b;
@@ -33,6 +32,9 @@ body {
   --nav-hover-color: rgb(55, 55, 55);
   --nav-color: #232323;
   --home-text-color: #fff;
+
+  --glass-primary: rgba(54, 149, 255, 0.5);
+  --glass-secondary: rgba(0, 255, 229, 0.5);
 }
 
 /* mode change */
@@ -77,7 +79,7 @@ body {
   position: absolute;
   transition-duration: 200ms;
   transition-timing-function: ease-out;
-  animation: cursorAnim .5s infinite alternate;
+  animation: cursorAnim 0.5s infinite alternate;
   pointer-events: none;
 }
 
@@ -88,45 +90,45 @@ body {
   position: absolute;
   border: 6px solid var(--main-color);
   border-radius: 50%;
-  opacity: .5;
+  opacity: 0.5;
   top: -6px;
   left: -6px;
-  animation: cursorAnim2 .5s infinite alternate;
+  animation: cursorAnim2 0.5s infinite alternate;
 }
 
 @keyframes cursorAnim {
   from {
-      transform: scale(1);
+    transform: scale(1);
   }
   to {
-      transform: scale(0.7);
+    transform: scale(0.7);
   }
 }
 
 @keyframes cursorAnim2 {
   from {
-      transform: scale(1);
+    transform: scale(1);
   }
   to {
-      transform: scale(.4);
+    transform: scale(0.4);
   }
 }
 
 @keyframes cursorAnim3 {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
   50% {
-      transform: scale(3);
+    transform: scale(3);
   }
   100% {
-      transform: scale(1);
-      opacity: 0;
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
 .expand {
-  animation: cursorAnim3 .5s forwards;
+  animation: cursorAnim3 0.5s forwards;
   border: 2px solid var(--main-color);
 }
 

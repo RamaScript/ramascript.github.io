@@ -27,6 +27,10 @@ const skillsData = {
   ],
   "Frameworks & Libraries": [
     {
+      image: "res/images/logo/react.png",
+      name: "React JS",
+    },
+    {
       image: "res/images/logo/tkin.png",
       name: "Python Tkinter",
     },
