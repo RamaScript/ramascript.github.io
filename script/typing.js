@@ -7,8 +7,17 @@ function startTypingAnimation(selector, strings) {
     loop: true,
   });
 }
-startTypingAnimation(".typing-2", ["Student", "Web Developer", "Programmer"]);
-startTypingAnimation(".typing", ["Student", "Web Developer", "Programmer"]);
+let myRoles = [
+  "App Developer",
+  "Web Developer",
+  "Freelance Developer",
+  "Computer Geek",
+  "Tech Enthusiast",
+  "Learner",
+  "Problem Solver",
+];
+startTypingAnimation(".typing-2", myRoles);
+startTypingAnimation(".typing", myRoles);
 
 // Leetcode card click
 let leetcodeImg = document.querySelector("#leetcode-card");
