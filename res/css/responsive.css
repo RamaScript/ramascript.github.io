@@ -323,6 +323,7 @@
 
   .right form{
     transform: scale(0.9);
+    margin-right: 2rem;
   }
 }
 

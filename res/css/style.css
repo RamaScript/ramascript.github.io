@@ -25,6 +25,7 @@ body {
   --home-bg: url(../images/bg_main.jpg);
   --text-color: #ffffff;
   --main-color: #ef6c00;
+  --main-color-alpha50: #ef6c0075;
 
   --primary-bg-color: #0b0b0b;
   --secondry-bg-color: #232323;

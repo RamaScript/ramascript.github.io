@@ -140,12 +140,13 @@
     } */
 }
 
-.view-cer .details h1 {
-  font-size: 2rem;
+.view-cer .details h3 {
+  font-size: 1.5rem;
   text-align: center;
   background-color: var(--main-color);
   color: var(--home-color);
   /* margin: 0 2rem; */
+  padding: 0.25rem;
   border-radius: 15px 15px 0 0;
   transition: all 0.3s;
 }
@@ -168,8 +169,12 @@
   margin: 0 0.5rem;
   text-align: justify;
   font-size: 1.25rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans",   "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 100;
+
+  a {
+    color: aqua;
+  }
 }
 .view-cer .btns {
   padding: 0.5rem;
@@ -179,4 +184,8 @@
   justify-content: center;
   position: relative;
   bottom: 0;
+}
+
+.view-cer .btn {
+  text-decoration: none;
 }
