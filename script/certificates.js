@@ -67,7 +67,7 @@ function generateCertificatesSection() {
                     <h3>${cert.title}</h3>
                 </div>
                 <div class="cer-img">
-                    <img src="${cert.image}" alt="${cert.title}">
+                    <img src="${cert.image}" alt="${cert.title}" loading="lazy">
                 </div>
                 <div class="cer-details">
                     <p>${cert.description}</p>
