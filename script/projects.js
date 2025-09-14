@@ -7,6 +7,7 @@ const projectsData = [
     playStore: "dsfg",
     webLink: "https://ramascript.github.io/AllenConnect/",
     github: "https://github.com/RamaScript/Allen-Connect",
+    techStack: ["Java", "XML", "Firebase", "Google Gemini","WebRTC"],
   },
   {
     title: "Shadow Talk",
@@ -15,6 +16,7 @@ const projectsData = [
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/ShadowTalk/",
+    techStack: ["Java", "XML", "Firebase"],
   },
   {
     title: "Retro Games",
@@ -23,6 +25,7 @@ const projectsData = [
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/Retro-Games",
+    techStack: ["Java", "XML"],
   },
 ];
 
