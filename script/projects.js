@@ -7,7 +7,7 @@ const projectsData = [
     playStore: "dsfg",
     webLink: "https://ramascript.github.io/AllenConnect/",
     github: "https://github.com/RamaScript/Allen-Connect",
-    techStack: ["Java", "XML", "Firebase", "gemini", "WebRTC"],
+    techStack: ["java", "xml", "firebase", "gemini", "webrtc"],
   },
   {
     title: "Shadow Talk",
@@ -16,7 +16,7 @@ const projectsData = [
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/ShadowTalk/",
-    techStack: ["Java", "XML", "Firebase"],
+    techStack: ["java", "xml", "firebase"],
   },
   {
     title: "Retro Games",
@@ -25,7 +25,7 @@ const projectsData = [
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/Retro-Games",
-    techStack: ["Java", "XML"],
+    techStack: ["java", "xml"],
   },
   {
     title: "Expense Manager",
@@ -34,7 +34,7 @@ const projectsData = [
     playStore: "N/A",
     webLink: "https://ramascript.github.io/expense-manager-js/",
     github: "https://github.com/RamaScript/expense-manager-js/",
-    techStack: ["html5", "css3", "JavaScript"],
+    techStack: ["html5", "css3", "javascript"],
   },
   {
     title: "Rama Quiz",
@@ -43,7 +43,7 @@ const projectsData = [
     playStore: "N/A",
     webLink: "https://ramascript.github.io/Rama-Quiz/",
     github: "https://github.com/RamaScript/Rama-Quiz",
-    techStack: ["html5", "css3", "JavaScript"],
+    techStack: ["html5", "css3", "javascript"],
   },
 ];
 
