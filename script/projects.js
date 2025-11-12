@@ -7,7 +7,7 @@ const projectsData = [
     playStore: "dsfg",
     webLink: "https://ramascript.github.io/AllenConnect/",
     github: "https://github.com/RamaScript/Allen-Connect",
-    techStack: ["Java", "XML", "Firebase", "Google Gemini","WebRTC"],
+    techStack: ["Java", "XML", "Firebase", "gemini", "WebRTC"],
   },
   {
     title: "Shadow Talk",
@@ -27,6 +27,24 @@ const projectsData = [
     github: "https://github.com/RamaScript/Retro-Games",
     techStack: ["Java", "XML"],
   },
+  {
+    title: "Expense Manager",
+    img: "res/images/projects/wallet.jpeg",
+    desc: "An Android app that helps users manage their expenses effectively. It provides features like expense tracking, budgeting, and financial insights, empowering users to take control of their finances.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/expense-manager-js/",
+    github: "https://github.com/RamaScript/expense-manager-js/",
+    techStack: ["html5", "css3", "JavaScript"],
+  },
+  {
+    title: "Rama Quiz",
+    img: "res/images/projects/rama_quiz.png",
+    desc: "An Android app that helps users test their knowledge across various subjects. It offers a wide range of quizzes, allowing users to challenge themselves and improve their skills.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/Rama-Quiz/",
+    github: "https://github.com/RamaScript/Rama-Quiz",
+    techStack: ["html5", "css3", "JavaScript"],
+  },
 ];
 
 function createProjectCards() {
@@ -42,44 +60,9 @@ function createProjectCards() {
     const hasWebLink = project.webLink !== "N/A";
     const hasGithub = project.github && project.github !== "N/A";
 
-    const linksSection =
-      hasPlayStore || hasWebLink || hasGithub
-        ? `
-      <div class="project-links">
-        ${
-          hasPlayStore
-            ? `
-          <a href="${project.playStore}" target="_blank" class="project-link play-store-link">
-            <i class="fab fa-google-play"></i> Play Store
-          </a>
-        `
-            : ""
-        }
-        ${
-          hasWebLink
-            ? `
-          <a href="${project.webLink}" target="_blank" class="project-link web-link">
-            <i class="fas fa-globe"></i> Visit Website
-          </a>
-        `
-            : ""
-        }
-        ${
-          hasGithub
-            ? `
-          <a href="${project.github}" target="_blank" class="project-link github-link">
-            <i class="fab fa-github"></i> View Code
-          </a>
-        `
-            : ""
-        }
-      </div>
-    `
-        : "";
-
     card.innerHTML = `
       <div class="project-image">
-        <img loading="lazy" src="${project.img}" alt="${project.title}">
+        <img class="project-img" loading="lazy" src="${project.img}" alt="${project.title}">
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -114,6 +97,12 @@ function createProjectCards() {
             }
           </div>
         </div>
+        <p class="tech-stack">${project.techStack
+          .map(
+            (tech) =>
+              `<img src="res/images/logo/${tech}.png" alt="${tech}" class="tech-icon">`
+          )
+          .join("")}</p>
         <p>${project.desc}</p>
       </div>
     `;

@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-.projects .projects-content .project-card img {
+.projects .projects-content .project-card .project-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -98,6 +98,7 @@
   padding-bottom: 0.5rem;
   font-weight: 600;
 }
+
 
 .projects .projects-content .project-card h3::after {
   content: "";
@@ -164,4 +165,22 @@
 
 .project-link i {
   font-size: 1.1rem;
+}
+
+
+.tech-stack {
+  margin-bottom: 1rem;
+}
+
+
+.tech-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  /* // give gradient background */
+  background: linear-gradient(135deg,rgba(0, 128, 128, 0.437),rgba(0, 255, 255, 0.325));
+  padding: 8px;
+  border-radius: 8px;
+
+  margin-right: 0.5rem;
 }
