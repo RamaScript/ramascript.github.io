@@ -100,7 +100,7 @@ function createProjectCards() {
         <p class="tech-stack">${project.techStack
           .map(
             (tech) =>
-              `<img src="res/images/logo/${tech}.png" alt="${tech}" class="tech-icon">`
+              `<img src="res/images/logo/${tech}.png" alt="${tech}" loading="lazy" class="tech-icon">`
           )
           .join("")}</p>
         <p>${project.desc}</p>
