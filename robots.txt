@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /res/docs/
+
+Sitemap: https://ramascript.github.io/sitemap.xml
