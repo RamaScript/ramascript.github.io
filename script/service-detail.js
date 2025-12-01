@@ -22,11 +22,9 @@ function getServiceFromURL() {
     return null;
   }
 
-  // Decode and normalize the service title
   const decodedTitle = decodeURIComponent(serviceTitle);
   console.log("Looking for service:", decodedTitle);
 
-  // Find service by exact title match (case-insensitive)
   const service = servicesData[category].find(
     (s) => s.title.toLowerCase() === decodedTitle.toLowerCase()
   );
@@ -60,13 +58,30 @@ function populateTeachingDetails(service) {
   document.getElementById("course-duration").textContent = service.duration;
   document.getElementById("course-level").textContent = service.level;
   document.getElementById("course-price").textContent = service.price;
+
+  // Learning outcomes
+  const learningOutcomesList = document.getElementById("learning-outcomes");
+  if (service.learningOutcomes && service.learningOutcomes.length > 0) {
+    learningOutcomesList.innerHTML = service.learningOutcomes
+      .map(
+        (outcome) => `
+      <li>${outcome}</li>
+    `
+      )
+      .join("");
+  }
+
+  // Why choose section
+  populateWhyChoose(service);
 }
 
 // Populate freelance service details
 function populateFreelanceDetails(service) {
-  // Features
+  // Use detailedFeatures if available, otherwise fall back to features
+  const featuresToShow = service.detailedFeatures || service.features;
+
   const featuresList = document.getElementById("features-list");
-  featuresList.innerHTML = service.features
+  featuresList.innerHTML = featuresToShow
     .map(
       (feature) => `
     <li>${feature}</li>
@@ -79,6 +94,28 @@ function populateFreelanceDetails(service) {
     service.deliveryTime;
   document.getElementById("project-type").textContent = service.projectType;
   document.getElementById("project-price").textContent = service.startingPrice;
+
+  // Why choose section
+  populateWhyChoose(service);
+}
+
+// Populate Why Choose section (common for both teaching and freelance)
+function populateWhyChoose(service) {
+  const whyChooseGrid = document.querySelector(".why-choose-grid");
+
+  if (service.whyChoose && service.whyChoose.length > 0) {
+    whyChooseGrid.innerHTML = service.whyChoose
+      .map(
+        (item) => `
+      <div class="why-choose-card">
+        <i class="${item.icon}"></i>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      </div>
+    `
+      )
+      .join("");
+  }
 }
 
 // Populate service details
@@ -107,7 +144,6 @@ function populateServiceDetails() {
     document.getElementById("teaching-details").style.display = "block";
     document.getElementById("freelance-details").style.display = "none";
 
-    // Populate teaching details
     populateTeachingDetails(service);
 
     // Update form
@@ -118,7 +154,6 @@ function populateServiceDetails() {
     document.getElementById("teaching-details").style.display = "none";
     document.getElementById("freelance-details").style.display = "block";
 
-    // Populate freelance details
     populateFreelanceDetails(service);
 
     // Update form
@@ -138,8 +173,8 @@ function validateEmail(email) {
 
 // Validate phone (optional - Indian format)
 function validatePhone(phone) {
-  if (!phone) return true; // Phone is optional
-  const phonePattern = /^[6-9]\d{9}$/; // Indian mobile number
+  if (!phone) return true;
+  const phonePattern = /^[6-9]\d{9}$/;
   return phonePattern.test(phone.replace(/\s+/g, "").replace("+91", ""));
 }
 
@@ -180,16 +215,16 @@ function setupFormSubmission(service, category) {
     submitButton.querySelector("span").textContent = "Sending...";
     submitButton.querySelector("i").className = "fas fa-spinner fa-spin";
 
-    // Prepare enhanced subject and message for Google Sheet
+    // Prepare enhanced subject and message
     let enhancedSubject = "";
     let enhancedMessage = "";
 
     if (category === "Teaching") {
       enhancedSubject = `📚 Course Enrollment: ${service.title}`;
       enhancedMessage = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 📚 NEW COURSE ENROLLMENT REQUEST
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+└────────────────────────────────────────────────┘
 
 📖 COURSE DETAILS:
    • Course Name: ${service.title}
@@ -202,19 +237,19 @@ function setupFormSubmission(service, category) {
 📚 Topics Covered:
    ${service.topics.map((topic) => `• ${topic}`).join("\n   ")}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 
 👤 STUDENT INFORMATION:
    • Name: ${name}
    • Email: ${email}
    ${phone ? `• Phone: ${phone}` : "• Phone: Not provided"}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 
 💬 STUDENT'S MESSAGE:
 ${userMessage}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 
 📍 SOURCE INFORMATION:
    • Source: Portfolio Website - Services Detail Page
@@ -225,16 +260,16 @@ ${userMessage}
      timeStyle: "long",
    })}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+└────────────────────────────────────────────────┘
 
 ✅ ACTION REQUIRED: Please respond to the student within 24 hours
       `.trim();
     } else {
       enhancedSubject = `💼 Project Quote: ${service.title}`;
       enhancedMessage = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 💼 NEW PROJECT QUOTE REQUEST
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+└────────────────────────────────────────────────┘
 
 💻 PROJECT DETAILS:
    • Service: ${service.title}
@@ -247,19 +282,19 @@ ${userMessage}
 ✨ Features Included:
    ${service.features.map((feature) => `• ${feature}`).join("\n   ")}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 
 👤 CLIENT INFORMATION:
    • Name: ${name}
    • Email: ${email}
    ${phone ? `• Phone: ${phone}` : "• Phone: Not provided"}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 
 💬 CLIENT'S REQUIREMENTS:
 ${userMessage}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┌────────────────────────────────────────────────┐
 
 📍 SOURCE INFORMATION:
    • Source: Portfolio Website - Services Detail Page
@@ -270,7 +305,7 @@ ${userMessage}
      timeStyle: "long",
    })}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+└────────────────────────────────────────────────┘
 
 ✅ ACTION REQUIRED: Please send quote to the client within 24 hours
       `.trim();
@@ -303,8 +338,6 @@ ${userMessage}
           "success"
         );
         form.reset();
-
-        // Scroll to top to show success message clearly
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         throw new Error(result.error || "Unknown error");
@@ -316,7 +349,6 @@ ${userMessage}
         "error"
       );
     } finally {
-      // Re-enable button
       submitButton.disabled = false;
       submitButton.querySelector("span").textContent = originalButtonText;
       submitButton.querySelector("i").className = "fas fa-paper-plane";
@@ -364,29 +396,6 @@ if (cursor) {
     }, 500);
   });
 }
-
-// Add expand animation for cursor
-const expandStyle = document.createElement("style");
-expandStyle.textContent = `
-  .cursor.expand {
-    animation: cursorExpand 0.5s forwards;
-    border: 2px solid var(--main-color);
-  }
-  
-  @keyframes cursorExpand {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(3);
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0;
-    }
-  }
-`;
-document.head.appendChild(expandStyle);
 
 // Initialize page
 document.addEventListener("DOMContentLoaded", () => {

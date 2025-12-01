@@ -175,6 +175,11 @@ body {
   font-size: 1.3rem;
 }
 
+.service-description-section h2{
+    color: var(--main-color);
+
+}
+
 .service-description-section p {
   font-size: 1.1rem;
   line-height: 1.8;
