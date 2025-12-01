@@ -17,7 +17,7 @@ const servicesData = {
       ],
       duration: "2-3 months",
       level: "Beginner to Advanced",
-      price: "₹5,000 - ₹15,000",
+      price: "₹10,000 - ₹15,000",
       highlight: "Popular",
       learningOutcomes: [
         "Build responsive websites that work on all devices",
@@ -71,7 +71,7 @@ const servicesData = {
       ],
       duration: "3-4 months",
       level: "Intermediate to Advanced",
-      price: "₹20,000 - ₹30,000",
+      price: "₹20,000 - ₹25,000",
       highlight: "Most Demanded",
       learningOutcomes: [
         "Build complete full-stack web applications from scratch",
@@ -108,58 +108,7 @@ const servicesData = {
         },
       ],
     },
-    {
-      title: "Backend Development - PHP & MySQL",
-      icon: "fas fa-database",
-      description:
-        "Build powerful server-side applications and manage databases efficiently. Learn PHP programming and MySQL database management for creating dynamic web applications.",
-      topics: [
-        "PHP",
-        "MySQL",
-        "CRUD Operations",
-        "Database Design",
-        "Security",
-        "Session Management",
-      ],
-      duration: "2-3 months",
-      level: "Beginner to Intermediate",
-      price: "₹8,000 - ₹15,000",
-      highlight: null,
-      learningOutcomes: [
-        "Master PHP programming fundamentals and advanced concepts",
-        "Design and implement MySQL databases",
-        "Create secure CRUD applications",
-        "Implement user authentication and session management",
-        "Handle file uploads and form validation",
-        "Prevent SQL injection and other security vulnerabilities",
-      ],
-      whyChoose: [
-        {
-          icon: "fas fa-database",
-          title: "Database Expertise",
-          description:
-            "Learn database design, normalization, and optimization techniques",
-        },
-        {
-          icon: "fas fa-lock",
-          title: "Security Focus",
-          description:
-            "Understand common vulnerabilities and how to prevent them",
-        },
-        {
-          icon: "fas fa-server",
-          title: "Server-Side Logic",
-          description:
-            "Build robust backend systems that power dynamic websites",
-        },
-        {
-          icon: "fas fa-tasks",
-          title: "Practical Projects",
-          description:
-            "Create real-world applications like CMS, e-commerce backends, and APIs",
-        },
-      ],
-    },
+
     {
       title: "Flutter App Development",
       icon: "fas fa-mobile-alt",
@@ -168,14 +117,15 @@ const servicesData = {
       topics: [
         "Flutter",
         "Dart",
-        "Firebase",
         "State Management",
+        "Provider",
+        "Firebase",
         "UI/UX Design",
         "API Integration",
       ],
       duration: "3-4 months",
       level: "Intermediate to Advanced",
-      price: "₹15,000 - ₹25,000",
+      price: "₹20,000 - ₹25,000",
       highlight: "Trending",
       learningOutcomes: [
         "Build native-quality apps for both Android and iOS",
@@ -227,7 +177,7 @@ const servicesData = {
       ],
       duration: "3-4 months",
       level: "Beginner to Intermediate",
-      price: "₹10,000 - ₹18,000",
+      price: "₹15,000 - ₹20,000",
       highlight: null,
       learningOutcomes: [
         "Understand programming fundamentals and logic building",
@@ -330,7 +280,7 @@ const servicesData = {
         "Material Design UI",
         "Google Play Console Setup",
       ],
-      deliveryTime: "3-6 weeks",
+      deliveryTime: "2-3 weeks",
       startingPrice: "₹15,000",
       projectType: "Mobile App",
       highlight: "Best Seller",
@@ -585,7 +535,7 @@ const servicesData = {
       description:
         "Complex web applications with custom backend, database, and frontend. Built for scalability and performance.",
       features: [
-        "MERN/MEAN Stack",
+        "MERN Stack",
         "REST APIs",
         "Database Design",
         "Authentication",
@@ -647,7 +597,7 @@ const servicesData = {
         "Modern Framework",
       ],
       deliveryTime: "3-5 weeks",
-      startingPrice: "₹12,000",
+      startingPrice: "₹15,000",
       projectType: "Website",
       highlight: null,
       detailedFeatures: [
@@ -698,7 +648,7 @@ const servicesData = {
         "Testing",
       ],
       deliveryTime: "2-4 weeks",
-      startingPrice: "₹8,000",
+      startingPrice: "₹10,000",
       projectType: "Backend",
       highlight: null,
       detailedFeatures: [
