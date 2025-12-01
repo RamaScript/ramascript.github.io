@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Details - Ramanand Portfolio</title>
+    <meta
+      name="description"
+      content="Detailed information about services offered by Ramanand Kumar"
+    />
+    <meta name="theme-color" content="#0f172a" />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="icon" href="res/images/r.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="res/css/style.css" />
+    <link rel="stylesheet" href="res/css/service-detail.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <!-- Service Detail Container -->
+      <div class="service-detail-container">
+        <!-- Left Side - Service Details -->
+        <div class="service-detail-left">
+          <!-- Back Button -->
+          <div class="back-button-container">
+            <a href="index.html#services" class="back-button">
+              <i class="fa-solid fa-arrow-left"></i>
+              Back to Services
+            </a>
+          </div>
+          <div class="service-detail-header">
+            <div class="service-detail-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="service-detail-title">
+              <span class="service-category-badge">Loading...</span>
+              <h1 id="service-title">Loading...</h1>
+            </div>
+          </div>
+
+          <div class="service-detail-content">
+            <div class="service-description-section">
+              <h2><i class="fas fa-info-circle"></i> About This Service</h2>
+              <p id="service-description">Loading description...</p>
+            </div>
+
+            <!-- Teaching Service Details -->
+            <div
+              id="teaching-details"
+              class="service-specific-details"
+              style="display: none"
+            >
+              <div class="detail-section">
+                <h2><i class="fas fa-book"></i> Topics Covered</h2>
+                <div id="topics-list" class="topics-grid"></div>
+              </div>
+
+              <div class="detail-section">
+                <h2><i class="fas fa-chart-line"></i> Course Information</h2>
+                <div class="info-grid">
+                  <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                      <span class="info-label">Duration</span>
+                      <span class="info-value" id="course-duration">-</span>
+                    </div>
+                  </div>
+                  <div class="info-card">
+                    <i class="fas fa-signal"></i>
+                    <div>
+                      <span class="info-label">Level</span>
+                      <span class="info-value" id="course-level">-</span>
+                    </div>
+                  </div>
+                  <div class="info-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <div>
+                      <span class="info-label">Price Range</span>
+                      <span class="info-value" id="course-price">-</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-section">
+                <h2><i class="fas fa-graduation-cap"></i> What You'll Learn</h2>
+                <ul class="learning-outcomes" id="learning-outcomes">
+                  <li>Comprehensive understanding of core concepts</li>
+                  <li>Hands-on practical experience with real projects</li>
+                  <li>Industry best practices and standards</li>
+                  <li>Problem-solving and debugging skills</li>
+                  <li>Portfolio-ready projects</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Freelance Service Details -->
+            <div
+              id="freelance-details"
+              class="service-specific-details"
+              style="display: none"
+            >
+              <div class="detail-section">
+                <h2><i class="fas fa-check-circle"></i> What's Included</h2>
+                <ul id="features-list" class="features-list-detailed"></ul>
+              </div>
+
+              <div class="detail-section">
+                <h2><i class="fas fa-cogs"></i> Project Information</h2>
+                <div class="info-grid">
+                  <div class="info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                      <span class="info-label">Delivery Time</span>
+                      <span class="info-value" id="project-delivery">-</span>
+                    </div>
+                  </div>
+                  <div class="info-card">
+                    <i class="fas fa-tag"></i>
+                    <div>
+                      <span class="info-label">Project Type</span>
+                      <span class="info-value" id="project-type">-</span>
+                    </div>
+                  </div>
+                  <div class="info-card highlight-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <div>
+                      <span class="info-label">Starting Price</span>
+                      <span class="info-value" id="project-price">-</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-section">
+                <h2><i class="fas fa-tasks"></i> Development Process</h2>
+                <ul class="process-list">
+                  <li>
+                    <i class="fas fa-comments"></i>
+                    <strong>Consultation:</strong> Discuss your requirements and
+                    vision
+                  </li>
+                  <li>
+                    <i class="fas fa-pencil-ruler"></i>
+                    <strong>Planning:</strong> Create detailed project plan and
+                    design
+                  </li>
+                  <li>
+                    <i class="fas fa-code"></i>
+                    <strong>Development:</strong> Build your solution with
+                    regular updates
+                  </li>
+                  <li>
+                    <i class="fas fa-vial"></i>
+                    <strong>Testing:</strong> Thorough testing and quality
+                    assurance
+                  </li>
+                  <li>
+                    <i class="fas fa-rocket"></i>
+                    <strong>Deployment:</strong> Launch and ongoing support
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h2><i class="fas fa-star"></i> Why Choose Me?</h2>
+              <div class="why-choose-grid">
+                <div class="why-choose-card">
+                  <i class="fas fa-user-graduate"></i>
+                  <h3>Expert Guidance</h3>
+                  <p>Learn from someone with real-world experience</p>
+                </div>
+                <div class="why-choose-card">
+                  <i class="fas fa-hands-helping"></i>
+                  <h3>Personalized Support</h3>
+                  <p>One-on-one attention and doubt solving</p>
+                </div>
+                <div class="why-choose-card">
+                  <i class="fas fa-project-diagram"></i>
+                  <h3>Practical Projects</h3>
+                  <p>Build real projects for your portfolio</p>
+                </div>
+                <div class="why-choose-card">
+                  <i class="fas fa-clock"></i>
+                  <h3>Flexible Schedule</h3>
+                  <p>Classes at your convenient time</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Enrollment/Quote Form -->
+        <div class="service-detail-right">
+          <div class="enrollment-form-container">
+            <div class="form-header">
+              <h2 id="form-title">Get Started</h2>
+              <p id="form-subtitle">
+                Fill in your details and I'll get back to you within 24 hours
+              </p>
+            </div>
+
+            <form id="service-inquiry-form" class="service-inquiry-form">
+              <div class="form-group">
+                <label for="inquiry-name">
+                  <i class="fas fa-user"></i>
+                  Full Name <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="inquiry-name"
+                  name="Name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-email">
+                  <i class="fas fa-envelope"></i>
+                  Email Address <span class="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="inquiry-email"
+                  name="Email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-phone">
+                  <i class="fas fa-phone"></i>
+                  Phone Number <span class="optional">(Optional)</span>
+                </label>
+                <input
+                  type="tel"
+                  id="inquiry-phone"
+                  name="Phone"
+                  placeholder="+91 XXXXX XXXXX"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-message">
+                  <i class="fas fa-comment-dots"></i>
+                  Your Message / Query <span class="required">*</span>
+                </label>
+                <textarea
+                  id="inquiry-message"
+                  name="Message"
+                  rows="5"
+                  placeholder="Tell me about your requirements, goals, or any questions you have..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <i class="fas fa-paper-plane"></i>
+                <span id="submit-button-text">Send Inquiry</span>
+              </button>
+
+              <p class="form-note">
+                <i class="fas fa-lock"></i>
+                Your information is secure and will only be used to contact you
+                about this service.
+              </p>
+            </form>
+
+            <div class="contact-info">
+              <h3>Or Contact Directly</h3>
+              <div class="direct-contact">
+                <a href="mailto:ramanand.in7@gmail.com" class="contact-link">
+                  <i class="fas fa-envelope"></i>
+                  ramanand.in7@gmail.com
+                </a>
+                <a
+                  href="https://wa.me/919142775336"
+                  target="_blank"
+                  class="contact-link"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  +91 91427 75336
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor"></div>
+
+    <!-- Success/Error Message Toast -->
+    <div id="toast-message" class="toast-message">
+      <i class="fas fa-check-circle"></i>
+      <span id="toast-text">Message sent successfully!</span>
+    </div>
+
+    <script src="script/servicesData.js"></script>
+    <script src="script/service-detail.js"></script>
+  </body>
+</html>
