@@ -607,50 +607,8 @@ body {
   font-size: 1.5rem;
 }
 
-/* Cursor */
-.cursor {
-  width: 12px;
-  height: 12px;
-  border: 1px solid var(--main-color);
-  border-radius: 50%;
-  position: fixed;
-  transition-duration: 200ms;
-  transition-timing-function: ease-out;
-  animation: cursorAnim 0.5s infinite alternate;
-  pointer-events: none;
-  z-index: 9999;
-}
 
-.cursor::after {
-  content: "";
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  border: 6px solid var(--main-color);
-  border-radius: 50%;
-  opacity: 0.5;
-  top: -6px;
-  left: -6px;
-  animation: cursorAnim2 0.5s infinite alternate;
-}
 
-@keyframes cursorAnim {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.7);
-  }
-}
-
-@keyframes cursorAnim2 {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.4);
-  }
-}
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {

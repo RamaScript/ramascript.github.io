@@ -1,5 +1,9 @@
 // script/service-detail.js
 
+if (localStorage.getItem("theme") === "light") {
+  document.documentElement.classList.add("light-mode");
+}
+
 // Google Sheets Script URL
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxPpEHNHYnva1v3Q9_RtK6bbgz9FocgO6G2BIz2qRzwB0_AevWbXE1nvGQo4cGk9ub1/exec";
