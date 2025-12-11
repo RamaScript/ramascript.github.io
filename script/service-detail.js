@@ -61,7 +61,12 @@ function populateTeachingDetails(service) {
   // Course info
   document.getElementById("course-duration").textContent = service.duration;
   document.getElementById("course-level").textContent = service.level;
-  document.getElementById("course-price").textContent = service.price;
+  
+  // Show/hide price card based on show-pricing
+  const coursePriceCard = document.getElementById("course-price").parentElement.parentElement;
+  if (!service["show-pricing"]) {
+    coursePriceCard.style.display = "none";
+  }
 
   // Learning outcomes
   const learningOutcomesList = document.getElementById("learning-outcomes");
@@ -97,7 +102,12 @@ function populateFreelanceDetails(service) {
   document.getElementById("project-delivery").textContent =
     service.deliveryTime;
   document.getElementById("project-type").textContent = service.projectType;
-  document.getElementById("project-price").textContent = service.startingPrice;
+  
+  // Show/hide price card based on show-pricing
+  const projectPriceCard = document.getElementById("project-price").parentElement.parentElement;
+  if (!service["show-pricing"]) {
+    projectPriceCard.style.display = "none";
+  }
 
   // Why choose section
   populateWhyChoose(service);
@@ -381,24 +391,6 @@ function showToast(message, type = "success") {
   setTimeout(() => {
     toast.classList.remove("show");
   }, 5000);
-}
-
-// Custom cursor
-const cursor = document.querySelector(".cursor");
-if (cursor) {
-  document.addEventListener("mousemove", (e) => {
-    cursor.setAttribute(
-      "style",
-      "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-    );
-  });
-
-  document.addEventListener("click", () => {
-    cursor.classList.add("expand");
-    setTimeout(() => {
-      cursor.classList.remove("expand");
-    }, 500);
-  });
 }
 
 // Initialize page

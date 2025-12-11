@@ -19,6 +19,7 @@ const servicesData = {
       level: "Beginner to Advanced",
       price: "₹10,000 - ₹15,000",
       highlight: "Popular",
+      "show-pricing": false,
       learningOutcomes: [
         "Build responsive websites that work on all devices",
         "Master HTML5 semantic elements and modern CSS3 features",
@@ -73,6 +74,7 @@ const servicesData = {
       level: "Intermediate to Advanced",
       price: "₹20,000 - ₹25,000",
       highlight: "Most Demanded",
+      "show-pricing": false,
       learningOutcomes: [
         "Build complete full-stack web applications from scratch",
         "Create RESTful APIs with Node.js and Express",
@@ -127,6 +129,7 @@ const servicesData = {
       level: "Intermediate to Advanced",
       price: "₹20,000 - ₹25,000",
       highlight: "Trending",
+      "show-pricing": false,
       learningOutcomes: [
         "Build native-quality apps for both Android and iOS",
         "Master Flutter widgets and UI components",
@@ -179,6 +182,7 @@ const servicesData = {
       level: "Beginner to Intermediate",
       price: "₹15,000 - ₹20,000",
       highlight: null,
+      "show-pricing": false,
       learningOutcomes: [
         "Understand programming fundamentals and logic building",
         "Master Object-Oriented Programming concepts",
@@ -230,6 +234,7 @@ const servicesData = {
       level: "Beginner to Intermediate",
       price: "₹5,000 - ₹10,000",
       highlight: null,
+      "show-pricing": false,
       learningOutcomes: [
         "Write complex SQL queries for data manipulation",
         "Design normalized database schemas",
@@ -284,6 +289,7 @@ const servicesData = {
       startingPrice: "₹15,000",
       projectType: "Mobile App",
       highlight: "Best Seller",
+      "show-pricing": false,
       detailedFeatures: [
         "Custom native Android app built with Java or Kotlin",
         "Modern Material Design UI following Google's guidelines",
@@ -336,6 +342,7 @@ const servicesData = {
       startingPrice: "₹25,000",
       projectType: "Mobile App",
       highlight: "Recommended",
+      "show-pricing": false,
       detailedFeatures: [
         "Single codebase for both Android and iOS platforms",
         "Beautiful, custom UI with Flutter's rich widget library",
@@ -390,6 +397,7 @@ const servicesData = {
       startingPrice: "₹10,000",
       projectType: "Website",
       highlight: "Popular",
+      "show-pricing": false,
       detailedFeatures: [
         "Fully responsive design that works on all devices",
         "SEO-optimized structure for better search rankings",
@@ -442,6 +450,7 @@ const servicesData = {
       startingPrice: "₹30,000",
       projectType: "Website",
       highlight: "Premium",
+      "show-pricing": false,
       detailedFeatures: [
         "Complete product catalog with categories and filters",
         "Shopping cart and wishlist functionality",
@@ -494,6 +503,7 @@ const servicesData = {
       startingPrice: "₹5,000",
       projectType: "Website",
       highlight: "Quick Delivery",
+      "show-pricing": false,
       detailedFeatures: [
         "Clean, modern design tailored to your brand",
         "Beautiful project/work gallery with lightbox",
@@ -546,6 +556,7 @@ const servicesData = {
       startingPrice: "₹40,000",
       projectType: "Web App",
       highlight: "Enterprise",
+      "show-pricing": false,
       detailedFeatures: [
         "Custom web application using MERN or MEAN stack",
         "RESTful API development with documentation",
@@ -600,6 +611,7 @@ const servicesData = {
       startingPrice: "₹15,000",
       projectType: "Website",
       highlight: null,
+      "show-pricing": false,
       detailedFeatures: [
         "Complete UI/UX redesign with modern aesthetics",
         "Performance optimization for faster loading",
@@ -651,6 +663,7 @@ const servicesData = {
       startingPrice: "₹10,000",
       projectType: "Backend",
       highlight: null,
+      "show-pricing": false,
       detailedFeatures: [
         "Custom RESTful API development",
         "API documentation with Swagger/Postman",

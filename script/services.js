@@ -75,13 +75,17 @@ function generateServicesSection() {
                   <span class="detail-value">${service.level}</span>
                 </div>
               </div>
-              <div class="detail-item">
+              ${
+                service["show-pricing"]
+                  ? `<div class="detail-item">
                 <i class="fas fa-rupee-sign"></i>
                 <div>
                   <span class="detail-label">Price Range</span>
                   <span class="detail-value">${service.price}</span>
                 </div>
-              </div>
+              </div>`
+                  : ""
+              }
             </div>
           </div>
           <div class="service-card-footer">
@@ -137,13 +141,17 @@ function generateServicesSection() {
                   <span class="detail-value">${service.projectType}</span>
                 </div>
               </div>
-              <div class="detail-item price-highlight">
+              ${
+                service["show-pricing"]
+                  ? `<div class="detail-item price-highlight">
                 <i class="fas fa-rupee-sign"></i>
                 <div>
                   <span class="detail-label">Starting at</span>
                   <span class="detail-value">${service.startingPrice}</span>
                 </div>
-              </div>
+              </div>`
+                  : ""
+              }
             </div>
           </div>
           <div class="service-card-footer">
