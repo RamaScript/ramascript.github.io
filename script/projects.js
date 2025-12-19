@@ -3,47 +3,54 @@ const projectsData = [
   {
     title: "Allen Connect",
     img: "res/images/projects/allen_logo_png.png",
-    desc: "An Android app exclusively designed for Allenhouse college, connecting Alumni, Students, and Professors. It enables networking, job opportunities, event updates, and mentorship, fostering a strong community within the Allenhouse network.",
+    desc: "An Android app built for Allenhouse college that connects students, alumni, and professors. It supports networking, mentorship, event updates, and job opportunities within a single unified platform.",
     playStore: "dsfg",
     webLink: "https://ramascript.github.io/AllenConnect/",
     github: "https://github.com/RamaScript/Allen-Connect",
-    techStack: ["java", "xml", "firebase", "gemini", "webrtc"],
+    techStack: [
+      "java.png",
+      "xml.png",
+      "firebase.png",
+      "gemini.svg",
+      "webrtc.png",
+    ],
+  },
+  {
+    title: "Money Mirror",
+    img: "res/images/projects/money_mirror_logo.png",
+    desc: "An Android app designed to help users track expenses and manage budgets efficiently. It offers clear financial insights, enabling users to make informed decisions and maintain better money control.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.money_mirror",
+    webLink: "https://ramascript.github.io/money-mirror_web/",
+    github: "N/A",
+    techStack: ["flutter.svg", "googleplayconsole.svg"],
   },
   {
     title: "Shadow Talk",
     img: "res/images/projects/shadow_talk.jpeg",
-    desc: "An Android app that allows users to chat anonymously, creating a safe space for open and honest conversations. Shadow Talk enables users to connect without revealing their identity, fostering genuine discussions and connections.",
+    desc: "An anonymous chat Android app that allows users to communicate freely without revealing identity. It provides a safe environment for honest conversations and meaningful discussions.",
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/ShadowTalk/",
-    techStack: ["java", "xml", "firebase"],
+    techStack: ["java.png", "xml.png", "firebase.png"],
   },
   {
     title: "Retro Games",
     img: "res/images/projects/Retro_games.jpg",
-    desc: "A nostalgic Android app that revives classic games from the past, allowing users to enjoy childhood favorites. It also includes an in-built chat feature, making it easy for users to connect and share their gaming experiences.",
+    desc: "An Android app that brings back classic retro games in a modern interface. It also includes a chat feature, allowing users to interact and share their gaming experiences.",
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/Retro-Games",
-    techStack: ["java", "xml"],
-  },
-  {
-    title: "Expense Manager",
-    img: "res/images/projects/wallet.jpeg",
-    desc: "An Android app that helps users manage their expenses effectively. It provides features like expense tracking, budgeting, and financial insights, empowering users to take control of their finances.",
-    playStore: "N/A",
-    webLink: "https://ramascript.github.io/expense-manager-js/",
-    github: "https://github.com/RamaScript/expense-manager-js/",
-    techStack: ["html5", "css3", "javascript"],
+    techStack: ["java.png", "xml.png"],
   },
   {
     title: "Rama Quiz",
     img: "res/images/projects/rama_quiz.png",
-    desc: "An Android app that helps users test their knowledge across various subjects. It offers a wide range of quizzes, allowing users to challenge themselves and improve their skills.",
+    desc: "A web-based quiz application that allows users to test knowledge across multiple subjects. It offers interactive quizzes designed to improve learning and self-assessment.",
     playStore: "N/A",
     webLink: "https://ramascript.github.io/Rama-Quiz/",
     github: "https://github.com/RamaScript/Rama-Quiz",
-    techStack: ["html5", "css3", "javascript"],
+    techStack: ["html5.png", "css3.png", "javascript.png"],
   },
 ];
 
@@ -62,7 +69,9 @@ function createProjectCards() {
 
     card.innerHTML = `
       <div class="project-image">
-        <img class="project-img" loading="lazy" src="${project.img}" alt="${project.title}">
+        <img class="project-img" loading="lazy" src="${project.img}" alt="${
+      project.title
+    }">
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -100,7 +109,7 @@ function createProjectCards() {
         <p class="tech-stack">${project.techStack
           .map(
             (tech) =>
-              `<img src="res/images/logo/${tech}.png" alt="${tech}" loading="lazy" class="tech-icon">`
+              `<img src="res/images/logo/${tech}" alt="${tech}" loading="lazy" class="tech-icon">`
           )
           .join("")}</p>
         <p>${project.desc}</p>
