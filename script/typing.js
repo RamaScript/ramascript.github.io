@@ -10,10 +10,7 @@ function startTypingAnimation(selector, strings) {
 let myRoles = [
   "App Developer",
   "Web Developer",
-  "Freelance Developer",
   "Computer Geek",
-  "Tech Enthusiast",
-  "Learner",
   "Problem Solver",
 ];
 startTypingAnimation(".typing-2", myRoles);
