@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.home-right-content{
+.home-right-content {
   margin: auto 0;
   margin-right: 1rem;
 }
@@ -31,7 +31,6 @@
   margin-right: 4rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-
 }
 
 .home .home-content .text-1 {
@@ -102,7 +101,9 @@
 #leetcode-card {
   cursor: pointer;
   transition: 1s;
-  
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
   filter: drop-shadow(0 0 4px var(--main-color));
 }
 
@@ -119,6 +120,7 @@
   pointer-events: none;
   width: 32rem;
   height: auto;
+  border-radius: 1rem;
 }
 
 .achievements {
