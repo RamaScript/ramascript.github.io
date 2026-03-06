@@ -119,8 +119,17 @@
   user-select: none;
   pointer-events: none;
   width: 32rem;
+
   height: auto;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
+}
+
+#leetcode-card img:nth-child(3) {
+  background-color: #1a1b27;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  height: auto;
 }
 
 .achievements {
