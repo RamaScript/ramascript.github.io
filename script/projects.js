@@ -292,9 +292,9 @@ const projectsData = [
 // Badge config
 // ================================================================
 const badgeConfig = {
-  client: { cls: "badge-client", icon: "⭐", label: "Client Project" },
-  personal: { cls: "badge-personal", icon: "📱", label: "Personal App" },
-  mini: { cls: "badge-mini", icon: "🔧", label: "Mini Project" },
+  client: { cls: "badge-client", icon: "fas fa-star", label: "Client Project" },
+  personal: { cls: "badge-personal", icon: "fas fa-mobile-alt", label: "Personal App" },
+  mini: { cls: "badge-mini", icon: "fas fa-tools", label: "Mini Project" },
 };
 
 // ================================================================
@@ -315,10 +315,6 @@ function createProjectCards(filter = "client") {
     card.className = "project-card";
     card.dataset.category = project.category;
 
-    const hasPlayStore = project.playStore && project.playStore !== "N/A";
-    const hasWebLink = project.webLink && project.webLink !== "N/A";
-    const hasGithub = project.github && project.github !== "N/A";
-
     const badge = badgeConfig[project.category];
 
     card.innerHTML = `
@@ -327,24 +323,99 @@ function createProjectCards(filter = "client") {
       </div>
       <div class="project-content">
         <div class="project-badge ${badge.cls}">
-          <span>${badge.icon}</span> ${badge.label}
+          <i class="${badge.icon}"></i> ${badge.label}
         </div>
         <div class="project-header">
           <h3>${project.title}</h3>
-          <div class="project-quick-links">
-            ${hasPlayStore ? `<a href="${project.playStore}" target="_blank" class="quick-link" title="View on Play Store"><i class="fab fa-google-play"></i></a>` : ""}
-            ${hasWebLink ? `<a href="${project.webLink}" target="_blank" class="quick-link" title="Visit Website"><i class="fas fa-globe"></i></a>` : ""}
-            ${hasGithub ? `<a href="${project.github}" target="_blank" class="quick-link" title="View on GitHub"><i class="fab fa-github"></i></a>` : ""}
-          </div>
         </div>
         ${project.result ? `<p class="project-result"><i class="fas fa-chart-line"></i> ${project.result}</p>` : ""}
-        <p class="tech-stack">${project.techStack.map((tech) => `<img src="res/images/logo/${tech}" alt="${tech}" loading="lazy" class="tech-icon">`).join("")}</p>
-        <p>${project.desc}</p>
+        <p class="project-desc">${project.desc}</p>
+        <button class="details-btn" data-index="${projectsData.indexOf(project)}">
+          <i class="fas fa-info-circle"></i> View Details
+        </button>
       </div>
     `;
     container.appendChild(card);
   });
+
+  // Add event listeners to all details buttons
+  const detailBtns = container.querySelectorAll(".details-btn");
+  detailBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const index = btn.dataset.index;
+      openProjectModal(projectsData[index]);
+    });
+  });
 }
+
+// ======================== MODAL LOGIC ========================
+function openProjectModal(project) {
+  const modal = document.getElementById("project-modal");
+  if (!modal) return;
+
+  const hasPlayStore = project.playStore && project.playStore !== "N/A";
+  const hasWebLink = project.webLink && project.webLink !== "N/A";
+  const hasGithub = project.github && project.github !== "N/A";
+
+  const modalContent = modal.querySelector(".project-modal-content");
+  
+  const techStackHtml = project.techStack
+    .map(tech => `
+      <div class="modal-tech-item">
+        <img src="res/images/logo/${tech}" alt="${tech}">
+        <span>${tech.split('.')[0].toUpperCase()}</span>
+      </div>
+    `).join('');
+
+  modalContent.innerHTML = `
+    <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
+    <div class="modal-header-img">
+      <img src="${project.img}" alt="${project.title}">
+    </div>
+    <div class="modal-body">
+      <div class="modal-title-row">
+        <h2>${project.title}</h2>
+        ${project.result ? `<p class="project-result"><i class="fas fa-chart-line"></i> ${project.result}</p>` : ""}
+      </div>
+      
+      <span class="modal-section-title">Description</span>
+      <p class="modal-desc">${project.desc}</p>
+      
+      <span class="modal-section-title">Technologies Used</span>
+      <div class="modal-tech-stack">
+        ${techStackHtml}
+      </div>
+      
+      <div class="modal-footer-links">
+        ${hasPlayStore ? `<a href="${project.playStore}" target="_blank" class="modal-link link-playstore"><i class="fab fa-google-play"></i> Google Play</a>` : ""}
+        ${hasWebLink ? `<a href="${project.webLink}" target="_blank" class="modal-link link-web"><i class="fas fa-globe"></i> Visit Site</a>` : ""}
+        ${hasGithub ? `<a href="${project.github}" target="_blank" class="modal-link link-github"><i class="fab fa-github"></i> Source Code</a>` : ""}
+      </div>
+    </div>
+  `;
+
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden"; // Prevent scrolling
+
+  // Re-attach close event listener
+  document.getElementById("modal-close-btn").addEventListener("click", closeProjectModal);
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById("project-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+}
+
+// Close modal when clicking outside content
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("project-modal");
+  if (e.target === modal) {
+    closeProjectModal();
+  }
+});
 
 // ================================================================
 // Filter tabs

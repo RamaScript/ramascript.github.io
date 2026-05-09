@@ -306,7 +306,6 @@
             >
               <i class="fas fa-chevron-left"></i>
             </button>
-            <div class="carousel-dots"></div>
             <button class="carousel-btn" id="carousel-next" aria-label="Next">
               <i class="fas fa-chevron-right"></i>
             </button>
@@ -320,13 +319,13 @@
           <!-- Filter Tabs -->
           <div class="project-filter-tabs">
             <button class="filter-tab active" data-filter="client">
-              ⭐ Client Projects
+              <i class="fas fa-star"></i> Client Projects
             </button>
             <button class="filter-tab" data-filter="personal">
-              📱 My Apps
+              <i class="fas fa-mobile-alt"></i> My Apps
             </button>
             <button class="filter-tab" data-filter="mini">
-              🔧 Mini Projects
+              <i class="fas fa-tools"></i> Mini Projects
             </button>
           </div>
           <div class="projects-content" id="projects-container"></div>
@@ -443,7 +442,7 @@
                   <i class="fas fa-map-marker-alt"></i>
                   <div class="info">
                     <div class="head">Address</div>
-                    <div class="sub-title">Rooma, Kanpur,UP 208001</div>
+                    <div class="sub-title">2377, Sector 35c, Chandigarh</div>
                   </div>
                 </div>
                 <div class="row">
@@ -572,6 +571,13 @@
       <i class="fab fa-whatsapp"></i>
       <span class="whatsapp-tooltip">Let's Talk!</span>
     </a>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="project-modal">
+      <div class="project-modal-content">
+        <!-- Content injected by projects.js -->
+      </div>
+    </div>
 
     <script
       src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"

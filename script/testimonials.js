@@ -24,7 +24,7 @@ function buildTestimonials() {
       <div class="testimonial-stars">${"★".repeat(t.stars)}</div>
       <p class="testimonial-text">"${t.text}"</p>
       <div class="testimonial-author">
-        <div class="testimonial-avatar" style="background:${t.color}">${t.initials}</div>
+        <div class="testimonial-avatar" style="background:${t.color}"><i class="${t.icon}"></i></div>
         <div class="testimonial-author-info">
           <h4>${t.name}</h4>
           <p>${t.role}</p>
@@ -32,12 +32,6 @@ function buildTestimonials() {
       </div>
     `;
     track.appendChild(card);
-
-    const dot = document.createElement("span");
-    dot.className = "carousel-dot" + (i === 0 ? " active" : "");
-    dot.dataset.index = i;
-    dot.addEventListener("click", () => { goTo(i); startAutoplay(); });
-    dotsContainer.appendChild(dot);
   });
 
   // Touch Events
@@ -89,7 +83,6 @@ function getPositionX(event) {
 
 function goTo(index) {
   const track = document.querySelector(".testimonials-track");
-  const dots = document.querySelectorAll(".carousel-dot");
   const cards = track.querySelectorAll(".testimonial-card");
   const max = Math.max(0, cards.length - visibleCount());
   
@@ -103,8 +96,6 @@ function goTo(index) {
   let translateAmount = currentSlide * (track.children[0].offsetWidth + gap);
   
   track.style.transform = `translateX(-${translateAmount}px)`;
-
-  dots.forEach((d, i) => d.classList.toggle("active", i === currentSlide));
 }
 
 function startAutoplay() {
