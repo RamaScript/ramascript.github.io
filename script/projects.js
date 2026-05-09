@@ -7,7 +7,7 @@ const projectsData = [
     category: "client",
     title: "Student Sahayak",
     img: "res/images/projects/student_sahayak_logo.png", // replace with student_sahayak image when available
-    result: "Live on Play Store · 500+ students",
+    result: "Live on Play Store",
     desc: "A comprehensive student management app built for an educational institution. Features include schedule management, syllabus tracking, admin panel, notifications, and Google Sign-In.",
     playStore:
       "https://play.google.com/store/apps/details?id=com.sachin.studentsahayak",
