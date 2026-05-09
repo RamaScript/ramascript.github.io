@@ -8,12 +8,28 @@ const testimonialsData = [
   //   text: "Ramanand delivered the entire Student Sahayak app — from design to Play Store deployment — with clean code and clear communication throughout. Genuinely impressed by the quality and speed.",
   // },
   {
+    name: "Toufik",
+    role: "Client — Fleet Track",
+    icon: "fas fa-satellite-dish",
+    color: "#0f766e",
+    stars: 5,
+    text: "Ramanand created a modern and trustworthy website for Fleet Track. The new design clearly explains our GPS tracking, goods locator, and fleet management services, making our business look more professional online.",
+  },
+  {
     name: "Pankaj Kumar Asnani",
     role: "Founder — Pro Route",
     icon: "fas fa-shield-alt",
     color: "#0284c7",
     stars: 5,
     text: "The Pro Route website is exactly what we needed. It's sleek, professional, and perfectly showcases our AI dashcam technology. Highly recommend for any business looking for a premium web presence.",
+  },
+  {
+    name: "Toufiq — Tanzania, East Africa",
+    role: "Client — Fleet Track",
+    icon: "fas fa-satellite-dish",
+    color: "#0f766e",
+    stars: 5,
+    text: "Ramanand created a modern and trustworthy website for Fleet Track. The new design clearly explains our GPS tracking, goods locator, and fleet management services, making our business look more professional online.",
   },
   {
     name: "Abhinav Yadav",

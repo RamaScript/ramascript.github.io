@@ -27,6 +27,18 @@ const projectsData = [
     techStack: ["html5.png", "css3.png", "reactjs.png"],
   },
   {
+    category: "client",
+    title: "FLEET TRACK",
+    img: "res/images/projects/fleet_track.jpg", // add ProRoute logo/image
+    result: "GPS fleet tracking business website",
+    desc: "A business website for Fleet Track, a GPS vehicle tracking company offering fleet tracking, goods locator, GPS locks, and fleet management solutions. The platform presents tracking services, business benefits, login access, news updates, and contact information in a structured company website format.",
+
+    playStore: "N/A",
+    webLink: "https://www.fleettracktz.com/",
+    github: "N/A",
+    techStack: ["html5.png", "css3.png", "reactjs.png"],
+  },
+  {
     category: "personal",
     title: "Allen Connect",
     img: "res/images/projects/allen_logo_png.png",
@@ -293,7 +305,11 @@ const projectsData = [
 // ================================================================
 const badgeConfig = {
   client: { cls: "badge-client", icon: "fas fa-star", label: "Client Project" },
-  personal: { cls: "badge-personal", icon: "fas fa-mobile-alt", label: "Personal App" },
+  personal: {
+    cls: "badge-personal",
+    icon: "fas fa-mobile-alt",
+    label: "Personal App",
+  },
   mini: { cls: "badge-mini", icon: "fas fa-tools", label: "Mini Project" },
 };
 
@@ -358,14 +374,17 @@ function openProjectModal(project) {
   const hasGithub = project.github && project.github !== "N/A";
 
   const modalContent = modal.querySelector(".project-modal-content");
-  
+
   const techStackHtml = project.techStack
-    .map(tech => `
+    .map(
+      (tech) => `
       <div class="modal-tech-item">
         <img src="res/images/logo/${tech}" alt="${tech}">
-        <span>${tech.split('.')[0].toUpperCase()}</span>
+        <span>${tech.split(".")[0].toUpperCase()}</span>
       </div>
-    `).join('');
+    `,
+    )
+    .join("");
 
   modalContent.innerHTML = `
     <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
@@ -398,7 +417,9 @@ function openProjectModal(project) {
   document.body.style.overflow = "hidden"; // Prevent scrolling
 
   // Re-attach close event listener
-  document.getElementById("modal-close-btn").addEventListener("click", closeProjectModal);
+  document
+    .getElementById("modal-close-btn")
+    .addEventListener("click", closeProjectModal);
 }
 
 function closeProjectModal() {
