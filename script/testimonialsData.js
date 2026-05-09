@@ -1,12 +1,12 @@
 const testimonialsData = [
-  {
-    name: "Sachin Sharma",
-    role: "Client — Student Sahayak App",
-    icon: "fas fa-user-graduate",
-    color: "#08e8de",
-    stars: 5,
-    text: "Ramanand delivered the entire Student Sahayak app — from design to Play Store deployment — with clean code and clear communication throughout. Genuinely impressed by the quality and speed.",
-  },
+  // {
+  //   name: "Sachin Sharma",
+  //   role: "Client — Student Sahayak App",
+  //   icon: "fas fa-user-graduate",
+  //   color: "#08e8de",
+  //   stars: 5,
+  //   text: "Ramanand delivered the entire Student Sahayak app — from design to Play Store deployment — with clean code and clear communication throughout. Genuinely impressed by the quality and speed.",
+  // },
   {
     name: "Pankaj Kumar Asnani",
     role: "Founder — Pro Route",

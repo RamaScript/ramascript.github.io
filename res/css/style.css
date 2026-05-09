@@ -38,14 +38,15 @@ body {
   --text-secondary: #64748b;
 
   /* Accent */
-  --main-color: #0891b2;
-  --main-color-alpha50: rgba(8, 145, 178, 0.4);
-  --main-color-light: rgba(8, 145, 178, 0.08);
+  --main-color: #7c3aed;
+  --main-color-alpha50: rgba(124, 58, 237, 0.4);
+  --main-color-light: rgba(124, 58, 237, 0.08);
 
   /* Borders & shadows */
   --border-color: rgba(0, 0, 0, 0.07);
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 40px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover:
+    0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 40px rgba(0, 0, 0, 0.08);
 
   /* Hero bg */
   --home-bg: url(../images/bg_main.jpg);
@@ -57,8 +58,8 @@ body {
   --bg-noise-img: none;
 
   /* Glass */
-  --glass-primary: rgba(8, 145, 178, 0.5);
-  --glass-secondary: rgba(6, 182, 212, 0.5);
+  --glass-primary: rgba(124, 58, 237, 0.5);
+  --glass-secondary: rgba(139, 92, 246, 0.5);
 }
 
 /* =====================================================
@@ -124,7 +125,11 @@ body {
   height: 6px;
   background: var(--main-color);
   box-shadow: 0 0 6px var(--main-color);
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Lagging outer ring */
@@ -134,8 +139,13 @@ body {
   border: 1.5px solid var(--main-color);
   background: transparent;
   opacity: 0.6;
-  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease,
-              opacity 0.3s ease, background 0.3s ease, border-width 0.3s ease;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease,
+    background 0.3s ease,
+    border-width 0.3s ease;
 }
 
 /* Hover state — ring grows and fills slightly */
@@ -159,13 +169,20 @@ body {
   height: 22px;
   opacity: 0.9;
   background: rgba(8, 145, 178, 0.18);
-  transition: width 0.1s ease, height 0.1s ease, opacity 0.1s ease;
+  transition:
+    width 0.1s ease,
+    height 0.1s ease,
+    opacity 0.1s ease;
 }
 
 /* On dark hero section the cursor is always visible */
-.home .cursor-dot  { background: #08e8de; box-shadow: 0 0 8px #08e8de; }
-.home .cursor-ring { border-color: #08e8de; }
-
+.home .cursor-dot {
+  background: #08e8de;
+  box-shadow: 0 0 8px #08e8de;
+}
+.home .cursor-ring {
+  border-color: #08e8de;
+}
 
 /* =====================================================
    TOP ICON BUTTONS (dark mode toggle, hamburger)
@@ -276,7 +293,9 @@ body {
   font-size: 1.65rem;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   animation: wa-pulse 2.5s ease-in-out infinite;
 }
 
@@ -305,19 +324,24 @@ body {
   white-space: nowrap;
   opacity: 0;
   transform: translateX(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   pointer-events: none;
   border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow);
 }
 
 @keyframes wa-pulse {
-  0%, 100% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45),
+  0%,
+  100% {
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.45),
       0 0 0 0 rgba(37, 211, 102, 0.35);
   }
   50% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45),
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.45),
       0 0 0 12px rgba(37, 211, 102, 0);
   }
 }
