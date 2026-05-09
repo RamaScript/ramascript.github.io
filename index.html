@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ramanand Portfolio</title>
+    <title>Ramanand Kumar — Flutter & Android Developer | Hire Me</title>
     <meta
       name="description"
-      content="Ramanand Kumar — Software developer portfolio. Projects, skills, certifications, and contact."
+      content="Ramanand Kumar — Flutter & Android Developer. 10+ clients served, 50+ projects, 12+ apps on Play Store. Available for freelance. Based in Kanpur, India."
     />
     <meta name="theme-color" content="#0f172a" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -43,26 +43,38 @@
     <link rel="stylesheet" href="res/css/contact.css" />
     <link rel="stylesheet" href="res/css/responsive.css" />
     <link rel="stylesheet" href="res/css/services.css" />
+    <link rel="stylesheet" href="res/css/enhancements.css" />
   </head>
 
   <body>
     <div class="main">
-      <div class="mobile-name-banner">
-        <h1>Ramanand Kumar</h1>
-        <h2>Software Developer</h2>
-      </div>
-      <div class="day-night-mode top-icons">
-        <!-- <i class="fa-regular fa-moon"></i> -->
-        <i class="fa-solid fa-sun"></i>
+      <!-- Mobile top bar (shown on ≤900px) -->
+      <div class="mobile-top-bar">
+        <span class="site-title">Ramanand Kumar</span>
+        <span class="site-subtitle">Flutter &amp; Android Developer</span>
       </div>
 
+      <!-- Premium Theme Toggle (always top-right) -->
+      <div class="theme-switch-wrapper" id="theme-toggle" title="Toggle Theme">
+        <div class="theme-switch">
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <div class="switch-slider"></div>
+        </div>
+      </div>
+
+      <!-- Hamburger -->
       <input type="checkbox" id="check" />
-      <div class="ham top-icons">
+      <div class="ham">
         <label for="check"><i class="fa-solid fa-bars"></i></label>
       </div>
 
+      <!-- Nav overlay backdrop -->
+      <label for="check" class="nav-overlay"></label>
+
       <nav class="nav">
-        <div class="cross top-icons">
+        <!-- Close button inside drawer -->
+        <div class="cross">
           <label for="check"><i class="fa-solid fa-xmark"></i></label>
         </div>
         <div class="logo">
@@ -101,144 +113,221 @@
               ><i class="fa-solid fa-user-graduate nav-icons"></i>Education</a
             >
           </li>
-          <li>
-            <a href="#certificates"
-              ><i class="fa-solid fa-graduation-cap nav-icons"></i
-              >Certificates</a
-            >
-          </li>
+
           <li>
             <a href="#contact"
               ><i class="fa-solid fa-address-card nav-icons"></i>Contact</a
             >
           </li>
         </ul>
+        <a
+          href="https://wa.me/919304753564?text=Hi%20Ramanand%2C%20I%27d%20like%20to%20hire%20you!"
+          target="_blank"
+          class="nav-hire-btn"
+        >
+          <i class="fas fa-paper-plane"></i> Hire Me
+        </a>
       </nav>
 
       <div class="sections">
         <section class="home scrollspy" id="home">
+          <canvas id="hero-canvas"></canvas>
           <div class="home-content">
             <div class="home-right-content">
-              <div class="text-1">Hello, my name is</div>
+              <!-- <div class="hero-availability">
+                <span class="dot"></span> Available for new projects
+              </div> -->
+              <div class="text-1">Hello, I'm</div>
               <div class="text-2"><span>R</span>amanand <span>K</span>umar</div>
-              <div class="text-3">
-                And I'm a
-                <span class="typing"></span>
+              <div class="text-3">A <span class="typing"></span></div>
+
+              <div class="hero-mini-stats reveal-stagger">
+                <div class="hero-mini-stat">
+                  <span class="num">8+</span><span class="lbl">Clients</span>
+                </div>
+                <div class="hero-mini-stat">
+                  <span class="num">20+</span><span class="lbl">Projects</span>
+                </div>
+                <div class="hero-mini-stat">
+                  <span class="num">15+</span
+                  ><span class="lbl">Play Store Apps</span>
+                </div>
+                <div class="hero-mini-stat">
+                  <span class="num">2+</span><span class="lbl">Years Exp</span>
+                </div>
               </div>
 
-              <a
-                href="https://www.linkedin.com/in/ramanand-kumar"
-                target="_blank"
-              >
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/RamaScript" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
+              <div class="hero-cta-row">
+                <a
+                  href="https://wa.me/919304753564?text=Hi%20Ramanand%2C%20I%27d%20like%20to%20discuss%20a%20project!"
+                  target="_blank"
+                  class="btn-primary"
+                >
+                  <i class="fab fa-whatsapp"></i> Hire Me on WhatsApp
+                </a>
+                <a href="#projects" class="btn-secondary">
+                  <i class="fas fa-folder-open"></i> View My Work
+                </a>
+              </div>
+
+              <div class="hero-social-row">
+                <a
+                  href="https://www.linkedin.com/in/ramanand-kumar"
+                  target="_blank"
+                  title="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/RamaScript"
+                  target="_blank"
+                  title="GitHub"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/@RamaScript"
+                  target="_blank"
+                  title="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a
+                  href="https://x.com/RamaScript"
+                  target="_blank"
+                  title="X / Twitter"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+              </div>
             </div>
 
-            <div id="leetcode-card" class="home-left-content">
-              <!-- <img
-                src="https://leetcard.jacoblin.cool/ramanand7?theme=dark&font=Poppins&ext=heatmap&border=0&radius=16"
-                alt="LeetCode Profile Card"
-              /> -->
-              <img
-                src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RamaScript&theme=tokyonight"
-                alt="RamaScript GitHub Stats"
-              />
-              <img
-                src="https://streak-stats.demolab.com/?user=RamaScript&theme=tokyonight&hide_border=true&border_radius=16"
-                alt="RamaScript GitHub Stats"
-              />
-              <img
-                src="https://ghchart.rshah.org/RamaScript"
-                alt="RamaScript GitHub Contribution Heatmap"
-              />
-              <img src="https://github-readme-activity-graph.vercel.app/graph?username=RamaScript&theme=tokyo-night&hide_border=true" alt="">
+            <div class="home-left-content">
+              <div class="hero-profile-card">
+                <div class="hero-profile-img-wrap">
+                  <img
+                    src="res/images/myP.png"
+                    alt="Ramanand Kumar"
+                    loading="eager"
+                  />
+                </div>
+              </div>
             </div>
           </div>
+          <!-- Scroll hint -->
+          <a href="#about" class="hero-scroll-hint" aria-label="Scroll down">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+            <div class="scroll-arrow"></div>
+          </a>
         </section>
 
         <section class="about scrollspy" id="about">
           <div class="section-banner">
-            <h2>About me</h2>
+            <h2>About Me</h2>
           </div>
           <div class="about-content">
             <div class="left">
-              <img
-                loading="lazy"
-                src="res/images/p1.png"
-                alt="Ramanand Kumar headshot"
-              />
+              <div class="about-img-wrapper">
+                <img
+                  loading="lazy"
+                  src="res/images/p1.png"
+                  alt="Ramanand Kumar headshot"
+                />
+                <div class="about-exp-badge">
+                  <span class="num">2+</span>
+                  <span class="txt">Years<br />Experience</span>
+                </div>
+              </div>
             </div>
             <div class="right">
               <div class="text">
-                <p>I am Ramanand</p>
-                and I'm a
-                <span class="typing-2"></span>
+                <p>I'm Ramanand Kumar</p>
+                A <span class="typing-2"></span>
               </div>
               <p>
-                Tech enthusiast and BCA professional passionate about applying
-                programming skills and creative problem-solving in dynamic
-                environments. Eager to contribute to innovative projects and
-                drive mutual success in a forward-thinking organization.
+                Flutter &amp; Android developer based in Kanpur, India. I've
+                built and shipped 50+ projects — from startup apps to client
+                products — with 12+ live apps on the Play Store. I specialize in
+                turning business ideas into polished, production-ready mobile
+                apps that are fast, clean, and backed by post-launch support.
               </p>
               <a
                 href="res/docs/ramanand_resume.pdf"
                 id="btn-new"
                 target="_blank"
               >
-                View Resume
+                <i class="fas fa-file-alt"></i> View Resume
               </a>
-            </div>
-          </div>
-          <div class="age-section">
-            <div class="age-container">
-              <div class="age">
-                <div class="a-box">
-                  <div class="a-in-box">
-                    <p id="y"></p>
+
+              <div class="why-grid reveal-stagger">
+                <div class="why-card">
+                  <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                  <div class="why-card-text">
+                    <h4>Fast Delivery</h4>
+                    <p>On-time delivery, every time. No endless delays.</p>
                   </div>
-                  <p>Years</p>
                 </div>
-                <div class="a-box">
-                  <div class="a-in-box">
-                    <p id="mo"></p>
+                <div class="why-card">
+                  <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                  <div class="why-card-text">
+                    <h4>Clean &amp; Secure Code</h4>
+                    <p>Well-structured, maintainable, production-ready code.</p>
                   </div>
-                  <p>Months</p>
                 </div>
-                <div class="a-box">
-                  <div class="a-in-box">
-                    <p id="d"></p>
+                <div class="why-card">
+                  <div class="icon-box"><i class="fas fa-headset"></i></div>
+                  <div class="why-card-text">
+                    <h4>Post-Launch Support</h4>
+                    <p>30 days free support after every delivery.</p>
                   </div>
-                  <p>Days</p>
                 </div>
-                <div class="a-box">
-                  <div class="a-in-box">
-                    <p id="h"></p>
+                <div class="why-card">
+                  <div class="icon-box"><i class="fas fa-comments"></i></div>
+                  <div class="why-card-text">
+                    <h4>Clear Communication</h4>
+                    <p>Regular updates and transparent project status.</p>
                   </div>
-                  <p>Hours</p>
-                </div>
-                <div class="a-box">
-                  <div class="a-in-box">
-                    <p id="mi"></p>
-                  </div>
-                  <p>Minutes</p>
-                </div>
-                <div class="a-box">
-                  <div class="a-in-box">
-                    <p id="s"></p>
-                  </div>
-                  <p>Seconds</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- ===== CLIENT REVIEWS — right after About ===== -->
+        <section class="testimonials-section scrollspy" id="testimonials">
+          <div class="section-banner">
+            <h2>Client Reviews</h2>
+          </div>
+          <div class="testimonials-carousel reveal">
+            <div class="testimonials-track"></div>
+          </div>
+          <div class="carousel-controls">
+            <button
+              class="carousel-btn"
+              id="carousel-prev"
+              aria-label="Previous"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-dots"></div>
+            <button class="carousel-btn" id="carousel-next" aria-label="Next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+
         <section class="projects scrollspy" id="projects">
           <div class="section-banner">
             <h2>Projects</h2>
+          </div>
+          <!-- Filter Tabs -->
+          <div class="project-filter-tabs">
+            <button class="filter-tab active" data-filter="client">
+              ⭐ Client Projects
+            </button>
+            <button class="filter-tab" data-filter="personal">
+              📱 My Apps
+            </button>
+            <button class="filter-tab" data-filter="mini">
+              🔧 Mini Projects
+            </button>
           </div>
           <div class="projects-content" id="projects-container"></div>
         </section>
@@ -314,14 +403,19 @@
               </div>
             </div>
           </div>
-        </section>
 
-        <section class="certificates scrollspy" id="certificates">
-          <div class="section-banner">
-            <h2>Certifications</h2>
+          <!-- Collapsible Certifications -->
+          <div class="certifications-toggle-wrapper">
+            <button id="toggle-certs-btn" class="btn-cert-toggle">
+              <span>View Certifications &amp; Achievements</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
-          <div class="certificate-content">
-            <!-- Certificates will be dynamically generated by certificates.js -->
+
+          <div class="certifications-collapsible" id="certs-collapsible">
+            <div class="certificate-content">
+              <!-- Certificates will be dynamically generated by certificates.js -->
+            </div>
           </div>
         </section>
 
@@ -409,37 +503,81 @@
             </div>
           </div>
         </section>
-      </div>
 
-      <div class="sm-icons">
-        <a href="https://www.linkedin.com/in/ramanand-kumar/" target="_blank"
-          ><i class="sm sm-icon fa-brands fa-linkedin"></i
-        ></a>
-        <a href="https://github.com/RamaScript" target="_blank"
-          ><i class="sm-icon fa-brands fa-square-github"></i
-        ></a>
-        <a href="https://www.youtube.com/@RamaScript" target="_blank"
-          ><i class="sm-icon fa-brands fa-square-youtube"></i
-        ></a>
-        <a href="https://x.com/RamaScript" target="_blank"
-          ><i class="sm-icon fa-brands fa-square-x-twitter"></i
-        ></a>
-
-        <a href="https://www.instagram.com/ramanand_7/" target="_blank"
-          ><i class="sm-icon fa-brands fa-square-instagram"></i
-        ></a>
-        <a href="https://www.facebook.com/RamaScript/" target="_blank"
-          ><i class="sm-icon fa-brands fa-square-facebook"></i
-        ></a>
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer">
+          <div class="footer-inner">
+            <div class="footer-available-badge">
+              <span class="dot"></span> Currently available for new projects
+            </div>
+            <nav class="footer-nav">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#skills">Skills</a>
+              <a href="#services">Services</a>
+              <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+              <a
+                href="https://www.linkedin.com/in/ramanand-kumar/"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/RamaScript"
+                target="_blank"
+                title="GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@RamaScript"
+                target="_blank"
+                title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://x.com/RamaScript" target="_blank" title="X"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ramanand_7/"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <p class="footer-tagline">
+              Turning ideas into production-ready apps. Fast.
+            </p>
+            <p class="footer-copy">
+              &copy; 2025 Ramanand Kumar. All rights reserved.
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
-    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+    <a
+      id="whatsapp-fab"
+      href="https://wa.me/919304753564?text=Hi%20Ramanand%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project!"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Chat on WhatsApp"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Let's Talk!</span>
+    </a>
 
     <script
       src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
       defer
     ></script>
-    <script src="script/gloabal.js  " defer></script>
+    <script src="script/global.js" defer></script>
     <script src="script/typing.js" defer></script>
     <script src="script/age-timer.js" defer></script>
     <script src="script/scrollspy.js" defer></script>
@@ -450,5 +588,9 @@
     <script src="script/skills.js" defer></script>
     <script src="script/servicesData.js" defer></script>
     <script src="script/services.js" defer></script>
+    <script src="script/testimonialsData.js" defer></script>
+    <script src="script/testimonials.js" defer></script>
+    <script src="script/reveal.js" defer></script>
+    <script src="script/hero-bg.js" defer></script>
   </body>
 </html>

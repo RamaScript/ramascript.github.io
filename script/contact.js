@@ -22,6 +22,15 @@ function validateEmail(email) {
   return emailPattern.test(email);
 }
 
+function showMsg(el, message, type, duration = 4000) {
+  el.innerHTML = message;
+  el.className = type; // "success" or "error"
+  setTimeout(() => {
+    el.innerHTML = "";
+    el.className = "";
+  }, duration);
+}
+
 function thank(event) {
   event.preventDefault();
   let name = document.querySelector("#name-id");
@@ -36,24 +45,16 @@ function thank(event) {
     sub.value === "" ||
     msg.value === ""
   ) {
-    p.innerHTML = "Please fill all the fields!!";
-    setTimeout(() => {
-      p.innerHTML = "";
-    }, 3000);
+    showMsg(p, "⚠️ Please fill in all the fields.", "error");
   } else if (!validateEmail(email.value)) {
-    p.innerHTML = "Please enter a valid email address!";
-    setTimeout(() => {
-      p.innerHTML = "";
-    }, 3000);
+    showMsg(p, "⚠️ Please enter a valid email address.", "error");
   } else {
     appScript();
     name.value = "";
     email.value = "";
     sub.value = "";
     msg.value = "";
-    p.innerHTML = "Thank you! Message sent successfully.";
-    setTimeout(() => {
-      p.innerHTML = "";
-    }, 3000);
+    showMsg(p, "✅ Message sent! I'll get back to you soon.", "success");
   }
 }
+

@@ -37,12 +37,19 @@ function padZero(number) {
 function updateAge() {
   const dob = "2005-01-04T05:27:00";
   const age = calculateAge(dob);
-  document.getElementById("y").innerText = padZero(age.years);
-  document.getElementById("mo").innerText = padZero(age.months);
-  document.getElementById("d").innerText = padZero(age.days);
-  document.getElementById("h").innerText = padZero(age.hours);
-  document.getElementById("mi").innerText = padZero(age.minutes);
-  document.getElementById("s").innerText = padZero(age.seconds);
+
+  const ids = ["y", "mo", "d", "h", "mi", "s"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const value = padZero(age[id === "y" ? "years" : id === "mo" ? "months" : id === "d" ? "days" : id === "h" ? "hours" : id === "mi" ? "minutes" : "seconds"]);
+      el.innerText = value;
+    }
+  });
 }
-setInterval(updateAge, 1000);
-updateAge();
+
+const timerExists = ["y", "mo", "d", "h", "mi", "s"].some((id) => document.getElementById(id));
+if (timerExists) {
+  setInterval(updateAge, 1000);
+  updateAge();
+}

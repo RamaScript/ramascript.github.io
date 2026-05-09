@@ -1,78 +1,92 @@
-/* skills section styling */
+/* ===== SKILLS ===== */
 
-.skills {
-  min-height: 100vh;
+.skills { background-color: var(--primary-bg-color); padding-bottom: 2.5rem; }
+
+.skills .skills-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .skills .skills-group {
-  margin: 1rem;
-  margin-right: 3rem;
-  padding: 0.5rem;
-  border: 2px solid var(--main-color);
-  background: var(--bg-noise-img);
-  background-color: var(--secondry-bg-color);
-  border-radius: 10px;
+  background: var(--secondry-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.skills .skills-group:hover {
+  border-color: var(--main-color);
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.1);
 }
 
 .skills .skills-group h2 {
-  padding: 0.25rem;
-  font-size: 2rem;
-  font-weight: 500;
-  border-bottom: 2px solid var(--main-color);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--main-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid var(--border-color);
 }
 
 .skills .skills-group .skills-group-items {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  align-items: center;
+  gap: 0.6rem;
 }
 
 .skills .skills-group .skills-group-items .skills-group-items-item {
-  margin: 1rem 0.5rem;
-  padding: 0.5rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: 1s;
-  border: 2px;
-  border-style: dotted;
-  border-color: var(--main-color);
-  border-radius: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background: var(--primary-bg-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
 }
 
 .skills .skills-group .skills-group-items .skills-group-items-item:hover {
-  border: 2px solid var(--main-color);
-  border-radius: 1.75rem;
-  box-shadow: 0 0 10px var(--main-color) inset;
-  filter: drop-shadow(0 0 10px var(--main-color));
-  transition: 0.5s;
-  background: var(--bg-img);
-  background-color: var(--primary-bg-color);
-  img {
-    transform: scale(0.8);
-  }
-  h3 {
-    transition: all 0.3s;
-    color: var(--text-color);
-    border-top: 1px solid var(--main-color);
-  }
+  border-color: var(--main-color);
+  background: var(--main-color-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15);
 }
 
 .skills .skills-group .skills-group-items .skills-group-items-item img {
-  margin: 0.25rem;
-  height: 5rem;
-  transition: 0.5s;
+  height: 2.5rem;
+  width: 2.5rem;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.skills .skills-group .skills-group-items .skills-group-items-item:hover img {
+  transform: scale(1.1);
 }
 
 .skills .skills-group .skills-group-items .skills-group-items-item h3 {
+  font-size: 0.72rem;
+  font-weight: 500;
   text-align: center;
-  width: 100%;
-  color: var(--main-color);
-  font-weight: 200;
-  margin-top: 0.2rem;
-  /* padding: 0.25rem; */
-  border-top: 1px dashed var(--main-color);
+  color: var(--text-secondary);
+  margin-top: 0;
+  border: none;
 }
+
+/* Dark mode */
+.dark-mode .skills { background-color: var(--primary-bg-color); }
+.dark-mode .skills-group { background: var(--secondry-bg-color); }
+.dark-mode .skills-group-items-item { background: rgba(255,255,255,0.04); }
+.dark-mode .skills-group-items-item:hover { background: rgba(8,232,222,0.08); border-color: #08e8de; }

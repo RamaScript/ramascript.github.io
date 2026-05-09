@@ -1,101 +1,75 @@
-// Initialize the show/hide functionality
-function initializeShowHideButtons() {
-  document.querySelectorAll(".show.btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const fview = button.closest(".frame").querySelector(".fview");
-      if (button.innerText === "Show") {
-        fview.style.display = "flex";
-        button.innerText = "Hide";
-      } else {
-        fview.style.display = "none";
-        button.innerText = "Show";
-      }
-    });
-  });
+// certificates.js — Compact chip/tag layout
+
+// Category icons
+const certCategoryIcons = {
+  Hackathons: "fas fa-trophy",
+  Internship: "fas fa-briefcase",
+  Trainings: "fas fa-graduation-cap",
+  "Co-Curricular": "fas fa-star",
+  "Extra-curricular": "fas fa-heart",
+};
+
+// Titles that should be highlighted (wins / first prizes)
+const highlightKeywords = ["won", "first", "winner", "prize"];
+
+function isHighlight(title) {
+  return highlightKeywords.some((kw) => title.toLowerCase().includes(kw));
 }
 
 function generateCertificatesSection() {
-  const certificateContent = document.querySelector(".certificate-content");
-  if (!certificateContent) return;
+  const container = document.querySelector(".certificate-content");
+  if (!container || !certificatesData) return;
+  container.innerHTML = "";
 
-  // Clear existing content
-  certificateContent.innerHTML = "";
+  for (const [category, certs] of Object.entries(certificatesData)) {
+    const icon = certCategoryIcons[category] || "fas fa-certificate";
 
-  // Generate content for each category
-  for (const [category, certificates] of Object.entries(certificatesData)) {
-    const frame = document.createElement("div");
-    frame.className = "frame";
+    const group = document.createElement("div");
+    group.className = "cert-group reveal";
 
-    // Create frame top
-    const ftop = document.createElement("div");
-    ftop.className = "ftop";
+    // Header
+    const header = document.createElement("div");
+    header.className = "cert-group-header";
+    header.innerHTML = `<i class="${icon}"></i> ${category}`;
+    group.appendChild(header);
 
-    const categoryDiv = document.createElement("div");
-    categoryDiv.className = "category";
-    categoryDiv.textContent = category;
+    // Chips row
+    const chips = document.createElement("div");
+    chips.className = "cert-chips";
 
-    const preview = document.createElement("div");
-    preview.className = "preview";
-    const previewImg = document.createElement("img");
-    previewImg.src = certificates[0].image; // Use first certificate as preview
-    previewImg.alt = category;
-    preview.appendChild(previewImg);
-
-    ftop.appendChild(categoryDiv);
-    ftop.appendChild(preview);
-
-    // Create frame bottom
-    const fbtm = document.createElement("div");
-    fbtm.className = "fbtm";
-    const showBtn = document.createElement("button");
-    showBtn.className = "show btn";
-    showBtn.textContent = "Show";
-    fbtm.appendChild(showBtn);
-
-    // Create frame view
-    const fview = document.createElement("div");
-    fview.className = "fview";
-    fview.style.display = "none";
-
-    // Generate certificate cards
-    certificates.forEach((cert) => {
-      const viewCer = document.createElement("div");
-      viewCer.className = "view-cer";
-
-      const cardHTML = `
-                <div class="details">
-                    <h3>${cert.title}</h3>
-                </div>
-                <div class="cer-img">
-                    <img src="${cert.image}" alt="${cert.title}" loading="lazy">
-                </div>
-                <div class="cer-details">
-                    <p>${cert.description}</p>
-                    <p>Issuer: <a href="${cert.issuerUrl}" target="_blank">${cert.issuer}</a></p>
-                </div>
-                <div class="btns">
-                    <a href="${cert.image}" target="_blank" class="btn">View</a>
-                    <a href="${cert.image}" download class="btn">Download</a>
-                </div>
-            `;
-      console.log("Certificate card HTML:", cardHTML);
-      viewCer.innerHTML = cardHTML;
-
-      fview.appendChild(viewCer);
+    certs.forEach((cert) => {
+      const chip = document.createElement("a");
+      chip.className = "cert-chip" + (isHighlight(cert.title) ? " highlight" : "");
+      chip.href = cert.image;
+      chip.target = "_blank";
+      chip.rel = "noopener noreferrer";
+      chip.title = `${cert.title} — ${cert.issuer}`;
+      chip.innerHTML = `<i class="${isHighlight(cert.title) ? "fas fa-trophy" : "fas fa-external-link-alt"}"></i>${cert.title}`;
+      chips.appendChild(chip);
     });
 
-    // Assemble the frame
-    frame.appendChild(ftop);
-    frame.appendChild(fbtm);
-    frame.appendChild(fview);
-
-    // Add to main container
-    certificateContent.appendChild(frame);
+    group.appendChild(chips);
+    container.appendChild(group);
   }
 
-  // Initialize buttons after adding all content
-  initializeShowHideButtons();
+  // Setup toggle button logic
+  const toggleBtn = document.getElementById("toggle-certs-btn");
+  const collapsible = document.getElementById("certs-collapsible");
+  
+  if (toggleBtn && collapsible) {
+    toggleBtn.addEventListener("click", () => {
+      const isExpanded = collapsible.classList.contains("expanded");
+      collapsible.classList.toggle("expanded");
+      toggleBtn.classList.toggle("active");
+      
+      const span = toggleBtn.querySelector("span");
+      if (isExpanded) {
+        span.innerText = "View Certifications & Achievements";
+      } else {
+        span.innerText = "Hide Certifications";
+      }
+    });
+  }
 }
 
-// Generate certificates when document is loaded
 document.addEventListener("DOMContentLoaded", generateCertificatesSection);

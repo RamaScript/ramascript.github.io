@@ -1,72 +1,70 @@
-/* education section styling */
+/* ===== EDUCATION ===== */
 
-.education {
-  min-height: 100vh;
-}
+.education { background-color: var(--secondry-bg-color); min-height: auto; padding-bottom: 3rem; }
 
 .education .education-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  margin: 0.5rem;
-  margin-right: 2rem;
-  padding: 0.5rem;
-  align-content: center;
-  justify-content: space-evenly;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .education .education-content .card {
-  min-width: 17rem;
-  width: 30%;
-  margin: 1rem;
-  text-align: center;
-  padding: 40px 15px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  background: var(--bg-noise-img);
-  /* background-color: var(--nav-color); */
-  border: 5px dotted var(--main-color);
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  background: var(--primary-bg-color);
+  border: 1px solid var(--border-color);
   border-radius: 1rem;
-  overflow: hidden;
-  /* box-shadow: 0 0 20px var(--main-color) inset; */
-  /* background-image: linear-gradient(var(--nav-color) , var(--main-color)); */
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--card-shadow);
 }
 
 .education .education-content .card:hover {
-  background: var(--bg-img);
-  background-color: var(--secondry-bg-color);
-  box-shadow: 0 0 30px var(--main-color), 0 0 20px var(--main-color) inset;
-  border: 5px solid var(--main-color);
-  border-radius: 2rem;
-  transition: all 1s ease;
-  /* i {
-      color: var(--nav-color);
-    } */
-  .box {
-    transform: scale(1.1);
-    transition: 0.5s;
-  }
+  border-color: var(--main-color);
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
 }
 
-.education .education-content .card .box {
-  transition: all 0.5s ease;
-  a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
+.education .education-content .card .box a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .education .education-content .card i {
-  font-size: 50px;
+  font-size: 2.2rem;
   color: var(--main-color);
-  transition: color 0.3s ease;
+  margin-bottom: 0.25rem;
 }
 
 .education .education-content .card .text {
-  font-weight: 500;
-  margin: 10px 0 7px;
-  font-size: 1.5rem;
-  background-color: var(--main-color);
-  text-align: center;
-  color: var(--primary-bg-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--main-color);
+  background: var(--main-color-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  display: inline-block;
+  margin-bottom: 0.35rem;
 }
+
+.education .education-content .card p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+/* Dark mode */
+.dark-mode .education { background-color: var(--primary-bg-color); }
+.dark-mode .education .card { background: var(--secondry-bg-color); }

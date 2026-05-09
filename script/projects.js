@@ -1,10 +1,38 @@
-// Project Cards Dynamic Generation
+// Project Cards with Category Filtering
+// Categories: "client" | "personal" | "mini"
+
 const projectsData = [
+  // ======================== CLIENT PROJECTS ========================
   {
+    category: "client",
+    title: "Student Sahayak",
+    img: "res/images/projects/student_sahayak_logo.png", // replace with student_sahayak image when available
+    result: "Live on Play Store · 500+ students",
+    desc: "A comprehensive student management app built for an educational institution. Features include schedule management, syllabus tracking, admin panel, notifications, and Google Sign-In.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.sachin.studentsahayak",
+    webLink: "https://www.studentsahayak.in/",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png", "googleplayconsole.svg"],
+  },
+  {
+    category: "client",
+    title: "Pro Route",
+    img: "res/images/projects/ProRouteLogo.png", // add ProRoute logo/image
+    result: "AI dashcam & fleet security website",
+    desc: "A professional business website built for ProRoute, an AI-powered vehicle surveillance and fleet security brand. The website presents Rakshak dashcam features, GPS tracking, live view, driver safety alerts, incident evidence capture, and transport management solutions in a clean and conversion-focused layout.",
+    playStore: "N/A",
+    webLink: "https://proroute.in/",
+    github: "N/A",
+    techStack: ["html5.png", "css3.png", "reactjs.png"],
+  },
+  {
+    category: "personal",
     title: "Allen Connect",
     img: "res/images/projects/allen_logo_png.png",
-    desc: "An Android app built for Allenhouse college that connects students, alumni, and professors. It supports networking, mentorship, event updates, and job opportunities within a single unified platform.",
-    playStore: "dsfg",
+    result: "Used by Allenhouse College students & alumni",
+    desc: "An Android app built for Allenhouse College that connects students, alumni, and professors. Supports networking, mentorship, event updates, and job opportunities within a single platform.",
+    playStore: "N/A",
     webLink: "https://ramascript.github.io/AllenConnect/",
     github: "https://github.com/RamaScript/Allen-Connect",
     techStack: [
@@ -15,10 +43,14 @@ const projectsData = [
       "webrtc.png",
     ],
   },
+
+  // ======================== PERSONAL APPS ========================
   {
+    category: "personal",
     title: "Money Mirror",
     img: "res/images/projects/money_mirror_logo.png",
-    desc: "An Android app designed to help users track expenses and manage budgets efficiently. It offers clear financial insights, enabling users to make informed decisions and maintain better money control.",
+    result: "Live on Play Store · 4.5★ rating",
+    desc: "A Flutter expense tracker app with budget insights, category charts, and financial reports. Helps users stay on top of their spending with a clean, intuitive UI.",
     playStore:
       "https://play.google.com/store/apps/details?id=com.ramascript.money_mirror",
     webLink: "https://ramascript.github.io/money-mirror_web/",
@@ -26,96 +58,309 @@ const projectsData = [
     techStack: ["flutter.svg", "googleplayconsole.svg"],
   },
   {
+    category: "personal",
+    title: "Math Grind",
+    img: "res/images/projects/math_grind_logo.png", // replace with math_grind image
+    result: "Gamified math practice app",
+    desc: "A competitive math practice app with Training Mode (Easy/Medium/Hard), Race Mode, leaderboards, and Firebase-backed progress tracking. Built with Flutter and Riverpod.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.math_grind&hl=en_ZA",
+    webLink: "https://ramascript.github.io/math-grind/",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png"],
+  },
+  {
+    category: "personal",
     title: "Shadow Talk",
     img: "res/images/projects/shadow_talk.jpeg",
-    desc: "An anonymous chat Android app that allows users to communicate freely without revealing identity. It provides a safe environment for honest conversations and meaningful discussions.",
+    result: "Anonymous chat — privacy-first",
+    desc: "An anonymous chat Android app that lets users communicate freely without revealing their identity. Provides a safe environment for honest conversations.",
     playStore: "N/A",
     webLink: "N/A",
     github: "https://github.com/RamaScript/ShadowTalk/",
     techStack: ["java.png", "xml.png", "firebase.png"],
   },
+
+  // ======================== MINI / PRACTICE ========================
   {
+    category: "personal",
     title: "Retro Games",
     img: "res/images/projects/Retro_games.jpg",
-    desc: "An Android app that brings back classic retro games in a modern interface. It also includes a chat feature, allowing users to interact and share their gaming experiences.",
-    playStore: "N/A",
-    webLink: "N/A",
+    result: "6 classic games in one app",
+    desc: "An Android app that brings classic retro games in a modern interface, plus a chat feature for users to share gaming experiences.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.retro_games&hl=en_ZA",
+    webLink: "https://ramascript.github.io/retro-games/",
     github: "https://github.com/RamaScript/Retro-Games",
     techStack: ["java.png", "xml.png"],
   },
   {
+    category: "mini",
     title: "Rama Quiz",
     img: "res/images/projects/rama_quiz.png",
-    desc: "A web-based quiz application that allows users to test knowledge across multiple subjects. It offers interactive quizzes designed to improve learning and self-assessment.",
+    result: "Web quiz app · Multi-subject",
+    desc: "A web-based quiz app with multiple subjects and instant scoring. Built to sharpen JavaScript and DOM skills.",
     playStore: "N/A",
     webLink: "https://ramascript.github.io/Rama-Quiz/",
     github: "https://github.com/RamaScript/Rama-Quiz",
     techStack: ["html5.png", "css3.png", "javascript.png"],
   },
+  {
+    category: "personal",
+    title: "Algo Layers",
+    img: "res/images/projects/algo_layers_logo.png",
+    result: "Live on Play Store",
+    desc: "A learning-focused Android app designed to help students understand programming concepts, algorithms, and logic-building topics in a structured way.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.algolayer",
+    webLink: "N/A",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
+    title: "Donee",
+    img: "res/images/projects/donee_logo.png",
+    result: "Live on Play Store",
+    desc: "A productivity and task-management app built to help users organise daily work, track tasks, and stay consistent with a clean mobile-first experience.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.donee",
+    webLink: "N/A",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png", "googleplayconsole.svg"],
+  },
+  {
+    category: "client",
+    title: "Fitlix",
+    img: "res/images/projects/fitlix_logo.png",
+    result: "Closed testing on Play Console",
+    desc: "A fitness-focused mobile app built for workout tracking, gym-related features, and user fitness engagement. Currently under closed testing on Google Play.",
+    playStore: "https://play.google.com/store/apps/details?id=com.acube.fitlix",
+    webLink: "N/A",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
+    title: "Gita Bodh",
+    img: "res/images/projects/gita_bodh_logo.png",
+    result: "Closed testing on Play Console",
+    desc: "A spiritual learning app based on Bhagavad Gita content, built with a clean reading experience and mobile-friendly interface for daily wisdom and reflection.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.gitabodh",
+    webLink: "N/A",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
+    title: "Neon Calc",
+    img: "res/images/projects/neon_calc_logo.png",
+    result: "Live on Play Store",
+    desc: "A stylish calculator app with a neon-themed interface, built to deliver quick calculations with a modern and minimal Android experience.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.neoncalc",
+    webLink: "N/A",
+    github: "N/A",
+    techStack: ["flutter.svg", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
+    title: "Reviso",
+    img: "res/images/projects/reviso_logo.png",
+    result: "Closed testing on Play Console",
+    desc: "A spaced-repetition and active-recall learning app that helps students revise topics at the right time, track weak areas, and build consistent study habits.",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.ramascript.reviso",
+    webLink: "N/A",
+    github: "N/A",
+    techStack: ["flutter.svg", "firebase.png", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
+    title: "ADB King",
+    img: "res/images/projects/adb_king_logo.png",
+    result: "Desktop utility for Android developers",
+    desc: "A cross-platform desktop tool designed to simplify common ADB operations for Android developers. It helps manage connected devices, run ADB commands, inspect apps, and perform debugging tasks through a clean GUI instead of manually typing commands in the terminal.",
+    playStore: "N/A",
+    webLink: "N/A",
+    github: "https://github.com/RamaScript/ADB-KING",
+    techStack: ["python.png", "qt.png"],
+  },
+  {
+    category: "mini",
+    title: "Type Race",
+    img: "res/images/projects/type_race_logo.png",
+    result: "Real-time multiplayer typing race game",
+    desc: "A real-time multiplayer typing race game built with vanilla JavaScript and Firebase Realtime Database. Users can create or join rooms, race with up to 5 players, track live progress, chat in the lobby, and view WPM, accuracy, mistakes, and final rankings.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/type-race/",
+    github: "https://github.com/RamaScript/type-race",
+    techStack: ["html5.png", "css3.png", "javascript.png", "firebase.png"],
+  },
+  {
+    category: "mini",
+    title: "Shadow Draw",
+    img: "res/images/projects/shadow_draw_logo.png",
+    result: "Real-time hand gesture air drawing system",
+    desc: "A browser-based computer vision project that lets users draw in the air using hand gestures captured through a webcam. Built with MediaPipe Hands, HTML5 Canvas, WebRTC, and JavaScript, it supports pinch-to-draw, open-hand stop, fist clear, smoothing filters, undo/redo, PNG export, and live performance metrics.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/shadow-draw/",
+    github: "https://github.com/RamaScript/shadow-draw",
+    techStack: ["html5.png", "css3.png", "javascript.png", "mediapipe.png"],
+  },
+  {
+    category: "mini",
+    title: "PasteBoard",
+    img: "res/images/projects/pasteboard_logo.png",
+    result: "Instant real-time text sharing web app",
+    desc: "A lightweight real-time text sharing web app that lets users create pads, auto-save text to Firebase Firestore, and share content instantly using a 4-digit code or direct link. Built as a single-file web app with no login, live character/word count, copy-all, clear pad, sharing modal, and cross-platform support.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/copy-paste/",
+    github: "https://github.com/RamaScript/copy-paste",
+    techStack: ["html5.png", "css3.png", "javascript.png", "firebase.png"],
+  },
+  {
+    category: "mini",
+    title: "Fitlix AI Trainer",
+    img: "res/images/projects/fitlix_ai_trainer_logo.png",
+    result: "Real-time AI workout posture analysis system",
+    desc: "A camera-based AI workout trainer built with HTML, CSS, JavaScript, and MediaPipe Pose. It runs inside the Fitlix Flutter app through WebView, detects body posture in real time, counts only valid reps, rejects incorrect or fake reps, and provides instant visual and voice feedback for exercises like push-ups, squats, pull-ups, lunges, sit-ups, bicep curls, shoulder press, and jumping jacks.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/gym-ai/",
+    github: "https://github.com/RamaScript/gym-ai",
+    techStack: ["html5.png", "css3.png", "javascript.png", "mediapipe.png"],
+  },
+  {
+    category: "client",
+    title: "Kalsharp Dosh Trimbakeshwar",
+    img: "res/images/projects/kalsharp_dosh_logo.png",
+    result: "Spiritual services business website",
+    desc: "A premium business platform built for spiritual and astrology services in Mumbai and Nashik. The website focuses on building client trust, presenting services clearly, and encouraging deep engagement through a professional and culturally aligned design.",
+    playStore: "N/A",
+    webLink: "https://kalsharpdoshtrimbkeshwar.vercel.app/ ",
+    github: "N/A",
+    techStack: ["html5.png", "css3.png", "javascript.png"],
+  },
+  {
+    category: "client",
+    title: "S.K. Construction",
+    img: "res/images/projects/sk_construction_logo.png",
+    result: "Corporate website · Delivered in 10 days",
+    desc: "A high-performance corporate website built for a heavy piling machinery business in Kanpur. The platform showcases complex machinery, construction capabilities, and project expertise in a clean, business-focused layout.",
+    playStore: "N/A",
+    webLink: "https://sk-mauve.vercel.app/",
+    github: "N/A",
+    techStack: ["html5.png", "css3.png", "javascript.png"],
+  },
+  {
+    category: "client",
+    title: "USH Online Academy",
+    img: "res/images/projects/ush_online_academy_logo.png",
+    result: "SaaS e-learning platform · Delivered in 15 days",
+    desc: "A complete e-learning SaaS platform built for online course selling, student management, video-based learning, and secure payments. Designed to help the academy manage digital education professionally from one platform.",
+    playStore: "N/A",
+    webLink: "https://ushonline.netlify.app/",
+    github: "N/A",
+    techStack: ["reactjs.png", "firebase.png", "razorpay.png"],
+  },
+  {
+    category: "mini",
+    title: "Rama Fitness",
+    img: "res/images/projects/rama_fitness_logo.png",
+    result: "Modern responsive gym website",
+    desc: "A modern, responsive fitness website built for Rama Fitness, Chandigarh. It showcases gym programs, expert trainers, membership plans, pricing, company story, and strong call-to-action sections using a bold red, black, and gold fitness-focused design.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/gym/",
+    github: "https://github.com/RamaScript/gym",
+    techStack: ["html5.png", "css3.png"],
+  },
+  {
+    category: "mini",
+    title: "Institute Course Portal",
+    img: "res/images/projects/institute_course_portal_logo.png",
+    result: "Static course syllabus explorer",
+    desc: "A course syllabus explorer built for Ramascript with a landing page, course cards, hash-based routing, sidebar module navigation, and JSON-driven syllabus content. It supports C/C++ and Python modules with chapters, topics, assignments, and final project details in a responsive web interface.",
+    playStore: "N/A",
+    webLink: "https://ramascript.github.io/institute/",
+    github: "https://github.com/RamaScript/institute",
+    techStack: ["html5.png", "css3.png", "javascript.png"],
+  },
 ];
 
-function createProjectCards() {
+// ================================================================
+// Badge config
+// ================================================================
+const badgeConfig = {
+  client: { cls: "badge-client", icon: "⭐", label: "Client Project" },
+  personal: { cls: "badge-personal", icon: "📱", label: "Personal App" },
+  mini: { cls: "badge-mini", icon: "🔧", label: "Mini Project" },
+};
+
+// ================================================================
+// Render cards
+// ================================================================
+function createProjectCards(filter = "client") {
   const container = document.getElementById("projects-container");
   if (!container) return;
   container.innerHTML = "";
-  projectsData.forEach((project) => {
+
+  const filtered =
+    filter === "all"
+      ? projectsData
+      : projectsData.filter((p) => p.category === filter);
+
+  filtered.forEach((project) => {
     const card = document.createElement("div");
     card.className = "project-card";
+    card.dataset.category = project.category;
 
-    // Create links section only if at least one link is available
-    const hasPlayStore = project.playStore !== "N/A";
-    const hasWebLink = project.webLink !== "N/A";
+    const hasPlayStore = project.playStore && project.playStore !== "N/A";
+    const hasWebLink = project.webLink && project.webLink !== "N/A";
     const hasGithub = project.github && project.github !== "N/A";
+
+    const badge = badgeConfig[project.category];
 
     card.innerHTML = `
       <div class="project-image">
-        <img class="project-img" loading="lazy" src="${project.img}" alt="${
-      project.title
-    }">
+        <img class="project-img" loading="lazy" src="${project.img}" alt="${project.title}">
       </div>
       <div class="project-content">
+        <div class="project-badge ${badge.cls}">
+          <span>${badge.icon}</span> ${badge.label}
+        </div>
         <div class="project-header">
           <h3>${project.title}</h3>
           <div class="project-quick-links">
-            ${
-              hasPlayStore
-                ? `
-              <a href="${project.playStore}" target="_blank" class="quick-link" title="View on Play Store">
-                <i class="fab fa-google-play"></i>
-              </a>
-            `
-                : ""
-            }
-            ${
-              hasWebLink
-                ? `
-              <a href="${project.webLink}" target="_blank" class="quick-link" title="Visit Website">
-                <i class="fas fa-globe"></i>
-              </a>
-            `
-                : ""
-            }
-            ${
-              hasGithub
-                ? `
-              <a href="${project.github}" target="_blank" class="quick-link" title="View Code on GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            `
-                : ""
-            }
+            ${hasPlayStore ? `<a href="${project.playStore}" target="_blank" class="quick-link" title="View on Play Store"><i class="fab fa-google-play"></i></a>` : ""}
+            ${hasWebLink ? `<a href="${project.webLink}" target="_blank" class="quick-link" title="Visit Website"><i class="fas fa-globe"></i></a>` : ""}
+            ${hasGithub ? `<a href="${project.github}" target="_blank" class="quick-link" title="View on GitHub"><i class="fab fa-github"></i></a>` : ""}
           </div>
         </div>
-        <p class="tech-stack">${project.techStack
-          .map(
-            (tech) =>
-              `<img src="res/images/logo/${tech}" alt="${tech}" loading="lazy" class="tech-icon">`
-          )
-          .join("")}</p>
+        ${project.result ? `<p class="project-result"><i class="fas fa-chart-line"></i> ${project.result}</p>` : ""}
+        <p class="tech-stack">${project.techStack.map((tech) => `<img src="res/images/logo/${tech}" alt="${tech}" loading="lazy" class="tech-icon">`).join("")}</p>
         <p>${project.desc}</p>
       </div>
     `;
     container.appendChild(card);
   });
 }
-document.addEventListener("DOMContentLoaded", createProjectCards);
+
+// ================================================================
+// Filter tabs
+// ================================================================
+function initProjectFilters() {
+  const tabs = document.querySelectorAll(".filter-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      createProjectCards(tab.dataset.filter);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  createProjectCards("client");
+  initProjectFilters();
+});

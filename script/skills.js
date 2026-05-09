@@ -40,7 +40,7 @@ const skillsData = {
     { image: "res/images/logo/androidstudio.png", name: "Android Studio" },
     { image: "res/images/logo/vscode.png", name: "VS Code" },
     { image: "res/images/logo/git.png", name: "Git" },
-    { image: "res/images/logo/github.svg", name: "GitHub" },
+    { image: "res/images/logo/github.jpg", name: "GitHub" },
     {
       image: "res/images/logo/googleplayconsole.svg",
       name: "Google Play Console",

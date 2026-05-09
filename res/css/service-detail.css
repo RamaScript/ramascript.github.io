@@ -95,10 +95,10 @@ body {
 /* Left Side - Service Details */
 .service-detail-left {
   background: var(--secondry-bg-color);
-  border-radius: 20px;
+  border-radius: 1.5rem;
   padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  border: 1px solid transparent;
 }
 
 .service-detail-header {
@@ -111,20 +111,16 @@ body {
 }
 
 .service-detail-icon {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(
-    135deg,
-    var(--main-color) 0%,
-    var(--main-color-alpha50) 100%
-  );
-  border-radius: 20px;
+  width: 64px;
+  height: 64px;
+  background: var(--primary-bg-color);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  color: var(--secondry-bg-color);
-  box-shadow: 0 10px 30px var(--main-color-alpha50);
+  font-size: 2rem;
+  color: var(--main-color);
+  border: 1px solid var(--border-color);
   flex-shrink: 0;
 }
 
@@ -196,25 +192,25 @@ body {
 
 .topic-item {
   background: var(--primary-bg-color);
-  padding: 1rem 1.25rem;
-  border-radius: 12px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .topic-item i {
   color: var(--main-color);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .topic-item:hover {
-  border-color: var(--main-color);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px var(--main-color-alpha50);
+  transform: translateY(-2px);
+  border-color: var(--border-color);
 }
 
 /* Info Grid */
@@ -226,19 +222,19 @@ body {
 
 .info-card {
   background: var(--primary-bg-color);
-  padding: 1.5rem;
-  border-radius: 15px;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .info-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--main-color);
-  box-shadow: 0 8px 20px var(--main-color-alpha50);
+  transform: translateY(-3px);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 .info-card i {
@@ -297,26 +293,22 @@ body {
 .learning-outcomes li,
 .features-list-detailed li,
 .process-list li {
-  padding: 1rem;
-  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
   background: var(--primary-bg-color);
-  border-radius: 10px;
-  border-left: 4px solid var(--main-color);
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  border: 1px solid transparent;
 }
 
 .learning-outcomes li:hover,
 .features-list-detailed li:hover,
 .process-list li:hover {
-  transform: translateX(10px);
-  background: linear-gradient(
-    90deg,
-    var(--primary-bg-color),
-    var(--main-color-alpha50)
-  );
+  border-color: var(--border-color);
+  transform: translateY(-2px);
 }
 
 .learning-outcomes li::before,
@@ -345,16 +337,17 @@ body {
 .why-choose-card {
   background: var(--primary-bg-color);
   padding: 1.5rem;
-  border-radius: 15px;
+  border-radius: 1.25rem;
   text-align: center;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 .why-choose-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--main-color);
-  box-shadow: 0 10px 30px var(--main-color-alpha50);
+  transform: translateY(-4px);
+  border-color: var(--border-color);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 .why-choose-card i {
@@ -400,10 +393,10 @@ body {
 
 .enrollment-form-container {
   background: var(--secondry-bg-color);
-  border-radius: 20px;
+  border-radius: 1.5rem;
   padding: 2rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  border: 2px solid var(--main-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  border: 1px solid transparent;
 }
 
 .form-header {
