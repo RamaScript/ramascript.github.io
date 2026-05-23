@@ -130,6 +130,11 @@
   color: #64748b;
   border: 1px solid rgba(100, 116, 139, 0.25);
 }
+.badge-demo {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
 
 /* Header */
 .project-header {
@@ -266,6 +271,11 @@
 .dark-mode .badge-mini {
   background: rgba(150, 150, 150, 0.1);
   color: #94a3b8;
+}
+.dark-mode .badge-demo {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border-color: rgba(139, 92, 246, 0.25);
 }
 
 @media (max-width: 700px) {
