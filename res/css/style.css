@@ -184,6 +184,14 @@ body {
   border-color: #08e8de;
 }
 
+/* Hide cursor on mobile and tablet screens */
+@media (max-width: 1024px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
 /* =====================================================
    TOP ICON BUTTONS (dark mode toggle, hamburger)
    ===================================================== */
