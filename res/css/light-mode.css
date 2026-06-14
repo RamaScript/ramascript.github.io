@@ -1,0 +1,316 @@
+/* ===================================================================
+   LIGHT MODE PREMIUM OVERRIDES
+   Rich warm purples, lavender tints, premium depth — light-only.
+   All rules scoped to body:not(.dark-mode) so dark mode wins cleanly.
+   =================================================================== */
+
+/* ── CSS Variables — override :root with richer values for light ── */
+:root {
+  --primary-bg-color: #f4f3ff;
+  --secondry-bg-color: #ffffff;
+  --nav-color: #ffffff;
+  --nav-hover-color: #f0eeff;
+  --text-color: #160e30;
+  --text-secondary: #5a5575;
+  --main-color: #6d28d9;
+  --main-color-alpha50: rgba(109, 40, 217, 0.35);
+  --main-color-light: rgba(109, 40, 217, 0.08);
+  --border-color: rgba(109, 40, 217, 0.1);
+  --card-shadow: 0 2px 8px rgba(109, 40, 217, 0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 8px 32px rgba(109, 40, 217, 0.14), 0 4px 12px rgba(0,0,0,0.06);
+  --gradient-primary: linear-gradient(135deg, #6d28d9 0%, #2563eb 100%);
+  --gradient-text:    linear-gradient(135deg, #6d28d9 0%, #2563eb 100%);
+  --gradient-hero:    linear-gradient(135deg, #6d28d9 0%, #a855f7 50%, #3b82f6 100%);
+  --gradient-accent:  linear-gradient(135deg, #6d28d9, #a855f7);
+}
+
+/* ── All light-mode rules (body without .dark-mode class) ── */
+body:not(.dark-mode) {
+
+  /* Layout backgrounds */
+  background: var(--primary-bg-color);
+
+  /* ── Section banners ── */
+  .section-banner {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f5ff 100%);
+    border-bottom: 1px solid rgba(109, 40, 217, 0.1);
+  }
+
+  /* ── Nav sidebar ── */
+  .nav {
+    background: #ffffff;
+    border-right: 1px solid rgba(109, 40, 217, 0.1);
+    box-shadow: 4px 0 24px rgba(109, 40, 217, 0.06);
+  }
+
+  /* ── Hero section ── */
+  .home {
+    background: linear-gradient(145deg, #f4f3ff 0%, #ede9fe 40%, #e0e7ff 100%) !important;
+  }
+  .hero-orb-1 { background: radial-gradient(circle, #a855f7, #7c3aed); opacity: 0.14; }
+  .hero-orb-2 { background: radial-gradient(circle, #3b82f6, #2563eb); opacity: 0.11; }
+  .hero-orb-3 { background: radial-gradient(circle, #8b5cf6, #6d28d9); opacity: 0.08; }
+
+  .hero-profile-img-wrap img {
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 6px rgba(109,40,217,0.12), 0 20px 60px rgba(109,40,217,0.2);
+  }
+
+  .hero-availability {
+    background: rgba(255,255,255,0.88);
+    border-color: rgba(109, 40, 217, 0.2);
+    color: #6d28d9;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(109,40,217,0.1);
+  }
+
+  .hero-social-row a {
+    background: rgba(255,255,255,0.85) !important;
+    border-color: rgba(109,40,217,0.18) !important;
+    color: #6d28d9 !important;
+    box-shadow: 0 2px 8px rgba(109,40,217,0.08) !important;
+  }
+  .hero-social-row a:hover {
+    background: #6d28d9 !important;
+    color: #fff !important;
+  }
+
+  .hero-scroll-hint span,
+  .hero-scroll-hint .scroll-arrow { border-color: #9f7aea; color: #9f7aea; }
+
+  /* Hero mini-stats numbers gradient */
+  .hero-mini-stat .num {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── About ── */
+  .about {
+    background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+  }
+  .about-exp-badge {
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(109,40,217,0.12);
+    border-color: rgba(109,40,217,0.12);
+  }
+  .why-card {
+    background: linear-gradient(135deg, #faf8ff, #f4f3ff);
+    border-color: rgba(109,40,217,0.08);
+  }
+  .why-card:hover {
+    border-color: rgba(109,40,217,0.2);
+    box-shadow: 0 8px 24px rgba(109,40,217,0.1);
+  }
+  .why-card .icon-box {
+    background: linear-gradient(135deg, rgba(109,40,217,0.1), rgba(37,99,235,0.06));
+  }
+
+  /* ── Testimonials ── */
+  .testimonials-section {
+    background: linear-gradient(135deg, #faf8ff 0%, #f0eeff 100%) !important;
+  }
+  .testimonial-card {
+    background: #ffffff;
+    border-color: rgba(109,40,217,0.08);
+    box-shadow: 0 4px 16px rgba(109,40,217,0.06);
+  }
+  .testimonial-card:hover {
+    border-color: rgba(109,40,217,0.25);
+    box-shadow: 0 12px 40px rgba(109,40,217,0.12);
+  }
+
+  /* ── Projects ── */
+  .projects {
+    background: linear-gradient(180deg, #f4f3ff 0%, #f8f5ff 100%);
+  }
+  .project-card {
+    background: #ffffff;
+    border-color: rgba(109,40,217,0.08);
+    box-shadow: 0 2px 12px rgba(109,40,217,0.06);
+  }
+  .project-card:hover {
+    border-color: rgba(109,40,217,0.28);
+    box-shadow: 0 12px 40px rgba(109,40,217,0.14);
+  }
+  .project-image {
+    background: linear-gradient(135deg, #f8f5ff, #ede9fe);
+  }
+  .badge-client   { background: rgba(217,119,6,0.08);  color: #92400e; border-color: rgba(217,119,6,0.2); }
+  .badge-personal { background: rgba(8,145,178,0.08);  color: #0369a1; border-color: rgba(8,145,178,0.2); }
+  .badge-mini     { background: rgba(100,116,139,0.08);color: #475569; border-color: rgba(100,116,139,0.2); }
+  .badge-demo     { background: rgba(109,40,217,0.08); color: #6d28d9; border-color: rgba(109,40,217,0.2); }
+
+  /* ── Skills ── */
+  .skills { background: #f4f3ff; }
+  .skills-group {
+    background: #ffffff;
+    border-color: rgba(109,40,217,0.1);
+  }
+  .skills-group:hover {
+    border-color: rgba(109,40,217,0.25);
+    box-shadow: 0 8px 32px rgba(109,40,217,0.12);
+  }
+  .skills-group-items-item {
+    background: linear-gradient(135deg, #faf8ff, #f4f3ff);
+    border-color: rgba(109,40,217,0.08);
+  }
+  .skills-group-items-item:hover {
+    background: linear-gradient(135deg, rgba(109,40,217,0.07), rgba(37,99,235,0.04));
+    border-color: rgba(109,40,217,0.22);
+    box-shadow: 0 4px 16px rgba(109,40,217,0.1);
+  }
+  .skills-group-items-item h3 { color: #160e30; }
+  .skill-bar-track { background: rgba(109,40,217,0.1); }
+  .skill-level-label.expert    { color: #5b21b6; }
+  .skill-level-label.advanced  { color: #0369a1; }
+  .skill-level-label.mid       { color: #15803d; }
+  .skill-level-label.basic     { color: #b45309; }
+
+  /* ── Services ── */
+  .services {
+    background: linear-gradient(180deg, #f8f5ff 0%, #f4f3ff 100%);
+  }
+
+  /* ── Education ── */
+  .education { background: #ffffff; }
+
+  /* ── Contact ── */
+  .contact {
+    background: linear-gradient(180deg, #f4f3ff 0%, #ffffff 100%);
+  }
+  .contact .contact-content .left .icons .row {
+    background: #ffffff;
+    border-color: rgba(109,40,217,0.1);
+  }
+  .contact .right form .field input,
+  .contact .right form .textarea textarea {
+    background: #faf8ff;
+    border-color: rgba(109,40,217,0.15);
+    color: #160e30;
+  }
+  .contact .right form .field input:focus,
+  .contact .right form .textarea textarea:focus {
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 3px rgba(109,40,217,0.1);
+    background: #ffffff;
+  }
+  .contact .right form .field input::placeholder,
+  .contact .right form .textarea textarea::placeholder {
+    color: #9f7aea;
+  }
+
+  /* ── Footer: dark with purple gradient ── */
+  .site-footer {
+    background: linear-gradient(135deg, #2d1b69 0%, #1e1b4b 100%);
+    color: #e2d9f3;
+    border-top: none;
+  }
+  .footer-nav a { color: #c4b5fd; }
+  .footer-nav a:hover { color: #fff; }
+  .footer-social a { color: #a78bfa; }
+  .footer-social a:hover { color: #fff; }
+  .footer-tagline, .footer-copy { color: #a78bfa; }
+  .footer-available-badge {
+    background: rgba(74,222,128,0.12);
+    border-color: rgba(74,222,128,0.3);
+    color: #4ade80;
+  }
+  .footer-available-badge .dot { background: #4ade80; }
+
+  /* ── Carousel buttons ── */
+  .carousel-btn {
+    border-color: #6d28d9;
+    color: #6d28d9;
+    background: #ffffff;
+  }
+  .carousel-btn:hover {
+    background: #6d28d9;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(109,40,217,0.3);
+  }
+
+  /* ── Custom cursor ── */
+  .cursor-dot   { background: #6d28d9; box-shadow: 0 0 8px rgba(109,40,217,0.6); }
+  .cursor-ring  { border-color: #6d28d9; }
+  .cursor-ring.ring-hover { background: rgba(109,40,217,0.08); border-color: #6d28d9; }
+
+  /* ── Filter tabs ── */
+  .filter-tab {
+    background: #ffffff;
+    border-color: rgba(109,40,217,0.15);
+    color: #5a5575;
+  }
+  .filter-tab:hover {
+    border-color: #6d28d9;
+    color: #6d28d9;
+    background: rgba(109,40,217,0.04);
+  }
+  .filter-tab.active {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(109,40,217,0.35);
+  }
+
+  /* ── Project modal ── */
+  .project-modal-content {
+    background: #ffffff;
+    border-color: rgba(109,40,217,0.12);
+  }
+  .modal-header-img { background: linear-gradient(135deg, #f8f5ff, #ede9fe); }
+
+  /* ── Reply guarantee badge ── */
+  .reply-guarantee-badge {
+    background: rgba(74, 222, 128, 0.07);
+    border-color: rgba(74, 222, 128, 0.25);
+    color: #15803d;
+  }
+  .reply-guarantee-badge i,
+  .reply-guarantee-badge strong { color: #15803d; }
+
+  /* ── Stats section ── */
+  .stats-section { background: linear-gradient(135deg, #6d28d9, #2563eb); }
+
+  /* ── Mobile top bar ── */
+  .mobile-top-bar {
+    background: linear-gradient(135deg, #6d28d9, #2563eb);
+  }
+  .mobile-top-bar .site-title,
+  .mobile-top-bar .site-subtitle { color: #fff; }
+
+  /* ── Theme toggle ── */
+  .theme-switch-wrapper .theme-switch {
+    background: rgba(255,255,255,0.9);
+    border: 1.5px solid rgba(109,40,217,0.15);
+    box-shadow: 0 4px 16px rgba(109,40,217,0.12);
+    backdrop-filter: blur(8px);
+  }
+  .theme-switch-wrapper:hover .theme-switch {
+    border-color: #6d28d9;
+    box-shadow: 0 6px 24px rgba(109,40,217,0.25);
+  }
+
+  /* ── Scroll hint ── */
+  .hero-scroll-hint span { color: #9f7aea; }
+  .hero-scroll-hint .scroll-arrow {
+    border-right-color: #9f7aea;
+    border-bottom-color: #9f7aea;
+  }
+
+  /* ── Nav Hire Me button ── */
+  .nav-hire-btn {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: #fff !important;
+    box-shadow: 0 4px 14px rgba(109,40,217,0.3);
+  }
+
+  /* ── Cert toggle button ── */
+  .btn-cert-toggle:hover {
+    border-color: #6d28d9;
+    color: #6d28d9;
+    background: rgba(109,40,217,0.04);
+  }
+}

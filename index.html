@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="res/css/responsive.css" />
     <link rel="stylesheet" href="res/css/services.css" />
     <link rel="stylesheet" href="res/css/enhancements.css" />
+    <link rel="stylesheet" href="res/css/animations.css" />
+    <link rel="stylesheet" href="res/css/light-mode.css" />
   </head>
 
   <body>
@@ -132,40 +134,48 @@
       <div class="sections">
         <section class="home scrollspy" id="home">
           <canvas id="hero-canvas"></canvas>
+          <!-- Hero background orbs -->
+          <div class="hero-orb hero-orb-1"></div>
+          <div class="hero-orb hero-orb-2"></div>
+          <div class="hero-orb hero-orb-3"></div>
           <div class="home-content">
             <div class="home-right-content">
-              <!-- <div class="hero-availability">
-                <span class="dot"></span> Available for new projects
-              </div> -->
-              <div class="text-1">Hello, I'm</div>
-              <div class="text-2"><span>R</span>amanand <span>K</span>umar</div>
-              <div class="text-3">A <span class="typing"></span></div>
+              <div class="text-1 hero-text-enter">Hello, I'm</div>
+              <div class="text-2 hero-text-enter">
+                <span>R</span>amanand <span>K</span>umar
+              </div>
+              <div class="text-3 hero-text-enter">
+                A <span class="typing"></span>
+              </div>
 
               <div class="hero-mini-stats reveal-stagger">
                 <div class="hero-mini-stat">
-                  <span class="num">8+</span><span class="lbl">Clients</span>
+                  <span class="num" data-count="8" data-suffix="+">8+</span
+                  ><span class="lbl">Clients</span>
                 </div>
                 <div class="hero-mini-stat">
-                  <span class="num">20+</span><span class="lbl">Projects</span>
+                  <span class="num" data-count="20" data-suffix="+">20+</span
+                  ><span class="lbl">Projects</span>
                 </div>
                 <div class="hero-mini-stat">
-                  <span class="num">15+</span
+                  <span class="num" data-count="15" data-suffix="+">15+</span
                   ><span class="lbl">Play Store Apps</span>
                 </div>
                 <div class="hero-mini-stat">
-                  <span class="num">2+</span><span class="lbl">Years Exp</span>
+                  <span class="num" data-count="2" data-suffix="+">2+</span
+                  ><span class="lbl">Years Exp</span>
                 </div>
               </div>
 
-              <div class="hero-cta-row">
+              <div class="hero-cta-row hero-text-enter">
                 <a
                   href="https://wa.me/919304753564?text=Hi%20Ramanand%2C%20I%27d%20like%20to%20discuss%20a%20project!"
                   target="_blank"
-                  class="btn-primary"
+                  class="btn-primary magnetic-btn ripple-wrap"
                 >
                   <i class="fab fa-whatsapp"></i> Hire Me on WhatsApp
                 </a>
-                <a href="#projects" class="btn-secondary">
+                <a href="#projects" class="btn-secondary magnetic-btn">
                   <i class="fas fa-folder-open"></i> View My Work
                 </a>
               </div>
@@ -459,6 +469,14 @@
             </div>
             <div class="column right">
               <div class="text">Message me</div>
+              <div class="reply-guarantee-badge">
+                <i class="fas fa-clock"></i>
+                <span
+                  >We reply to every message within <strong>24 hours</strong> on
+                  your email. Fill the form below — we will definitely get back
+                  to you!</span
+                >
+              </div>
               <form action="" method="post" name="contact">
                 <div class="fields">
                   <div class="field name">
@@ -601,5 +619,6 @@
     <script src="script/testimonials.js" defer></script>
     <script src="script/reveal.js" defer></script>
     <script src="script/hero-bg.js" defer></script>
+    <script src="script/animations.js" defer></script>
   </body>
 </html>

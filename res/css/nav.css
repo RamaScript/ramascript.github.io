@@ -319,7 +319,7 @@
   .nav {
     position: fixed;
     top: 0;
-    left: -280px;
+    left: -320px;
     width: 260px;
     height: 100vh;
     z-index: 15;

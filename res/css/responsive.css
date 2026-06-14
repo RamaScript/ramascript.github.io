@@ -1,68 +1,212 @@
-/* ============================================================
-   RESPONSIVE.CSS — Non-hero section adjustments only.
-   Hero / nav mobile handled in home.css + nav.css
-   ============================================================ */
+/* ===================================================================
+   RESPONSIVE — Full mobile & tablet audit
+   Breakpoints:
+     ≤480px   = small mobile
+     ≤700px   = mobile
+     ≤900px   = tablet / large mobile
+     ≤1100px  = small desktop
+   =================================================================== */
 
-/* ── About ── */
-@media only screen and (max-width: 900px) {
-  .about .about-content { flex-direction: column; align-items: center; padding: 1.5rem 1rem; gap: 1.25rem; }
-  .about .about-content .left img { width: 140px; height: 175px; }
-  .why-grid { grid-template-columns: 1fr; }
-  .about .about-content .right { margin-right: 0; }
-}
+/* ═══════════════════════════════════
+   TABLET (≤900px)
+   ═══════════════════════════════════ */
+@media (max-width: 900px) {
 
-/* ── Skills ── */
-@media only screen and (max-width: 900px) {
-  .skills .skills-content { grid-template-columns: 1fr; padding: 1rem; }
-}
+  /* Nav */
+  .nav { width: 75vw; max-width: 300px; }
 
-/* ── Education ── */
-@media only screen and (max-width: 900px) {
-  .education .education-content { padding: 1rem; }
-}
-
-/* ── Contact ── */
-@media only screen and (max-width: 700px) {
-  .contact-content { flex-direction: column; padding: 1.5rem 1rem; }
-  .contact .contact-content .column { width: 100%; }
-  .right form .fields { flex-direction: column; gap: 0; }
-}
-
-/* ── Projects ── */
-@media only screen and (max-width: 700px) {
-  .projects .projects-content { grid-template-columns: 1fr; padding: 1rem; }
-  .projects .projects-content .project-card { margin: 0; }
-}
-
-/* ── Services tabs on mobile ── */
-@media only screen and (max-width: 650px) {
-  .services-tabs { flex-direction: column; align-items: stretch; }
-  .service-tab { justify-content: center; }
-  .services-category { grid-template-columns: 1fr; }
-}
-
-/* ── Section banners ── */
-@media only screen and (max-width: 900px) {
-  .section-banner { height: 3.5rem; font-size: 1.35rem; }
-}
-
-/* ── GitHub strip ── */
-@media only screen and (max-width: 600px) {
-  .github-strip { padding: 1rem; }
-  .github-strip-inner { flex-direction: column; gap: 0.75rem; }
-  .github-stat-img { max-width: 100%; height: auto; min-width: unset; }
-}
-
-/* ── Testimonials carousel ── */
-@media only screen and (max-width: 900px) {
+  /* Testimonials */
   .testimonial-card { flex: 0 0 calc(50% - 0.75rem); }
-}
-@media only screen and (max-width: 600px) {
-  .testimonial-card { flex: 0 0 100%; }
+
+  /* About why-grid: 1 col on tablet */
+  .why-grid { grid-template-columns: 1fr; }
+
+  /* Hero profile */
+  .hero-profile-img-wrap { width: 200px; height: 200px; }
+
+  /* Disable 3D heavy effects on tablet */
+  .tilt-card { transform: none !important; }
+
+  /* Hero orbs — smaller */
+  .hero-orb-1 { width: 280px; height: 280px; }
+  .hero-orb-2 { width: 200px; height: 200px; }
+  .hero-orb-3 { display: none; }
 }
 
-/* ── Footer ── */
-@media only screen and (max-width: 600px) {
-  .footer-nav { gap: 0.75rem; }
-  .site-footer { padding: 1.5rem 1rem 1rem; }
+/* ═══════════════════════════════════
+   MOBILE (≤700px)
+   ═══════════════════════════════════ */
+@media (max-width: 700px) {
+
+  /* Sections padding */
+  section { scroll-margin-top: 3rem; }
+
+  /* Projects grid */
+  #projects-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  /* Featured card: full width on mobile */
+  .project-card.featured,
+  .project-card.featured:first-child {
+    grid-column: span 1;
+  }
+
+  /* Contact */
+  .contact-content { flex-direction: column; padding: 1.25rem 1rem; }
+  .contact .contact-content .column { width: 100%; }
+  .contact .right form .fields { flex-direction: column; gap: 0; }
+
+  /* Testimonials: 1 per slide */
+  .testimonial-card {
+    flex: 0 0 calc(100% - 0rem);
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Filter tabs: scrollable row */
+  .project-filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 1rem 1rem 0.75rem;
+    gap: 0.5rem;
+    scrollbar-width: none;
+  }
+  .project-filter-tabs::-webkit-scrollbar { display: none; }
+
+  .filter-tab {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Hero mini stats: 2×2 grid */
+  .hero-mini-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .hero-mini-stat:not(:last-child)::after { display: none; }
+
+  /* Footer nav */
+  .footer-nav { gap: 0.85rem; }
+
+  /* Section banner slightly smaller */
+  .section-banner { height: 5rem; }
+  .section-banner h2 { font-size: 1.8rem; }
+
+  /* Why cards: min touch target */
+  .why-card { min-height: 44px; }
+  .icon-box { min-width: 44px; min-height: 44px; }
+
+  /* About image smaller on mobile */
+  .about-img-wrapper img { max-width: 240px; }
+
+  /* Disable hero orbs on mobile (perf) */
+  .hero-orb { display: none; }
+
+  /* Skill items full width */
+  .skills-content .skill-category { width: 100%; }
+
+  /* Carousel controls touch friendly */
+  .carousel-btn { width: 2.75rem; height: 2.75rem; }
+}
+
+/* ═══════════════════════════════════
+   SMALL MOBILE (≤480px)
+   ═══════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* Section banner */
+  .section-banner { height: 4.5rem; }
+  .section-banner h2 { font-size: 1.5rem; }
+
+  /* Hero name */
+  .home .home-content .text-2 { font-size: 1.85rem; letter-spacing: -1px; }
+
+  /* CTA buttons: full width */
+  .btn-primary, .btn-secondary,
+  .home .home-content .btn-primary,
+  .home .home-content .btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.85rem 1rem !important;
+  }
+
+  /* Profile image */
+  .hero-profile-img-wrap { width: 110px; height: 110px; }
+
+  /* Stats: smaller nums */
+  .hero-mini-stat .num { font-size: 1.25rem; }
+  .hero-mini-stat .lbl { font-size: 0.58rem; }
+
+  /* Modal full-screen feel */
+  .project-modal { padding: 0; }
+  .project-modal-content {
+    max-height: 88vh;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  /* Contact info rows */
+  .contact .contact-content .left .icons .row { padding: 0.75rem 0.9rem; }
+
+  /* Education cards */
+  .education-content .card .box { padding: 1.25rem 1rem; }
+
+  /* Certificates toggle button */
+  .btn-cert-toggle { font-size: 0.85rem; padding: 0.65rem 1.1rem; }
+
+  /* Testimonial card */
+  .testimonial-card { padding: 1.25rem 1rem; }
+  .testimonial-text { font-size: 0.88rem; }
+
+  /* Footer */
+  .footer-nav { gap: 0.65rem; }
+  .footer-nav a { font-size: 0.8rem; }
+
+  /* Services card */
+  .service-card { padding: 1.25rem; }
+
+  /* WhatsApp FAB: slightly smaller */
+  #whatsapp-fab { width: 2.85rem; height: 2.85rem; font-size: 1.4rem; bottom: 1.25rem; right: 1.25rem; }
+}
+
+/* ═══════════════════════════════════
+   SMALL DESKTOP (≤1100px)
+   ═══════════════════════════════════ */
+@media (max-width: 1100px) and (min-width: 901px) {
+  #projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-card.featured:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* ═══════════════════════════════════
+   TOUCH DEVICES — remove hover effects
+   ═══════════════════════════════════ */
+@media (hover: none) {
+  .project-overlay { display: none; }
+  .tilt-card:hover { transform: none !important; }
+  .details-btn:hover { background: transparent; color: var(--main-color); }
+}
+
+/* ═══════════════════════════════════
+   PREFERS REDUCED MOTION
+   ═══════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-orb, .tech-badge { display: none; }
 }

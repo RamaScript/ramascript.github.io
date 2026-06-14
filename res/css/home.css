@@ -48,7 +48,7 @@
 /* ── Greeting & name ── */
 .home .home-content .text-1 {
   font-size: 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-heading);
   font-weight: 500;
   color: var(--text-secondary);
   letter-spacing: 1.5px;
@@ -58,20 +58,23 @@
 
 .home .home-content .text-2 {
   font-size: 3.2rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   color: var(--text-color);
   line-height: 1.1;
-  letter-spacing: -1.5px;
+  letter-spacing: -2px;
 }
 
 .home .home-content .text-2 span {
-  color: var(--main-color);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .home .home-content .text-3 {
   font-size: 1.2rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-heading);
   font-weight: 600;
   color: var(--text-secondary);
   margin-top: 0.5rem;
@@ -140,8 +143,11 @@
 .hero-mini-stat .num {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--text-color);
-  font-family: "Inter", sans-serif;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-heading);
   line-height: 1;
 }
 
@@ -306,6 +312,7 @@
   border-radius: 50%;
   border: 3px solid var(--main-color);
   box-shadow: 0 0 0 6px var(--main-color-light), 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: glowPulse 4s ease-in-out infinite;
   user-select: none;
   pointer-events: none;
 }
@@ -411,6 +418,11 @@
 }
 
 @media (max-width: 480px) {
-  .home .home-content .text-2 { font-size: 1.9rem; }
+  .home .home-content .text-2 { font-size: 1.9rem; letter-spacing: -1px; }
   .hero-mini-stats { gap: 0.7rem; }
 }
+
+/* ── Dark mode hero orb color overrides ── */
+.dark-mode .hero-orb-1 { background: #08e8de; }
+.dark-mode .hero-orb-2 { background: #3b82f6; }
+
