@@ -16,7 +16,7 @@ function generateServicesSection() {
     </button>
     <button class="service-tab" data-category="Freelance">
       <i class="fas fa-briefcase"></i>
-      Freelance Services
+      Software Services
     </button>
   `;
   servicesContainer.appendChild(tabsContainer);
