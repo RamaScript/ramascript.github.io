@@ -26,7 +26,9 @@ body {
 
 :root {
   --font: "Inter", sans-serif;
-  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  --font-heading:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    sans-serif;
   --font-mono: "Doto", monospace;
 
   /* Backgrounds */
@@ -69,7 +71,12 @@ body {
 
   /* Gradient tokens */
   --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
-  --gradient-hero: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #3b82f6 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #a855f7 50%,
+    #3b82f6 100%
+  );
   --gradient-text: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
   --gradient-accent: linear-gradient(135deg, #7c3aed, #a855f7);
 }
@@ -96,7 +103,12 @@ body {
   --glass-primary: rgba(8, 232, 222, 0.5);
   --glass-secondary: rgba(0, 255, 229, 0.5);
   --gradient-primary: linear-gradient(135deg, #08e8de 0%, #0891b2 100%);
-  --gradient-hero: linear-gradient(135deg, #08e8de 0%, #06b6d4 50%, #3b82f6 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    #08e8de 0%,
+    #06b6d4 50%,
+    #3b82f6 100%
+  );
   --gradient-text: linear-gradient(135deg, #08e8de 0%, #38bdf8 100%);
   --gradient-accent: linear-gradient(135deg, #08e8de, #06b6d4);
 }
@@ -318,14 +330,22 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at bottom, var(--main-color-light) 0%, transparent 60%);
+  background: radial-gradient(
+    ellipse at bottom,
+    var(--main-color-light) 0%,
+    transparent 60%
+  );
   pointer-events: none;
   z-index: 1;
 }
 
 @keyframes underlineDraw {
-  from { transform: translateX(-50%) scaleX(0); }
-  to   { transform: translateX(-50%) scaleX(1); }
+  from {
+    transform: translateX(-50%) scaleX(0);
+  }
+  to {
+    transform: translateX(-50%) scaleX(1);
+  }
 }
 
 /* =====================================================
