@@ -121,18 +121,25 @@
 }
 
 /* Light mode overrides */
-.light-mode .stat-card {
-  background: rgba(0, 0, 0, 0.03);
-  border-color: rgba(220, 20, 60, 0.2);
+body:not(.dark-mode) .stat-card {
+  background: rgba(109, 40, 217, 0.03);
+  border-color: rgba(109, 40, 217, 0.15);
 }
 
-.light-mode .stat-card:hover {
-  border-color: crimson;
-  box-shadow: 0 8px 40px rgba(220, 20, 60, 0.12), 0 2px 12px rgba(0, 0, 0, 0.1);
+body:not(.dark-mode) .stat-card:hover {
+  border-color: var(--main-color);
+  box-shadow: 0 8px 40px rgba(109, 40, 217, 0.12), 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.light-mode .stat-label {
+body:not(.dark-mode) .stat-label {
   color: rgba(0, 0, 0, 0.55);
+}
+
+body:not(.dark-mode) .stat-number,
+body:not(.dark-mode) .stat-suffix,
+body:not(.dark-mode) .stat-icon {
+  color: var(--main-color);
+  filter: none;
 }
 
 /* ===== Counter animation ===== */

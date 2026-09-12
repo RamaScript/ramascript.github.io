@@ -3,25 +3,25 @@
 const statsData = [
   {
     icon: "fas fa-users",
-    number: 10,
+    number: 8,
     suffix: "+",
     label: "Clients Served",
   },
   {
     icon: "fas fa-folder-open",
-    number: 50,
+    number: 20,
     suffix: "+",
     label: "Projects Completed",
   },
   {
     icon: "fab fa-google-play",
-    number: 12,
+    number: 15,
     suffix: "+",
     label: "Apps on Play Store",
   },
   {
     icon: "fas fa-code",
-    number: 3,
+    number: 2,
     suffix: "+",
     label: "Years of Experience",
   },

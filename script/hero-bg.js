@@ -187,14 +187,38 @@
     });
   }
 
-  // Animation loop
+  // Animation loop — pause when hero is off-screen
+  let animFrameId = null;
+  let isVisible = true;
+
   function animate() {
+    if (!isVisible) return;
     drawBackground();
     drawOrbs();
     drawConnections();
     particles.forEach((p) => { p.update(); p.draw(); });
-    requestAnimationFrame(animate);
+    animFrameId = requestAnimationFrame(animate);
   }
+
+  // Pause/resume based on visibility
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible = true;
+          if (!animFrameId) animate();
+        } else {
+          isVisible = false;
+          if (animFrameId) {
+            cancelAnimationFrame(animFrameId);
+            animFrameId = null;
+          }
+        }
+      });
+    },
+    { threshold: 0.01 }
+  );
+  heroObserver.observe(section);
 
   animate();
 })();

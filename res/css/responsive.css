@@ -16,7 +16,7 @@
   .nav { width: 75vw; max-width: 300px; }
 
   /* Testimonials */
-  .testimonial-card { flex: 0 0 calc(50% - 0.75rem); }
+  .testimonial-card { flex: 0 0 calc(50% - 0.625rem); }
 
   /* About why-grid: 1 col on tablet */
   .why-grid { grid-template-columns: 1fr; }

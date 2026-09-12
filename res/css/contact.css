@@ -3,6 +3,7 @@
 .contact {
   /* background-color: var(--primary-bg-color); */
   min-height: auto;
+  padding-top: 3rem;
   padding-bottom: 5rem;
   position: relative;
   overflow: hidden;
@@ -22,11 +23,12 @@
   opacity: 0.15;
 }
 
-/* .contact::before {
+.contact::before {
   top: -100px;
   left: -200px;
   background: var(--main-color);
-} */
+  opacity: 0.08;
+}
 
 .contact::after {
   bottom: -100px;
@@ -46,10 +48,10 @@
   background: var(--secondry-bg-color);
   border: 1px solid var(--border-color);
   border-radius: 2rem;
-  /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05); */
   position: relative;
   z-index: 1;
   backdrop-filter: blur(20px);
+  margin-top: 3rem;
 }
 
 .contact .contact-content .column {

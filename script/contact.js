@@ -1,20 +1,29 @@
 // Contact Section
-function appScript() {
+function appScript(btn) {
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbxPpEHNHYnva1v3Q9_RtK6bbgz9FocgO6G2BIz2qRzwB0_AevWbXE1nvGQo4cGk9ub1/exec";
   const form = document.forms["contact"];
   const formData = new FormData(form);
 
   // Add custom fields to identify source and destination
-  formData.append("ToEmail", "ramanand.in7@gmail.com"); // Where you want to receive notifications
-  formData.append("Source", "Portfolio Website"); // Which project this is from
+  formData.append("ToEmail", "ramanand.in7@gmail.com");
+  formData.append("Source", "Portfolio Website");
+
+  // Show loading state
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
   fetch(scriptURL, { method: "POST", body: formData })
     .then((response) => response.json())
     .then((data) => {
       console.log("✅ Success:", data);
     })
-    .catch((error) => console.error("❌ Error!", error.message));
+    .catch((error) => console.error("❌ Error!", error.message))
+    .finally(() => {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    });
 }
 
 function validateEmail(email) {
@@ -33,6 +42,7 @@ function showMsg(el, message, type, duration = 4000) {
 
 function thank(event) {
   event.preventDefault();
+  const btn = event.target;
   let name = document.querySelector("#name-id");
   let email = document.querySelector("#email-id");
   let sub = document.querySelector("#subject-id");
@@ -49,7 +59,7 @@ function thank(event) {
   } else if (!validateEmail(email.value)) {
     showMsg(p, "⚠️ Please enter a valid email address.", "error");
   } else {
-    appScript();
+    appScript(btn);
     name.value = "";
     email.value = "";
     sub.value = "";
@@ -57,4 +67,3 @@ function thank(event) {
     showMsg(p, "✅ Message sent! I'll get back to you soon.", "success");
   }
 }
-

@@ -190,10 +190,6 @@
   flex-shrink: 0;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
 
 /* Hero micro-stat strip */
 .hero-mini-stats {
@@ -475,7 +471,7 @@
   position: relative;
   max-width: 1100px;
   margin: 0.5rem auto 0;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   overflow: hidden;
 }
 
@@ -486,7 +482,7 @@
 }
 
 .testimonial-card {
-  flex: 0 0 calc(33.333% - 1rem);
+  flex: 0 0 calc(33.333% - 0.834rem);
   background: var(--primary-bg-color);
   border: 1px solid transparent;
   border-radius: 1.25rem;
@@ -756,7 +752,7 @@
 
 @media (max-width: 900px) {
   .testimonial-card {
-    flex: 0 0 calc(50% - 0.75rem);
+    flex: 0 0 calc(50% - 0.625rem);
   }
   .why-grid {
     grid-template-columns: 1fr;

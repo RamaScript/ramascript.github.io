@@ -27,11 +27,17 @@ if (cursorDot && cursorRing) {
   let mouseX = 0, mouseY = 0;
   let ringX  = 0, ringY  = 0;
   let isHovering = false;
+  let cursorVisible = false;
 
   document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
     cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    if (!cursorVisible) {
+      cursorVisible = true;
+      cursorDot.style.opacity  = "1";
+      cursorRing.style.opacity = "0.6";
+    }
   });
 
   // Silky trailing ring
