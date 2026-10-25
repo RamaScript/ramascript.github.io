@@ -84,6 +84,39 @@ const projectsData = [
   // ======================== PERSONAL APPS ========================
   {
     category: "personal",
+    title: "Brain Rot Meter",
+    img: "res/images/projects/brain-rot-meter.png",
+    result: "Live on Play Store · Tracks doomscrolling in real-time",
+    desc: "An Android app that tracks how many short-form videos (Reels & Shorts) you watch each day. Features a dynamic brain mascot that visually 'fries' as your scroll count increases, platform-specific stats, and a floating overlay — all with zero data collection using Android's Accessibility API.",
+    playStore: "https://play.google.com/store/apps/details?id=com.ramascript.brainrotmeter",
+    webLink: "https://ramascript.com/brain-rot-meter/",
+    github: "N/A",
+    techStack: ["flutter.svg", "googleplayconsole.svg", "firebase.png"],
+  },
+  {
+    category: "personal",
+    title: "MirrorPop",
+    img: "res/images/projects/mirror-pop.png",
+    result: "Live on Play Store · Privacy-first lock screen mirror",
+    desc: "A privacy-first Android lock screen mirror app that gives you instant front-camera preview, quick selfies, and glanceable checks — with the screen locked. No accounts, no cloud storage, no setup required. Just tap, glance, go.",
+    playStore: "https://play.google.com/store/apps/developer?id=RamaScript",
+    webLink: "https://mirrorpop.ramascript.com/",
+    github: "N/A",
+    techStack: ["flutter.svg", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
+    title: "Shake Torch",
+    img: "res/images/projects/shake-torch.png",
+    result: "Live on Play Store · Screen-off shake-to-flashlight",
+    desc: "An Android flashlight utility that activates your torch with a single wrist shake — even with the screen off. Uses gravity-filtered accelerometer detection with adjustable sensitivity, pocket detection, and sub-700ms response time. No accounts, no data collection.",
+    playStore: "N/A",
+    webLink: "https://ramascript.com/shake-torch/",
+    github: "N/A",
+    techStack: ["flutter.svg", "googleplayconsole.svg"],
+  },
+  {
+    category: "personal",
     title: "Allen Connect",
     img: "res/images/projects/allen_logo_png.png",
     result: "Used by Allenhouse College students & alumni",
@@ -417,101 +450,64 @@ function buildOverlay(project) {
 }
 
 // ================================================================
-// Render cards — Bento layout (first 2 in client = featured)
+// Render cards — Clean & Instant (No jitter/tilt animation)
 // ================================================================
 function createProjectCards(filter = "client") {
   const container = document.getElementById("projects-container");
   if (!container) return;
 
-  // --- Exit animation ---
-  const existing = container.querySelectorAll(".project-card");
-  existing.forEach((c) => {
-    c.style.transition = "opacity 0.2s ease, transform 0.2s ease";
-    c.style.opacity = "0";
-    c.style.transform = "scale(0.9) translateY(-10px)";
+  container.innerHTML = "";
+
+  const filtered =
+    filter === "all"
+      ? projectsData
+      : projectsData.filter((p) => p.category === filter);
+
+  filtered.forEach((project, idx) => {
+    const card = document.createElement("div");
+    const isFirst2 = (filter === "client" || filter === "all") && idx < 2;
+    card.className = `project-card${isFirst2 ? " featured" : ""}`;
+    card.dataset.category = project.category;
+
+    const badge = badgeConfig[project.category] || { cls: "badge-client", icon: "fas fa-folder", label: "Project" };
+    const globalIndex = projectsData.indexOf(project);
+
+    card.innerHTML = `
+      <div class="project-image">
+        <img class="project-img" loading="lazy" src="${project.img}" alt="${project.title}">
+        ${buildOverlay(project)}
+      </div>
+      <div class="project-content">
+        <div class="project-badge ${badge.cls}">
+          <i class="${badge.icon}"></i> ${badge.label}
+        </div>
+        <div class="project-header">
+          <h3>${project.title}</h3>
+        </div>
+        ${project.result ? `<p class="project-result"><i class="fas fa-chart-line"></i> ${project.result}</p>` : ""}
+        <p class="project-desc">${project.desc}</p>
+        <button class="details-btn" data-index="${globalIndex}">
+          <i class="fas fa-info-circle"></i> View Details
+        </button>
+      </div>
+    `;
+
+    container.appendChild(card);
   });
 
-  setTimeout(() => {
-    container.innerHTML = "";
-
-    const filtered =
-      filter === "all"
-        ? projectsData
-        : projectsData.filter((p) => p.category === filter);
-
-    filtered.forEach((project, idx) => {
-      const card = document.createElement("div");
-      const isFirst2 = (filter === "client" || filter === "all") && idx < 2;
-      card.className = `project-card tilt-card ripple-wrap${isFirst2 ? " featured" : ""}`;
-      card.dataset.category = project.category;
-
-      const badge = badgeConfig[project.category];
-      const globalIndex = projectsData.indexOf(project);
-
-      card.innerHTML = `
-        <div class="project-image">
-          <img class="project-img" loading="lazy" src="${project.img}" alt="${project.title}">
-          ${buildOverlay(project)}
-        </div>
-        <div class="project-content">
-          <div class="project-badge ${badge.cls}">
-            <i class="${badge.icon}"></i> ${badge.label}
-          </div>
-          <div class="project-header">
-            <h3>${project.title}</h3>
-          </div>
-          ${project.result ? `<p class="project-result"><i class="fas fa-chart-line"></i> ${project.result}</p>` : ""}
-          <p class="project-desc">${project.desc}</p>
-          <button class="details-btn ripple-wrap" data-index="${globalIndex}">
-            <i class="fas fa-info-circle"></i> View Details
-          </button>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
-
-    // Attach detail button listeners
-    container.querySelectorAll(".details-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        openProjectModal(projectsData[btn.dataset.index]);
-      });
-    });
-
-    // Attach 3D tilt to each card
-    attachCardTilt();
-
-    // Entrance animation
-    if (window.animateProjectCards) window.animateProjectCards();
-
-  }, existing.length > 0 ? 220 : 0);
-}
-
-// ================================================================
-// 3D Card Tilt
-// ================================================================
-function attachCardTilt() {
-  const isMobile = window.matchMedia("(max-width: 900px)").matches;
-  if (isMobile) return;
-
-  document.querySelectorAll(".tilt-card").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y = (e.clientY - rect.top)  / rect.height - 0.5;
-      card.style.transition = "transform 0.1s ease, box-shadow 0.25s ease";
-      card.style.transform = `perspective(700px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) scale(1.02)`;
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transition = "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease";
-      card.style.transform = "";
+  // Attach detail button listeners
+  container.querySelectorAll(".details-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openProjectModal(projectsData[btn.dataset.index]);
     });
   });
 }
 
 // ================================================================
 // MODAL
+// ================================================================
+// MODAL — High-End Product Case Study View
 // ================================================================
 function openProjectModal(project) {
   const modal = document.getElementById("project-modal");
@@ -522,37 +518,59 @@ function openProjectModal(project) {
   const hasGithub    = project.github    && project.github    !== "N/A";
 
   const modalContent = modal.querySelector(".project-modal-content");
+  const badge = badgeConfig[project.category] || { cls: "badge-client", icon: "fas fa-folder", label: "Project" };
 
-  const techStackHtml = project.techStack
-    .map((tech) => `
-      <div class="modal-tech-item">
-        <img src="res/images/logo/${tech}" alt="${tech}">
-        <span>${tech.split(".")[0].toUpperCase()}</span>
-      </div>
-    `)
+  const techStackHtml = (project.techStack || [])
+    .map((tech) => {
+      const cleanName = tech.split(".")[0].replace(/[-_]/g, " ").toUpperCase();
+      return `
+        <div class="modal-tech-pill">
+          <img src="res/images/logo/${tech}" alt="${cleanName}" onerror="this.style.display='none'">
+          <span>${cleanName}</span>
+        </div>
+      `;
+    })
     .join("");
 
   modalContent.innerHTML = `
-    <div class="modal-handle"></div>
-    <button class="modal-close" id="modal-close-btn"><i class="fas fa-times"></i></button>
-    <div class="modal-header-img">
-      <img src="${project.img}" alt="${project.title}">
-    </div>
-    <div class="modal-body">
-      <div class="modal-title-row">
-        <h2>${project.title}</h2>
-        ${project.result ? `<p class="project-result"><i class="fas fa-chart-line"></i> ${project.result}</p>` : ""}
+    <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="modal-header-hero">
+      <div class="modal-icon-box">
+        <img src="${project.img}" alt="${project.title}" class="modal-app-icon">
       </div>
-      <span class="modal-section-title">Description</span>
+      <div class="modal-title-meta">
+        <div class="modal-tag-row">
+          <span class="project-badge ${badge.cls}">
+            <i class="${badge.icon}"></i> ${badge.label}
+          </span>
+          ${project.result ? `<span class="modal-result-tag"><i class="fas fa-bolt"></i> ${project.result}</span>` : ""}
+        </div>
+        <h2 class="modal-title">${project.title}</h2>
+      </div>
+    </div>
+
+    ${(hasPlayStore || hasWebLink || hasGithub) ? `
+    <div class="modal-action-bar">
+      ${hasPlayStore ? `<a href="${project.playStore}" target="_blank" class="modal-btn btn-playstore"><i class="fab fa-google-play"></i> Get on Google Play</a>` : ""}
+      ${hasWebLink   ? `<a href="${project.webLink}"   target="_blank" class="modal-btn btn-weblink"><i class="fas fa-arrow-up-right-from-square"></i> Visit Website</a>` : ""}
+      ${hasGithub    ? `<a href="${project.github}"    target="_blank" class="modal-btn btn-github"><i class="fab fa-github"></i> View Source</a>` : ""}
+    </div>
+    ` : ""}
+
+    <div class="modal-section">
+      <h3 class="modal-section-title"><i class="fas fa-align-left"></i> About the Project</h3>
       <p class="modal-desc">${project.desc}</p>
-      <span class="modal-section-title">Technologies Used</span>
-      <div class="modal-tech-stack">${techStackHtml}</div>
-      <div class="modal-footer-links">
-        ${hasPlayStore ? `<a href="${project.playStore}" target="_blank" class="modal-link link-playstore"><i class="fab fa-google-play"></i> Google Play</a>` : ""}
-        ${hasWebLink   ? `<a href="${project.webLink}"   target="_blank" class="modal-link link-web"><i class="fas fa-globe"></i> Visit Site</a>` : ""}
-        ${hasGithub    ? `<a href="${project.github}"    target="_blank" class="modal-link link-github"><i class="fab fa-github"></i> Source Code</a>` : ""}
-      </div>
     </div>
+
+    ${project.techStack && project.techStack.length > 0 ? `
+    <div class="modal-section">
+      <h3 class="modal-section-title"><i class="fas fa-layer-group"></i> Technologies &amp; Architecture</h3>
+      <div class="modal-tech-pills-wrap">${techStackHtml}</div>
+    </div>
+    ` : ""}
   `;
 
   modal.classList.add("active");
