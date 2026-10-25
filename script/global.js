@@ -1,79 +1,80 @@
-// Dark mode / Light mode — LIGHT is default, dark is opt-in
+// Clean Global Scripts — Navigation, Modals & Interactions
 
-const themeSwitch = document.querySelector(".theme-switch-wrapper");
-if (themeSwitch) {
-  themeSwitch.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    
-    // Save preference to localStorage
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  });
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // ── Mobile Navigation Drawer Toggle ──
+  const mobileToggle = document.getElementById("mobile-nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-// Check local storage for theme preference
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-}
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("open");
+      const icon = mobileToggle.querySelector("i");
+      if (icon) {
+        if (mobileMenu.classList.contains("open")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+        } else {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      }
+    });
 
-// ─── Premium Cursor ───────────────────────────────────────────
-const cursorDot  = document.querySelector(".cursor-dot");
-const cursorRing = document.querySelector(".cursor-ring");
+    // Close when clicking any menu link
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        const icon = mobileToggle.querySelector("i");
+        if (icon) {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      });
+    });
 
-if (cursorDot && cursorRing) {
-  let mouseX = 0, mouseY = 0;
-  let ringX  = 0, ringY  = 0;
-  let isHovering = false;
-  let cursorVisible = false;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-    if (!cursorVisible) {
-      cursorVisible = true;
-      cursorDot.style.opacity  = "1";
-      cursorRing.style.opacity = "0.6";
-    }
-  });
-
-  // Silky trailing ring
-  function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateRing);
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (mobileMenu.classList.contains("open") && !mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        mobileMenu.classList.remove("open");
+        const icon = mobileToggle.querySelector("i");
+        if (icon) {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      }
+    });
   }
-  animateRing();
 
-  // Magnetic expand on hover over interactive elements
-  const interactives = "a, button, input, textarea, .filter-tab, .why-card, .cert-chip, .project-card, label";
-  document.querySelectorAll(interactives).forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-      cursorRing.classList.add("ring-hover");
-      cursorDot.classList.add("dot-hover");
+  // ── Close Project Modal on Outside Click or Escape ──
+  const modal = document.getElementById("project-modal");
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     });
-    el.addEventListener("mouseleave", () => {
-      cursorRing.classList.remove("ring-hover");
-      cursorDot.classList.remove("dot-hover");
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     });
-  });
+  }
 
-  // Click burst
-  document.addEventListener("mousedown", () => cursorRing.classList.add("ring-click"));
-  document.addEventListener("mouseup",   () => cursorRing.classList.remove("ring-click"));
-
-  // Hide / show when leaving window
-  document.addEventListener("mouseleave", () => {
-    cursorDot.style.opacity  = "0";
-    cursorRing.style.opacity = "0";
-  });
-  document.addEventListener("mouseenter", () => {
-    cursorDot.style.opacity  = "1";
-    cursorRing.style.opacity = "1";
-  });
-}
-
+  // ── Header Scroll Glass Elevation ──
+  const header = document.querySelector(".site-header");
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+  }
+});

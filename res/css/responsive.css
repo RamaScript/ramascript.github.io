@@ -12,9 +12,6 @@
    ═══════════════════════════════════ */
 @media (max-width: 900px) {
 
-  /* Nav */
-  .nav { width: 75vw; max-width: 300px; }
-
   /* Testimonials */
   .testimonial-card { flex: 0 0 calc(50% - 0.625rem); }
 

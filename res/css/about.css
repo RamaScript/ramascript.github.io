@@ -1,183 +1,322 @@
-/* ===== ABOUT SECTION ===== */
+/* =====================================================
+   ABOUT SECTION — Clean Engineering Story & Principles
+   Warm-Light Palette: Canvas #faf8f5 | Card #ffffff | Accent #f97316
+   ===================================================== */
 
 .about {
-  min-height: auto;
-  height: fit-content;
-  background-color: var(--secondry-bg-color);
+  padding: 3rem 1.5rem 5rem;
+  background-color: var(--primary-bg-color);
+  position: relative;
 }
 
 .about .about-content {
-  padding: 3rem 2.5rem 2.5rem;
+  max-width: 1080px;
+  margin: 0 auto;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  gap: 3rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 3.5rem;
 }
 
-.about .about-content .left { position: relative; }
+/* ── Left Column: Clean Framed Portrait ── */
+.about .about-content .left {
+  flex: 0.82;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .about-img-wrapper {
   position: relative;
-  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  height: 420px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 4px solid #ffffff;
+  box-shadow: 0 16px 44px rgba(28, 25, 23, 0.08),
+              0 0 0 1px rgba(231, 226, 215, 0.6);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.about .about-content .left img {
-  width: 280px;
-  height: 400px;
+.about-img-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(28, 25, 23, 0.12),
+              0 0 0 1px var(--orange-border);
+}
+
+.about-portrait-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 1.5rem;
-  transition: transform 0.4s ease;
-  box-shadow: var(--card-shadow);
+  object-position: top center;
+  display: block;
 }
 
-.about .about-content .left img:hover {
-  transform: scale(1.02);
-}
-
-.about-exp-badge {
+/* Soft ambient halo behind about photo */
+.about-img-halo {
   position: absolute;
-  bottom: -15px;
-  right: -25px;
-  background: var(--secondry-bg-color);
-  padding: 0.8rem 1.25rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 65%, rgba(28, 25, 23, 0.18) 100%);
+}
+
+/* Quick Specs Strip below photo */
+.about-quick-specs {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 0.65rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  border: 1px solid var(--border-color);
-  z-index: 2;
-  transition: transform 0.3s ease;
+  justify-content: space-between;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(28, 25, 23, 0.02);
 }
 
-.about-img-wrapper:hover .about-exp-badge {
-  transform: translateY(-5px);
-}
-
-.about-exp-badge .num {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--main-color);
-  font-family: "Doto", monospace;
-  line-height: 1;
-}
-
-.about-exp-badge .txt {
-  font-size: 0.7rem;
+.about-quick-specs .spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
   font-weight: 600;
   color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
 }
 
-.about .about-content .right { flex: 1; min-width: 0; }
+.about-quick-specs .spec-item i {
+  color: var(--main-color);
+  font-size: 0.82rem;
+}
 
-.about .about-content .right .text {
-  font-size: 1.6rem;
+/* ── Right Column: Narrative & Work Principles ── */
+.about .about-content .right {
+  flex: 1.28;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-header-block {
+  margin-bottom: 1.25rem;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
+}
+
+.about-heading {
+  font-size: 1.85rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
   color: var(--text-color);
   letter-spacing: -0.5px;
-  margin-bottom: 0.25rem;
+  line-height: 1.28;
 }
 
-.about .about-content .right .text p {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: -0.25rem;
-  color: var(--text-color);
-}
-
-.about .about-content .right .text span { color: var(--main-color); }
-
-.about .about-content .right > p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--text-secondary);
+.about-narrative {
   margin-bottom: 1.5rem;
-  text-align: left;
 }
 
-.about .about-content .right a#btn-new {
+.about-narrative p {
+  font-size: 0.98rem;
+  line-height: 1.72;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.about-narrative p:last-child {
+  margin-bottom: 0;
+}
+
+/* Actions Row */
+.about-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-btn-resume {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  text-decoration: none;
-  font-size: 0.9rem;
+  padding: 0.65rem 1.35rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
   font-weight: 600;
-  background: var(--main-color);
-  color: #fff;
-  padding: 0.65rem 1.4rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border: none;
-  margin-bottom: 1.5rem;
+  color: var(--text-color) !important;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(28, 25, 23, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about .about-content .right a#btn-new:hover {
-  opacity: 0.88;
+.about-btn-resume i {
+  color: var(--main-color);
+  transition: transform 0.2s ease;
+}
+
+.about-btn-resume:hover {
+  background: var(--main-color-light);
+  border-color: var(--orange-border);
+  color: var(--main-color) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px var(--main-color-alpha50);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.12);
 }
 
-/* Why-cards */
-.why-grid {
+.about-btn-resume:hover i {
+  transform: translateY(1px);
+}
+
+.about-btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary) !important;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.about-btn-contact:hover {
+  color: var(--main-color) !important;
+  transform: translateX(2px);
+}
+
+/* ── 4 Principles Bento Grid ── */
+.about-principles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
 }
 
-.why-card {
-  background: var(--primary-bg-color);
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  padding: 1rem;
+.principle-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.15rem;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
-  transition: all 0.25s ease;
-  cursor: default;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 8px rgba(28, 25, 23, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.why-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-  border-color: var(--border-color);
+.principle-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--orange-border);
+  box-shadow: 0 8px 22px rgba(249, 115, 22, 0.08);
+  background: #fffcf9;
 }
 
-.why-card .icon-box {
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.6rem;
-  background: var(--main-color-light);
+.principle-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #fff7ed;
+  border: 1px solid rgba(234, 88, 12, 0.16);
+  color: #ea580c;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.95rem;
   flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
-.why-card .icon-box i { 
-  font-size: 1rem; 
-  color: var(--main-color); 
+.principle-card:hover .principle-icon-box {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  color: #ffffff;
+  transform: scale(1.08);
 }
 
-.why-card-text h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--text-color); }
-.why-card-text p { font-size: 0.82rem !important; margin-bottom: 0 !important; color: var(--text-secondary) !important; text-align: left !important; line-height: 1.5 !important; }
+.principle-info h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
+}
 
-/* Dark mode */
-.dark-mode .about { background-color: var(--primary-bg-color); }
-.dark-mode .why-card { background: var(--secondry-bg-color); }
+.principle-info p {
+  font-size: 0.8rem !important;
+  color: #78716c !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
 
-@media (max-width: 850px) {
-  .about .about-content { flex-direction: column; align-items: center; padding: 2rem 1.5rem; gap: 2rem; }
-  .about .about-content .left img { width: 100%; max-width: 280px; height: auto; aspect-ratio: 7/10; }
-  .about-exp-badge { right: -10px; bottom: -10px; padding: 0.6rem 1rem; }
-  .about-exp-badge .num { font-size: 1.5rem; }
-  .about-exp-badge .txt { font-size: 0.6rem; }
-  .why-grid { grid-template-columns: 1fr; }
+/* ── Responsive Mobile & Tablet ── */
+@media (max-width: 900px) {
+  .about {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  .about .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+  }
+  .about .about-content .left {
+    width: 100%;
+  }
+  .about-img-wrapper {
+    max-width: 270px;
+    height: 350px;
+    border-radius: 22px;
+  }
+  .about-quick-specs {
+    max-width: 270px;
+  }
+  .about-heading {
+    font-size: 1.6rem;
+  }
+  .about-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-img-wrapper {
+    max-width: 230px;
+    height: 300px;
+    border-radius: 20px;
+  }
+  .about-quick-specs {
+    max-width: 230px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .about-heading {
+    font-size: 1.4rem;
+  }
+  .about-narrative p {
+    font-size: 0.92rem;
+  }
+  .about-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-btn-resume {
+    justify-content: center;
+  }
+  .about-btn-contact {
+    justify-content: center;
+  }
 }

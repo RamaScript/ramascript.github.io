@@ -34,22 +34,26 @@ const servicesData = {
         {
           icon: "fas fa-microchip",
           title: "Practical AI",
-          description: "Built to solve real business bottlenecks, not just demo gimmicks.",
+          description:
+            "Built to solve real business bottlenecks, not just demo gimmicks.",
         },
         {
           icon: "fas fa-comments",
           title: "Natural Tone",
-          description: "Prompt-engineered for polite, accurate, brand-aligned conversations.",
+          description:
+            "Prompt-engineered for polite, accurate, brand-aligned conversations.",
         },
         {
           icon: "fas fa-coins",
           title: "Token Optimization",
-          description: "Efficient context management to keep API running costs minimal.",
+          description:
+            "Efficient context management to keep API running costs minimal.",
         },
         {
           icon: "fas fa-plug",
           title: "Seamless Handoff",
-          description: "Easy integration with existing databases, CRMs, and email systems.",
+          description:
+            "Easy integration with existing databases, CRMs, and email systems.",
         },
       ],
     },
@@ -85,26 +89,30 @@ const servicesData = {
         {
           icon: "fas fa-file-shield",
           title: "Data Confidentiality",
-          description: "Proprietary information is securely isolated with zero model retraining.",
+          description:
+            "Proprietary information is securely isolated with zero model retraining.",
         },
         {
           icon: "fas fa-magnifying-glass",
           title: "Verifiable Answers",
-          description: "Every answer cites exact document page numbers and sources.",
+          description:
+            "Every answer cites exact document page numbers and sources.",
         },
         {
           icon: "fas fa-database",
           title: "Scalable Search",
-          description: "Handles thousands of documents with sub-second retrieval latency.",
+          description:
+            "Handles thousands of documents with sub-second retrieval latency.",
         },
         {
           icon: "fas fa-arrows-rotate",
           title: "Auto Sync",
-          description: "Automated pipelines to re-index new documents as your library grows.",
+          description:
+            "Automated pipelines to re-index new documents as your library grows.",
         },
       ],
     },
-    {    {
+    {
       title: "Mobile App Development",
       icon: "fas fa-mobile-screen-button",
       description:
@@ -136,22 +144,26 @@ const servicesData = {
         {
           icon: "fas fa-bolt",
           title: "Production Speed",
-          description: "Rapid iteration cycles with weekly test builds and clean milestone tracking.",
+          description:
+            "Rapid iteration cycles with weekly test builds and clean milestone tracking.",
         },
         {
           icon: "fas fa-shield-halved",
           title: "Store Approval Ready",
-          description: "Built to comply with strict Google Play Store policies and requirements.",
+          description:
+            "Built to comply with strict Google Play Store policies and requirements.",
         },
         {
           icon: "fas fa-cubes",
           title: "Modular Codebase",
-          description: "Clean separation of presentation, domain, and data layers for easy future expansion.",
+          description:
+            "Clean separation of presentation, domain, and data layers for easy future expansion.",
         },
         {
           icon: "fas fa-headset",
           title: "Support Included",
-          description: "30 days of free bug-fixing and configuration support after store launch.",
+          description:
+            "30 days of free bug-fixing and configuration support after store launch.",
         },
       ],
     },
@@ -187,22 +199,26 @@ const servicesData = {
         {
           icon: "fas fa-mobile-screen",
           title: "Mobile First",
-          description: "Pixel-perfect responsiveness across all screen sizes and browsers.",
+          description:
+            "Pixel-perfect responsiveness across all screen sizes and browsers.",
         },
         {
           icon: "fas fa-lock",
           title: "Secure Architecture",
-          description: "Sanitized queries, secure headers, encrypted credentials, and token auth.",
+          description:
+            "Sanitized queries, secure headers, encrypted credentials, and token auth.",
         },
         {
           icon: "fas fa-gauge-high",
           title: "Performance First",
-          description: "Optimized bundle sizes, asset compression, and clean DOM rendering.",
+          description:
+            "Optimized bundle sizes, asset compression, and clean DOM rendering.",
         },
         {
           icon: "fas fa-code",
           title: "Full Documentation",
-          description: "Comprehensive API documentation and clean handover for your team.",
+          description:
+            "Comprehensive API documentation and clean handover for your team.",
         },
       ],
     },
@@ -238,25 +254,28 @@ const servicesData = {
         {
           icon: "fas fa-clock",
           title: "Hours Saved",
-          description: "Replaces hours of repetitive daily spreadsheet work with 1-click scripts.",
+          description:
+            "Replaces hours of repetitive daily spreadsheet work with 1-click scripts.",
         },
         {
           icon: "fas fa-check-double",
           title: "Zero Human Error",
-          description: "Clean, consistent data transformation with automated validation checks.",
+          description:
+            "Clean, consistent data transformation with automated validation checks.",
         },
         {
           icon: "fas fa-code-compare",
           title: "Resilient Scraping",
-          description: "Error-handled scrapers that gracefully adapt to website layout changes.",
+          description:
+            "Error-handled scrapers that gracefully adapt to website layout changes.",
         },
         {
           icon: "fas fa-terminal",
           title: "Easy to Run",
-          description: "Simple execution via terminal or fully automated cloud cron jobs.",
+          description:
+            "Simple execution via terminal or fully automated cloud cron jobs.",
         },
       ],
-    },
     },
   ],
 
@@ -289,12 +308,14 @@ const servicesData = {
         {
           icon: "fas fa-user-check",
           title: "Direct 1-on-1 Guidance",
-          description: "Personalized attention tailored to your exact career goals and current skill level.",
+          description:
+            "Personalized attention tailored to your exact career goals and current skill level.",
         },
         {
           icon: "fas fa-laptop-code",
           title: "Project-Based Learning",
-          description: "Focus on building real, portfolio-ready products that impress recruiters.",
+          description:
+            "Focus on building real, portfolio-ready products that impress recruiters.",
         },
       ],
     },

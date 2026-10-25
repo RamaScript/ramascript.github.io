@@ -109,240 +109,8 @@
    PHASE 2 — Hero Section Redesign (replaces GitHub stat images)
    ============================================================ */
 
-/* Hero CTA buttons row */
-.hero-cta-row {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.75rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
+/* (Legacy hero & button overrides removed to prevent conflicts with home.css and style.css) */
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  background: var(--main-color);
-  color: var(--secondry-bg-color);
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.75rem 1.75rem;
-  border-radius: 3rem;
-  border: 2px solid var(--main-color);
-  transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--main-color);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(8, 232, 222, 0.35);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  background: transparent;
-  color: var(--main-color);
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.75rem 1.75rem;
-  border-radius: 3rem;
-  border: 2px solid var(--main-color);
-  transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  background: var(--main-color);
-  color: var(--secondry-bg-color);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(8, 232, 222, 0.35);
-}
-
-/* Hero availability pill */
-.hero-availability {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(8, 232, 222, 0.1);
-  border: 1px solid rgba(8, 232, 222, 0.3);
-  border-radius: 3rem;
-  padding: 0.35rem 1rem;
-  font-size: 0.85rem;
-  color: var(--main-color);
-  margin-bottom: 1rem;
-  width: fit-content;
-}
-
-.hero-availability .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #25d366;
-  animation: blink 1.5s ease-in-out infinite;
-  flex-shrink: 0;
-}
-
-
-/* Hero micro-stat strip */
-.hero-mini-stats {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1.75rem;
-  flex-wrap: wrap;
-}
-
-.hero-mini-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.hero-mini-stat .num {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--main-color);
-  font-family: "Doto", monospace;
-  line-height: 1;
-}
-
-.hero-mini-stat .lbl {
-  font-size: 0.72rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 0.1rem;
-  font-weight: 600;
-}
-
-/* Hero right: profile card */
-.hero-profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  position: relative;
-}
-
-.hero-profile-img-wrap {
-  position: relative;
-  width: 260px;
-  height: 260px;
-  flex-shrink: 0;
-}
-
-.hero-profile-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--main-color);
-  box-shadow: 0 0 40px rgba(8, 232, 222, 0.25);
-  transition: box-shadow 0.4s ease;
-  user-select: none;
-  pointer-events: none;
-}
-
-.hero-profile-img-wrap:hover img {
-  box-shadow: 0 0 60px rgba(8, 232, 222, 0.5);
-}
-
-/* Floating tech badges around image */
-.tech-badge {
-  position: absolute;
-  background: var(--secondry-bg-color);
-  border: 1px solid rgba(8, 232, 222, 0.3);
-  border-radius: 2rem;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--text-color);
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  white-space: nowrap;
-  backdrop-filter: blur(8px);
-  animation: float 3s ease-in-out infinite;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  user-select: none;
-}
-
-.tech-badge img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-}
-
-.tech-badge:nth-child(2) { top: -10px; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-.tech-badge:nth-child(3) { top: 30px; right: -30px; animation-delay: 0.5s; }
-.tech-badge:nth-child(4) { bottom: 30px; right: -30px; animation-delay: 1s; }
-.tech-badge:nth-child(5) { bottom: -10px; left: 50%; transform: translateX(-50%); animation-delay: 1.5s; }
-.tech-badge:nth-child(6) { top: 30px; left: -30px; animation-delay: 2s; }
-.tech-badge:nth-child(7) { bottom: 30px; left: -30px; animation-delay: 2.5s; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) translateX(var(--tx, 0)); }
-  50% { transform: translateY(-6px) translateX(var(--tx, 0)); }
-}
-
-.tech-badge:nth-child(2),
-.tech-badge:nth-child(5) {
-  --tx: -50%;
-}
-
-/* Social icons in hero (override existing home a styling) */
-.hero-social-row {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.hero-social-row a {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem !important;
-  height: 2.5rem !important;
-  border-radius: 50% !important;
-  font-size: 1.25rem !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  border: 2px solid var(--main-color) !important;
-  color: var(--main-color) !important;
-  text-decoration: none;
-  transition: all 0.3s ease !important;
-}
-
-.hero-social-row a:hover {
-  background: var(--main-color) !important;
-  color: var(--secondry-bg-color) !important;
-  transform: translateY(-3px) scale(1) !important;
-  box-shadow: 0 4px 15px rgba(8, 232, 222, 0.4) !important;
-}
-
-/* Light mode overrides */
-.light-mode .hero-availability {
-  background: rgba(220, 20, 60, 0.08);
-  border-color: rgba(220, 20, 60, 0.2);
-  color: crimson;
-}
-.light-mode .hero-mini-stat .lbl {
-  color: rgba(0, 0, 0, 0.5);
-}
-.light-mode .tech-badge {
-  background: rgba(255,255,255,0.9);
-  border-color: rgba(220, 20, 60, 0.2);
-  color: #333;
-}
 
 /* ============================================================
    PHASE 2 — About Section Redesign
@@ -459,148 +227,197 @@
 }
 
 /* ============================================================
-   PHASE 4 — Testimonials Section
+/* ============================================================
+   PHASE 4 — Testimonials Section (Modern Warm-Light Redesign)
    ============================================================ */
 
 .testimonials-section {
-  padding: 0 0 3rem;
-  background-color: var(--secondry-bg-color);
+  padding: 3rem 1.5rem 5rem;
+  background-color: var(--primary-bg-color);
+  position: relative;
 }
 
 .testimonials-carousel {
   position: relative;
-  max-width: 1100px;
-  margin: 0.5rem auto 0;
-  padding: 1.5rem 0;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem 1.5rem;
   overflow: hidden;
+  user-select: none;
 }
 
 .testimonials-track {
   display: flex;
   gap: 1.25rem;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .testimonial-card {
   flex: 0 0 calc(33.333% - 0.834rem);
-  background: var(--primary-bg-color);
-  border: 1px solid transparent;
-  border-radius: 1.25rem;
-  padding: 2rem 1.75rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
   position: relative;
-  transition: all 0.3s ease;
-  cursor: default;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(28, 25, 23, 0.03);
 }
 
 .testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-  border-color: var(--main-color);
-}
-
-.testimonial-quote-icon {
-  font-size: 2.5rem;
-  color: var(--main-color);
-  opacity: 0.1;
-  position: absolute;
-  top: 1.25rem;
-  right: 1.5rem;
-  line-height: 1;
+  box-shadow: 0 16px 36px rgba(249, 115, 22, 0.09);
+  border-color: var(--orange-border);
 }
 
 .testimonial-stars {
   color: #f59e0b;
   font-size: 0.85rem;
-  margin-bottom: 0.6rem;
-  letter-spacing: 1px;
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 0.85rem;
 }
 
 .testimonial-text {
   font-size: 0.92rem;
-  line-height: 1.6;
+  line-height: 1.68;
   color: var(--text-color);
   margin-bottom: 1.5rem;
   font-weight: 500;
+  flex-grow: 1;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f5f2eb;
 }
 
 .testimonial-avatar {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
-  background: var(--main-color);
+  border-radius: 11px;
+  background: #fff7ed;
+  border: 1px solid rgba(234, 88, 12, 0.18);
+  color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: 0.92rem;
   flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.testimonial-card:hover .testimonial-avatar {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  color: #ffffff;
+}
+
+.testimonial-author-info {
+  min-width: 0;
 }
 
 .testimonial-author-info h4 {
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-heading);
   color: var(--text-color);
-  margin-bottom: 0.1rem;
+  margin: 0 0 0.15rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .testimonial-author-info p {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
+  font-size: 0.74rem;
+  color: #78716c;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Carousel controls */
+/* Carousel Controls & Dots */
 .carousel-controls {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.25rem;
   margin-top: 1.5rem;
 }
 
 .carousel-btn {
-  width: 3rem;
-  height: 3rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid var(--main-color);
-  background: var(--secondry-bg-color);
-  color: var(--main-color);
-  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  color: var(--text-color);
+  font-size: 0.88rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  box-shadow: 0 2px 8px rgba(28, 25, 23, 0.04);
 }
 
 .carousel-btn:hover {
+  background: var(--main-color-light);
+  border-color: var(--orange-border);
+  color: var(--main-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.14);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #d6d3d1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  width: 24px;
   background: var(--main-color);
-  color: #fff;
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px var(--main-color-alpha50);
 }
 
-.carousel-btn i {
-  transition: transform 0.3s ease;
+/* Responsive Breakpoints */
+@media (max-width: 990px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 0.625rem);
+  }
 }
 
-#carousel-prev:hover i { transform: translateX(-3px); }
-#carousel-next:hover i { transform: translateX(3px); }
-
-/* Dark mode */
-.dark-mode .testimonials-section { background-color: var(--primary-bg-color); }
-.dark-mode .testimonial-card { background: var(--secondry-bg-color); }
+@media (max-width: 680px) {
+  .testimonials-section {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  .testimonial-card {
+    flex: 0 0 100%;
+    padding: 1.5rem 1.25rem;
+  }
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+}
 
 /* ============================================================
    PHASE 5 — Footer
@@ -694,28 +511,7 @@
 
 
 /* ============================================================
-   PHASE 5 — Hire Me nav button + Navbar glass on scroll
-   ============================================================ */
-
-.nav-hire-btn {
-  display: block;
-  margin: 0.5rem 0.5rem 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--main-color);
-  color: var(--secondry-bg-color) !important;
-  border-radius: 2rem;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: 2px solid var(--main-color);
-}
-
-.nav-hire-btn:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
-}
+/* (nav-hire-btn defined in nav.css) */
 
 /* ============================================================
    PHASE 5 — Scroll reveal animations

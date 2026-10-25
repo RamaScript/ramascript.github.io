@@ -1,127 +1,86 @@
-/* ===== Certificates Section — Compact Redesign ===== */
+/* =====================================================
+   CERTIFICATES — Collapsible Chip Layout
+   ===================================================== */
 
-.certificates {
-  min-height: unset; /* was 100vh — remove the forced full-height */
-  padding-bottom: 3rem;
+.certifications-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.certifications-collapsible.open {
+  max-height: 2000px;
+  opacity: 1;
 }
 
 .certificate-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 2rem 0;
+  max-width: 1040px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  background: var(--secondry-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.75rem;
+  box-shadow: var(--card-shadow);
 }
 
-/* ── Category group ── */
 .cert-group {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .cert-group-header {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 700;
+  font-family: var(--font-heading);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.8px;
   color: var(--main-color);
-  opacity: 0.85;
 }
 
 .cert-group-header::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: rgba(8, 232, 222, 0.18);
+  background: var(--border-subtle);
 }
 
-/* ── Chip row ── */
 .cert-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
-/* ── Individual chip ── */
 .cert-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.38rem 0.9rem;
-  border-radius: 2rem;
-  border: 1px solid rgba(8, 232, 222, 0.22);
-  background: rgba(8, 232, 222, 0.05);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background: var(--surface-subtle);
   color: var(--text-color);
   font-size: 0.82rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
-  transition: border-color 0.25s ease, background 0.25s ease,
-    transform 0.2s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-  white-space: nowrap;
-  position: relative;
+  transition: all 0.2s ease;
 }
 
 .cert-chip i {
-  font-size: 0.7rem;
   color: var(--main-color);
-  opacity: 0.8;
+  font-size: 0.85rem;
 }
 
 .cert-chip:hover {
-  border-color: var(--main-color);
-  background: rgba(8, 232, 222, 0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(8, 232, 222, 0.15);
-  color: var(--text-color);
-}
-
-/* Special highlight for wins / first prizes */
-.cert-chip.highlight {
-  border-color: rgba(255, 193, 7, 0.4);
-  background: rgba(255, 193, 7, 0.07);
-}
-.cert-chip.highlight i {
-  color: #ffc107;
-}
-.cert-chip.highlight:hover {
-  border-color: #ffc107;
-  background: rgba(255, 193, 7, 0.14);
-  box-shadow: 0 4px 14px rgba(255, 193, 7, 0.2);
-}
-
-/* Light mode */
-.light-mode .cert-chip {
-  background: rgba(220, 20, 60, 0.04);
-  border-color: rgba(220, 20, 60, 0.15);
-}
-.light-mode .cert-chip:hover {
-  background: rgba(220, 20, 60, 0.1);
-  border-color: crimson;
-  box-shadow: 0 4px 14px rgba(220, 20, 60, 0.12);
-}
-.light-mode .cert-chip.highlight {
-  border-color: rgba(255, 150, 0, 0.3);
-  background: rgba(255, 150, 0, 0.06);
-}
-.light-mode .cert-group-header::after {
-  background: rgba(220, 20, 60, 0.12);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .certificate-content {
-    padding: 1.5rem 1rem 0;
-    gap: 1.5rem;
-  }
-  .cert-chip {
-    font-size: 0.78rem;
-    padding: 0.32rem 0.75rem;
-  }
+  background: var(--main-color-light);
+  border-color: var(--orange-border);
+  color: var(--main-color);
+  transform: translateY(-1px);
 }

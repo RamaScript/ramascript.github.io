@@ -3,68 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service Details - Ramanand Portfolio</title>
+    <title>Service Details - Ramanand Kumar</title>
     <meta
       name="description"
       content="Detailed information about services offered by Ramanand Kumar"
     />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#faf8f5" />
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="icon" href="res/images/r.png" />
+    <link rel="icon" type="image/png" href="res/images/favicon.png" />
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="res/css/style.css" />
+    <link rel="stylesheet" href="res/css/nav.css" />
     <link rel="stylesheet" href="res/css/service-detail.css" />
-    <script src="script/global.js"></script>
   </head>
 
   <body>
     <div class="main">
-      <!-- Service Detail Container -->
-      <div class="service-detail-container">
-        <!-- Left Side - Service Details -->
-        <div class="service-detail-left">
-          <!-- Back Button -->
-          <div class="back-button-container">
-            <a href="index.html#services" class="back-button">
-              <i class="fa-solid fa-arrow-left"></i>
-              Back to Services
-            </a>
-          </div>
-          <div class="service-detail-header">
-            <div class="service-detail-icon">
-              <i class="fas fa-code"></i>
+      <!-- Sticky Floating Pill Navbar -->
+      <header class="site-header">
+        <div class="nav-container">
+          <a href="index.html" class="nav-brand">
+            <div class="brand-avatar-wrap">
+              <img
+                src="res/images/Ramanand_Kumar_3.jpeg"
+                alt="Ramanand Kumar"
+                class="brand-avatar"
+              />
+              <span class="avatar-online-dot"></span>
             </div>
-            <div class="service-detail-title">
-              <span class="service-category-badge">Loading...</span>
-              <h1 id="service-title">Loading...</h1>
-            </div>
-          </div>
-
-          <div class="service-detail-content">
-            <div class="service-description-section">
-              <h2><i class="fas fa-info-circle"></i> About This Service</h2>
-              <p id="service-description">Loading description...</p>
-            </div>
-
-            <!-- Teaching Service Details -->
-            <div
-              id="teaching-details"
-              class="service-specific-details"
-              style="display: none"
+            <span class="brand-name">Ramanand <span class="brand-accent">Kumar</span></span>
+          </a>
+          <ul id="nav-links-all">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#services" class="active">Services</a></li>
+            <li><a href="index.html#education">Education</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a
+              href="https://wa.me/919304753564"
+              target="_blank"
+              class="nav-hire-btn"
             >
-              <div class="detail-section">
-                <h2><i class="fas fa-book"></i> Topics Covered</h2>
-                <div id="topics-list" class="topics-grid"></div>
-              </div>
+              <i class="fab fa-whatsapp"></i>
+              <span>Let's Talk</span>
+            </a>
+            <button class="nav-toggle-btn" id="mobile-nav-toggle" aria-label="Toggle navigation">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-nav-menu" id="mobile-menu">
+          <a href="index.html#home"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="index.html#about"><i class="fa-solid fa-user"></i> About</a>
+          <a href="index.html#projects"><i class="fa-solid fa-folder-open"></i> Projects</a>
+          <a href="index.html#skills"><i class="fa-solid fa-code"></i> Skills</a>
+          <a href="index.html#services"><i class="fa-solid fa-briefcase"></i> Services</a>
+          <a href="index.html#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+          <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </header>
 
+      <div class="service-page-wrapper">
+        <!-- Breadcrumb Link -->
+        <div class="service-breadcrumb">
+          <a href="index.html#services" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to All Services
+          </a>
+        </div>
+
+        <!-- 2-Column Main Container -->
+        <div class="service-detail-container">
+          <!-- Left Column - Details -->
+          <div class="service-detail-left">
+            <!-- Hero Header Card -->
+            <div class="service-hero-card">
+              <span class="service-category-badge">Service</span>
+              <div class="service-title-row">
+                <div class="service-detail-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h1 id="service-title">Loading...</h1>
+              </div>
+              <p id="service-description" class="service-lead-desc">Loading description...</p>
+            </div>
+
+            <!-- Teaching Specific Section -->
+            <div id="teaching-details" style="display: none">
               <div class="detail-section">
-                <h2><i class="fas fa-chart-line"></i> Course Information</h2>
+                <h2><i class="fas fa-chart-pie"></i> Course Information</h2>
                 <div class="info-grid">
                   <div class="info-card">
                     <i class="fas fa-clock"></i>
@@ -91,44 +128,36 @@
               </div>
 
               <div class="detail-section">
+                <h2><i class="fas fa-book-open"></i> Topics Covered</h2>
+                <div id="topics-list" class="topics-grid"></div>
+              </div>
+
+              <div class="detail-section">
                 <h2><i class="fas fa-graduation-cap"></i> What You'll Learn</h2>
-                <ul class="learning-outcomes" id="learning-outcomes">
-                  <!-- Content will be populated by JavaScript -->
-                </ul>
+                <ul class="learning-outcomes" id="learning-outcomes"></ul>
               </div>
             </div>
 
-            <!-- Freelance Service Details -->
-            <div
-              id="freelance-details"
-              class="service-specific-details"
-              style="display: none"
-            >
+            <!-- Freelance / Software Specific Section -->
+            <div id="freelance-details" style="display: none">
               <div class="detail-section">
-                <h2><i class="fas fa-check-circle"></i> What's Included</h2>
-                <ul id="features-list" class="features-list-detailed">
-                  <!-- Content will be populated by JavaScript -->
-                </ul>
-              </div>
-
-              <div class="detail-section">
-                <h2><i class="fas fa-cogs"></i> Project Information</h2>
+                <h2><i class="fas fa-sliders"></i> Project Deliverables</h2>
                 <div class="info-grid">
                   <div class="info-card">
-                    <i class="fas fa-calendar-alt"></i>
+                    <i class="fas fa-calendar-check"></i>
                     <div>
-                      <span class="info-label">Delivery Time</span>
+                      <span class="info-label">Delivery Timeline</span>
                       <span class="info-value" id="project-delivery">-</span>
                     </div>
                   </div>
                   <div class="info-card">
-                    <i class="fas fa-tag"></i>
+                    <i class="fas fa-cube"></i>
                     <div>
                       <span class="info-label">Project Type</span>
                       <span class="info-value" id="project-type">-</span>
                     </div>
                   </div>
-                  <div class="info-card highlight-card">
+                  <div class="info-card">
                     <i class="fas fa-rupee-sign"></i>
                     <div>
                       <span class="info-label">Starting Price</span>
@@ -139,154 +168,153 @@
               </div>
 
               <div class="detail-section">
-                <h2><i class="fas fa-tasks"></i> Development Process</h2>
+                <h2><i class="fas fa-check-circle"></i> What's Included</h2>
+                <ul id="features-list" class="features-list-detailed"></ul>
+              </div>
+
+              <div class="detail-section">
+                <h2><i class="fas fa-timeline"></i> Development Workflow</h2>
                 <ul class="process-list">
                   <li>
                     <i class="fas fa-comments"></i>
-                    <strong>Consultation:</strong> Discuss your requirements and
-                    vision
+                    <div>
+                      <strong>1. Discovery &amp; Strategy:</strong>
+                      Understand requirements, architecture goals, and wireframes.
+                    </div>
                   </li>
                   <li>
                     <i class="fas fa-pencil-ruler"></i>
-                    <strong>Planning:</strong> Create detailed project plan and
-                    design
+                    <div>
+                      <strong>2. UI/UX &amp; Planning:</strong>
+                      Interactive mockups, clean component hierarchy, and timeline alignment.
+                    </div>
                   </li>
                   <li>
                     <i class="fas fa-code"></i>
-                    <strong>Development:</strong> Build your solution with
-                    regular updates
+                    <div>
+                      <strong>3. Agile Development:</strong>
+                      Clean Flutter/Web code with state management and regular demo builds.
+                    </div>
                   </li>
                   <li>
-                    <i class="fas fa-vial"></i>
-                    <strong>Testing:</strong> Thorough testing and quality
-                    assurance
+                    <i class="fas fa-vial-circle-check"></i>
+                    <div>
+                      <strong>4. QA &amp; Testing:</strong>
+                      Real-device testing, performance audits, and security validation.
+                    </div>
                   </li>
                   <li>
                     <i class="fas fa-rocket"></i>
-                    <strong>Deployment:</strong> Launch and ongoing support
+                    <div>
+                      <strong>5. Deployment &amp; Support:</strong>
+                      Google Play Store release + 30 days complimentary post-launch support.
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <!-- Why Choose Section - Will be populated dynamically -->
+            <!-- Why Choose Me Section -->
             <div class="detail-section">
               <h2><i class="fas fa-star"></i> Why Choose Me?</h2>
-              <div class="why-choose-grid">
-                <!-- Content will be populated by JavaScript from servicesData.js -->
-              </div>
+              <div class="why-choose-grid"></div>
             </div>
           </div>
-        </div>
 
-        <!-- Right Side - Enrollment/Quote Form -->
-        <div class="service-detail-right">
-          <div class="enrollment-form-container">
-            <div class="form-header">
-              <h2 id="form-title">Get Started</h2>
-              <p id="form-subtitle">
-                Fill in your details and I'll get back to you within 24 hours
-              </p>
-            </div>
-
-            <form id="service-inquiry-form" class="service-inquiry-form">
-              <div class="form-group">
-                <label for="inquiry-name">
-                  <i class="fas fa-user"></i>
-                  Full Name <span class="required">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="inquiry-name"
-                  name="Name"
-                  placeholder="Enter your full name"
-                  required
-                />
+          <!-- Right Column - Booking & Consultation -->
+          <div class="service-detail-right">
+            <div class="enrollment-form-container">
+              <div class="form-header">
+                <h2 id="form-title">Book This Service</h2>
+                <p id="form-subtitle">Direct developer consultation with fast turnaround</p>
               </div>
 
-              <div class="form-group">
-                <label for="inquiry-email">
-                  <i class="fas fa-envelope"></i>
-                  Email Address <span class="required">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="inquiry-email"
-                  name="Email"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="inquiry-phone">
-                  <i class="fas fa-phone"></i>
-                  Phone Number <span class="optional">(Optional)</span>
-                </label>
-                <input
-                  type="tel"
-                  id="inquiry-phone"
-                  name="Phone"
-                  placeholder="+91 XXXXX XXXXX"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="inquiry-message">
-                  <i class="fas fa-comment-dots"></i>
-                  Your Message / Query <span class="required">*</span>
-                </label>
-                <textarea
-                  id="inquiry-message"
-                  name="Message"
-                  rows="5"
-                  placeholder="Tell me about your requirements, goals, or any questions you have..."
-                  required
-                ></textarea>
-              </div>
-
-              <button type="submit" class="submit-button">
-                <i class="fas fa-paper-plane"></i>
-                <span id="submit-button-text">Send Inquiry</span>
-              </button>
-
-              <p class="form-note">
-                <i class="fas fa-lock"></i>
-                Your information is secure and will only be used to contact you
-                about this service.
-              </p>
-            </form>
-
-            <div class="contact-info">
-              <h3>Or Contact Directly</h3>
-              <div class="direct-contact">
-                <a href="mailto:ramanand.in7@gmail.com" class="contact-link">
-                  <i class="fas fa-envelope"></i>
-                  ramanand.in7@gmail.com
-                </a>
+              <div class="direct-action-block">
                 <a
-                  href="https://wa.me/919304753564"
+                  href="https://wa.me/919304753564?text=Hi%20Ramanand%2C%20I%20am%20interested%20in%20your%20services!"
                   target="_blank"
-                  class="contact-link"
+                  class="btn-fast-whatsapp"
                 >
-                  <i class="fab fa-whatsapp"></i>
-                  +91 9304753564
+                  <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                 </a>
               </div>
+
+              <div class="form-divider">Or Send An Inquiry</div>
+
+              <form id="service-inquiry-form" class="service-inquiry-form">
+                <div class="form-group">
+                  <label for="inquiry-name">
+                    <i class="fas fa-user"></i> Full Name <span class="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="inquiry-name"
+                    name="Name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="inquiry-email">
+                    <i class="fas fa-envelope"></i> Email Address <span class="required">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="inquiry-email"
+                    name="Email"
+                    placeholder="name@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="inquiry-phone">
+                    <i class="fas fa-phone"></i> WhatsApp / Phone <span class="optional">(Optional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="inquiry-phone"
+                    name="Phone"
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="inquiry-message">
+                    <i class="fas fa-comment-dots"></i> Project Brief / Query <span class="required">*</span>
+                  </label>
+                  <textarea
+                    id="inquiry-message"
+                    name="Message"
+                    rows="4"
+                    placeholder="Briefly describe your requirements or questions..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                  <i class="fas fa-paper-plane"></i>
+                  <span id="submit-button-text">Send Inquiry</span>
+                </button>
+
+                <p class="form-note">
+                  <i class="fas fa-shield-halved"></i> 24h Response Time · 100% Privacy Protected
+                </p>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="cursor"></div>
-
-    <!-- Success/Error Message Toast -->
+    <!-- Toast Message -->
     <div id="toast-message" class="toast-message">
       <i class="fas fa-check-circle"></i>
       <span id="toast-text">Message sent successfully!</span>
     </div>
 
+    <script src="script/global.js"></script>
     <script src="script/servicesData.js"></script>
     <script src="script/service-detail.js"></script>
   </body>

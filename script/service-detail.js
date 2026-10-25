@@ -154,16 +154,16 @@ function populateServiceDetails() {
     service.description;
 
   // Show appropriate details section
-  if (category === "Teaching") {
+  if (category === "Teaching" || category === "Mentorship") {
     document.getElementById("teaching-details").style.display = "block";
     document.getElementById("freelance-details").style.display = "none";
 
     populateTeachingDetails(service);
 
     // Update form
-    document.getElementById("form-title").textContent = "Enroll in This Course";
+    document.getElementById("form-title").textContent = "Inquire About Mentorship";
     document.getElementById("submit-button-text").textContent =
-      "Submit Enrollment";
+      "Send Inquiry";
   } else {
     document.getElementById("teaching-details").style.display = "none";
     document.getElementById("freelance-details").style.display = "block";
@@ -171,8 +171,8 @@ function populateServiceDetails() {
     populateFreelanceDetails(service);
 
     // Update form
-    document.getElementById("form-title").textContent = "Get a Quote";
-    document.getElementById("submit-button-text").textContent = "Request Quote";
+    document.getElementById("form-title").textContent = "Discuss Your Project";
+    document.getElementById("submit-button-text").textContent = "Send Project Inquiry";
   }
 
   // Setup form submission

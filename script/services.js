@@ -1,199 +1,119 @@
-// script/services.js
+// script/services.js — Dynamic Services Section Rendering
 
 function generateServicesSection() {
   const servicesContainer = document.querySelector(".services-content");
   if (!servicesContainer) return;
 
+  const data = typeof servicesData !== "undefined" ? servicesData : (window.servicesData || {});
+  if (!data || Object.keys(data).length === 0) return;
+
   servicesContainer.innerHTML = "";
 
-  // Create tabs for Teaching and Freelance
+  // Create Tabs
   const tabsContainer = document.createElement("div");
   tabsContainer.className = "services-tabs";
+
+  const categories = Object.keys(data);
+  const defaultCategory = categories[0] || "Software";
+
   tabsContainer.innerHTML = `
-    <button class="service-tab active" data-category="Teaching">
-      <i class="fas fa-chalkboard-teacher"></i>
-      Teaching Services
+    <button class="service-tab active" data-category="Software">
+      <i class="fas fa-code"></i>
+      <span>Software &amp; AI Services</span>
     </button>
-    <button class="service-tab" data-category="Freelance">
-      <i class="fas fa-briefcase"></i>
-      Software Services
-    </button>
+    ${
+      data.Mentorship
+        ? `<button class="service-tab" data-category="Mentorship">
+             <i class="fas fa-chalkboard-user"></i>
+             <span>1-on-1 Mentorship</span>
+           </button>`
+        : ""
+    }
   `;
   servicesContainer.appendChild(tabsContainer);
 
-  // Create containers for each category
-  Object.keys(servicesData).forEach((category, index) => {
-    const categoryContainer = document.createElement("div");
-    categoryContainer.className = `services-category ${
-      index === 0 ? "active" : ""
-    }`;
-    categoryContainer.setAttribute("data-category", category);
+  // Create Category Grids
+  categories.forEach((category, index) => {
+    const categoryGrid = document.createElement("div");
+    categoryGrid.className = `services-category ${category === defaultCategory ? "active" : ""}`;
+    categoryGrid.setAttribute("data-category", category);
 
-    const services = servicesData[category];
+    const services = data[category] || [];
 
     services.forEach((service) => {
-      const serviceCard = document.createElement("div");
-      serviceCard.className = "service-card";
+      const card = document.createElement("div");
+      card.className = "service-card";
 
-      if (category === "Teaching") {
-        serviceCard.innerHTML = `
-          <div class="service-card-header">
-            <div class="service-icon">
-              <i class="${service.icon}"></i>
-            </div>
-            ${
-              service.highlight
-                ? `<span class="service-badge">${service.highlight}</span>`
-                : ""
-            }
-          </div>
-          <div class="service-card-body">
-            <h3>${service.title}</h3>
-            <p class="service-description">${service.description}</p>
-            
-            <div class="service-topics">
-              <h4><i class="fas fa-book"></i> Topics Covered:</h4>
-              <div class="topics-list">
-                ${service.topics
-                  .map((topic) => `<span class="topic-tag">${topic}</span>`)
-                  .join("")}
-              </div>
-            </div>
-            
-            <div class="service-details">
-              <div class="detail-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                  <span class="detail-label">Duration</span>
-                  <span class="detail-value">${service.duration}</span>
-                </div>
-              </div>
-              <div class="detail-item">
-                <i class="fas fa-signal"></i>
-                <div>
-                  <span class="detail-label">Level</span>
-                  <span class="detail-value">${service.level}</span>
-                </div>
-              </div>
-              ${
-                service["show-pricing"]
-                  ? `<div class="detail-item">
-                <i class="fas fa-rupee-sign"></i>
-                <div>
-                  <span class="detail-label">Price Range</span>
-                  <span class="detail-value">${service.price}</span>
-                </div>
-              </div>`
-                  : ""
-              }
-            </div>
-          </div>
-          <div class="service-card-footer">
-            <a href="service-detail.html?service=${encodeURIComponent(
-              service.title
-            )}&category=Teaching" class="btn-enroll">
-              <i class="fas fa-arrow-right"></i>
-              View Details
-            </a>
-          </div>
-        `;
-      } else {
-        // Freelance services
-        serviceCard.innerHTML = `
-          <div class="service-card-header">
-            <div class="service-icon">
-              <i class="${service.icon}"></i>
-            </div>
-            ${
-              service.highlight
-                ? `<span class="service-badge">${service.highlight}</span>`
-                : ""
-            }
-          </div>
-          <div class="service-card-body">
-            <h3>${service.title}</h3>
-            <p class="service-description">${service.description}</p>
-            
-            <div class="service-features">
-              <h4><i class="fas fa-check-circle"></i> What's Included:</h4>
-              <ul class="features-list">
-                ${service.features
-                  .map(
-                    (feature) =>
-                      `<li><i class="fas fa-check"></i>${feature}</li>`
-                  )
-                  .join("")}
-              </ul>
-            </div>
-            
-            <div class="service-details">
-              <div class="detail-item">
-                <i class="fas fa-calendar-alt"></i>
-                <div>
-                  <span class="detail-label">Delivery</span>
-                  <span class="detail-value">${service.deliveryTime}</span>
-                </div>
-              </div>
-              <div class="detail-item">
-                <i class="fas fa-tag"></i>
-                <div>
-                  <span class="detail-label">Type</span>
-                  <span class="detail-value">${service.projectType}</span>
-                </div>
-              </div>
-              ${
-                service["show-pricing"]
-                  ? `<div class="detail-item price-highlight">
-                <i class="fas fa-rupee-sign"></i>
-                <div>
-                  <span class="detail-label">Starting at</span>
-                  <span class="detail-value">${service.startingPrice}</span>
-                </div>
-              </div>`
-                  : ""
-              }
-            </div>
-          </div>
-          <div class="service-card-footer">
-            <a href="service-detail.html?service=${encodeURIComponent(
-              service.title
-            )}&category=Freelance" class="btn-hire">
-              <i class="fas fa-arrow-right"></i>
-              View Details
-            </a>
-          </div>
-        `;
-      }
+      // Tags / Features items
+      const features = service.features || service.topics || [];
+      const featuresHTML = features
+        .slice(0, 6)
+        .map((f) => `<span class="service-feature-tag"><i class="fas fa-check"></i> ${f}</span>`)
+        .join("");
 
-      categoryContainer.appendChild(serviceCard);
+      card.innerHTML = `
+        <div class="service-card-top">
+          <div class="service-icon-box">
+            <i class="${service.icon}"></i>
+          </div>
+          ${
+            service.highlight
+              ? `<span class="service-highlight-badge">${service.highlight}</span>`
+              : ""
+          }
+        </div>
+
+        <div class="service-card-body">
+          <h3 class="service-title">${service.title}</h3>
+          <p class="service-desc">${service.description}</p>
+
+          <div class="service-features-wrap">
+            <div class="service-features-list">
+              ${featuresHTML}
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card-footer">
+          <a
+            href="service-detail.html?service=${encodeURIComponent(service.title)}&category=${encodeURIComponent(category)}"
+            class="service-cta-btn"
+          >
+            <span>View Scope &amp; Details</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      `;
+
+      categoryGrid.appendChild(card);
     });
 
-    servicesContainer.appendChild(categoryContainer);
+    servicesContainer.appendChild(categoryGrid);
   });
 
-  // Add tab switching functionality
-  const tabs = document.querySelectorAll(".service-tab");
-  const categories = document.querySelectorAll(".services-category");
+  // Tab Switching Logic
+  const tabs = tabsContainer.querySelectorAll(".service-tab");
+  const categoryContainers = servicesContainer.querySelectorAll(".services-category");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const targetCategory = tab.getAttribute("data-category");
 
-      // Update active tab
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
 
-      // Update visible category
-      categories.forEach((cat) => {
-        if (cat.getAttribute("data-category") === targetCategory) {
-          cat.classList.add("active");
-        } else {
-          cat.classList.remove("active");
-        }
+      categoryContainers.forEach((grid) => {
+        grid.classList.toggle(
+          "active",
+          grid.getAttribute("data-category") === targetCategory
+        );
       });
     });
   });
 }
 
-// Generate services when document is loaded
-document.addEventListener("DOMContentLoaded", generateServicesSection);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", generateServicesSection);
+} else {
+  generateServicesSection();
+}

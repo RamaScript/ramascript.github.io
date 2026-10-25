@@ -42,7 +42,7 @@ const skillsCategories = [
       { name: "REST APIs", image: "res/images/logo/restapis.svg" },
       { name: "HTML5 / CSS3", image: "res/images/logo/html5.png" },
     ],
-  }
+  },
   {
     category: "Data Analysis & Python",
     icon: "fas fa-chart-line",

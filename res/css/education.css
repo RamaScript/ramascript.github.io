@@ -1,34 +1,33 @@
-/* ===== EDUCATION ===== */
+/* =====================================================
+   EDUCATION & CERTIFICATES — Clean Timeline & Expandable
+   ===================================================== */
 
-.education { background-color: var(--secondry-bg-color); min-height: auto; padding-bottom: 3rem; }
+.education {
+  padding: 2rem 1.5rem 5rem;
+  background-color: var(--primary-bg-color);
+}
 
 .education .education-content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  padding: 2rem 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  justify-content: center;
+  max-width: 1040px;
+  margin: 0 auto 2.5rem;
 }
 
 .education .education-content .card {
-  flex: 1;
-  min-width: 220px;
-  max-width: 300px;
-  background: var(--primary-bg-color);
+  background: var(--secondry-bg-color);
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  padding: 1.75rem 1.5rem;
+  border-radius: var(--radius-card);
+  padding: 1.75rem 1.25rem;
   text-align: center;
-  cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: var(--card-shadow);
 }
 
 .education .education-content .card:hover {
-  border-color: var(--main-color);
-  transform: translateY(-4px);
+  border-color: var(--orange-border);
+  transform: translateY(-3px);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -42,29 +41,71 @@
 }
 
 .education .education-content .card i {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--main-color);
-  margin-bottom: 0.25rem;
-}
-
-.education .education-content .card .text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--main-color);
-  background: var(--main-color-light);
-  padding: 0.25rem 0.75rem;
-  border-radius: 2rem;
-  display: inline-block;
   margin-bottom: 0.35rem;
 }
 
-.education .education-content .card p {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-top: 0.25rem;
+.education .education-content .card .text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  background: var(--main-color-light);
+  border: 1px solid var(--orange-border);
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 0.4rem;
 }
 
-/* Dark mode */
-.dark-mode .education { background-color: var(--primary-bg-color); }
-.dark-mode .education .card { background: var(--secondry-bg-color); }
+.education .education-content .card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Certifications Collapsible Toggle */
+.certifications-toggle-wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-cert-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  background: var(--secondry-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.btn-cert-toggle i {
+  color: var(--main-color);
+  transition: transform 0.3s ease;
+}
+
+.btn-cert-toggle:hover {
+  border-color: var(--orange-border);
+  background: var(--main-color-light);
+  color: var(--main-color);
+}
+
+.btn-cert-toggle.active i {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 800px) {
+  .education .education-content {
+    grid-template-columns: 1fr;
+  }
+}

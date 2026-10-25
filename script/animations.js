@@ -218,23 +218,9 @@ function initPageSplash() {
 }
 
 /* ═══════════════════════════════════════════════
-   10. PROJECT CARD ENTRANCE on filter change
+   10. PROJECT CARD ENTRANCE on filter change (DISABLED for clean minimalism)
    ═══════════════════════════════════════════════ */
-window.animateProjectCards = function () {
-  const cards = document.querySelectorAll(".project-card");
-  cards.forEach((card, i) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(40px) scale(0.92)";
-    card.style.transition = "none";
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        card.style.transition = `opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.06}s, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 0.06}s`;
-        card.style.opacity = "1";
-        card.style.transform = "";
-      }, 10);
-    });
-  });
-};
+window.animateProjectCards = function () {};
 
 /* ═══════════════════════════════════════════════
    INIT ALL
