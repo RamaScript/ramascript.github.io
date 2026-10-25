@@ -10,13 +10,20 @@ function startTypingAnimation(selector, strings) {
   });
 }
 
-const myRoles = [
-  "Flutter Developer",
-  "Android Developer",
-  "Full-Stack Dev",
-  "Freelancer",
-  "Problem Solver",
+const heroRoles = [
+  "AI Engineer &amp; LLM Developer",
+  "AI Agents &amp; RAG Architect",
+  "Flutter &amp; Mobile App Developer",
+  "Full-Stack &amp; AI Systems Builder",
+  "Intelligent Chatbot Specialist",
 ];
 
-startTypingAnimation(".typing", myRoles);
-startTypingAnimation(".typing-2", myRoles);
+const aboutRoles = [
+  "AI Engineer &amp; Flutter Developer",
+  "LLM Agent &amp; RAG Systems Builder",
+  "Mobile &amp; Web App Architect",
+  "Data-Driven Product Developer",
+];
+
+startTypingAnimation(".typing", heroRoles);
+startTypingAnimation(".typing-2", aboutRoles);

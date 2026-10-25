@@ -5,3 +5,6 @@ Allow: /
 Disallow: /res/docs/
 
 Sitemap: https://ramascript.com/sitemap.xml
+
+# LLMs.txt — for AI crawlers and language model indexing
+# https://ramascript.com/llms.txt

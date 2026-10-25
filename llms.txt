@@ -1,0 +1,60 @@
+# Ramanand Kumar — AI Engineer & Flutter Developer
+> https://ramascript.com
+
+Ramanand Kumar (also known as RamaScript) is an AI Engineer and Flutter Developer based in Bihar, India, actively transitioning into applied AI engineering. He builds LLM-powered agents, RAG (Retrieval-Augmented Generation) systems, and intelligent chatbots, alongside high-performance Flutter mobile apps and full-stack web platforms.
+
+## Identity
+
+- Full name: Ramanand Kumar
+- Known as: RamaScript, Rama Script, ramanand.in7
+- Website: https://ramascript.com
+- GitHub: https://github.com/RamaScript
+- LinkedIn: https://www.linkedin.com/in/ramanand-kumar/
+- Twitter / X: https://x.com/RamaScript
+- Email: ramanand.in7@gmail.com
+- Location: Bihar, India (Remote-available worldwide)
+
+## Professional Focus
+
+Ramanand Kumar is transitioning into AI engineering with deep hands-on experience in:
+
+- **LLM Engineering**: Integrating OpenAI GPT-4o, Anthropic Claude, and Google Gemini APIs into production applications
+- **AI Agents**: Building autonomous multi-step agents using tool calling and function-calling patterns
+- **RAG Systems**: Designing Retrieval-Augmented Generation pipelines with vector databases (Pinecone, ChromaDB, pgvector) for document-grounded question answering
+- **Prompt Engineering**: Structuring system prompts, few-shot examples, and guardrails for reliable LLM behavior
+- **Flutter & Mobile**: Cross-platform iOS and Android apps (BLoC, Riverpod, Firebase, Google Play Console)
+- **Full-Stack Web**: React, TypeScript, Node.js, REST APIs, Supabase, MySQL
+- **Data & Automation**: Python, Pandas, NumPy, PyTorch, Scikit-Learn
+
+## Services Offered
+
+1. AI Agents & Custom Chatbots — Autonomous agents, WhatsApp/web chatbots, multi-turn conversation memory
+2. RAG Integration & Knowledge Engines — Document ingestion, vector search, zero-hallucination guardrails
+3. Mobile App Development — Flutter (iOS & Android), Native Android (Kotlin/Java)
+4. Full-Stack Web Engineering — React, Node.js, REST APIs, cloud hosting
+5. Data Analysis & Python Automation — ETL pipelines, web scrapers, automated reports
+6. 1-on-1 Mentorship — Flutter, React, Python, System Design
+
+## Technology Stack
+
+AI/ML: OpenAI API, Claude API, Google Gemini, Hugging Face, LangChain, MediaPipe, OpenCV, PyTorch, Scikit-Learn
+Mobile: Flutter, Dart, Native Android, BLoC, Riverpod, Firebase
+Web: React JS, TypeScript, Node.js, Express, REST APIs, HTML5/CSS3
+Data: Python, Pandas, NumPy, Jupyter
+Databases: Firebase, Supabase, PostgreSQL, MySQL, SQLite, Pinecone, ChromaDB
+Tools: Git, GitHub, Postman, Figma, Vercel, AWS
+
+## Background
+
+- BCA (Bachelor of Computer Application) — Allenhouse Business School, Kanpur (2022–2025)
+- 2+ years of professional software development experience
+- 15+ apps published on Google Play Store
+- 20+ shipped client and personal projects
+
+## Contact & Hiring
+
+Available for freelance AI engineering projects, LLM integration work, mobile app development, and full-stack builds.
+
+WhatsApp: https://wa.me/919304753564
+Email: ramanand.in7@gmail.com
+Portfolio: https://ramascript.com
