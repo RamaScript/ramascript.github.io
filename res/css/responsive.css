@@ -170,8 +170,8 @@
   /* Services card */
   .service-card { padding: 1.25rem; }
 
-  /* WhatsApp FAB: slightly smaller */
-  #whatsapp-fab { width: 2.85rem; height: 2.85rem; font-size: 1.4rem; bottom: 1.25rem; right: 1.25rem; }
+  /* FAB: slightly smaller on mobile */
+  #linkedin-fab, #whatsapp-fab { width: 2.85rem; height: 2.85rem; font-size: 1.35rem; bottom: 1.25rem; right: 1.25rem; }
 }
 
 /* ═══════════════════════════════════

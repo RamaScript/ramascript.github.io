@@ -359,7 +359,7 @@ ${userMessage}
     } catch (error) {
       console.error("❌ Error:", error);
       showToast(
-        "❌ Failed to send inquiry. Please try again or contact directly via email/WhatsApp.",
+        "❌ Failed to send inquiry. Please try again or reach out on LinkedIn.",
         "error"
       );
     } finally {

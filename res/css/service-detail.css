@@ -398,6 +398,7 @@ body {
   gap: 0.65rem;
 }
 
+.btn-fast-linkedin,
 .btn-fast-whatsapp {
   display: flex;
   align-items: center;
@@ -405,20 +406,22 @@ body {
   gap: 0.5rem;
   width: 100%;
   padding: 0.75rem 1rem;
-  background: #25d366;
+  background: #0a66c2;
   color: #ffffff !important;
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 700;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.3);
   transition: all 0.2s ease;
 }
 
+.btn-fast-linkedin:hover,
 .btn-fast-whatsapp:hover {
-  background: #22c55e;
+  background: #004182;
   transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.45);
 }
 
 .form-divider {
