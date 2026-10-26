@@ -26,7 +26,7 @@ const skillsCategories = [
       { name: "Dart", image: "res/images/logo/dart.svg" },
       { name: "Native Android", image: "res/images/logo/android.png" },
       { name: "BLoC / Cubit", image: "res/images/logo/bloc.svg" },
-      { name: "Riverpod", image: "res/images/logo/riverpod.svg" },
+      { name: "Riverpod" },
       { name: "Google Play Console", image: "res/images/logo/googleplayconsole.svg" },
     ],
   },

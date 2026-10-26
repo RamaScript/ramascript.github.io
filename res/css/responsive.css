@@ -1,209 +1,803 @@
 /* ===================================================================
-   RESPONSIVE — Full mobile & tablet audit
+   RESPONSIVE — Comprehensive Mobile, Tablet & Touch Optimizations
    Breakpoints:
-     ≤480px   = small mobile
-     ≤700px   = mobile
-     ≤900px   = tablet / large mobile
-     ≤1100px  = small desktop
+     ≤1100px = Small Desktop / Tablet Landscape
+     ≤900px  = Tablet Portrait
+     ≤768px  = Mobile Standard (Phones)
+     ≤520px  = Compact Mobile (iPhone SE, Galaxy, Pixel)
+     ≤380px  = Very Narrow Mobile
    =================================================================== */
 
-/* ═══════════════════════════════════
-   TABLET (≤900px)
-   ═══════════════════════════════════ */
-@media (max-width: 900px) {
-
-  /* Testimonials */
-  .testimonial-card { flex: 0 0 calc(50% - 0.625rem); }
-
-  /* About why-grid: 1 col on tablet */
-  .why-grid { grid-template-columns: 1fr; }
-
-  /* Hero profile */
-  .hero-profile-img-wrap { width: 200px; height: 200px; }
-
-  /* Disable 3D heavy effects on tablet */
-  .tilt-card { transform: none !important; }
-
-  /* Hero orbs — smaller */
-  .hero-orb-1 { width: 280px; height: 280px; }
-  .hero-orb-2 { width: 200px; height: 200px; }
-  .hero-orb-3 { display: none; }
+/* ═══════════════════════════════════════════════════════════════════
+   TABLET & SMALL DESKTOP (≤1100px)
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) and (min-width: 901px) {
+  #projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
 }
 
-/* ═══════════════════════════════════
-   MOBILE (≤700px)
-   ═══════════════════════════════════ */
-@media (max-width: 700px) {
-
-  /* Sections padding */
-  section { scroll-margin-top: 3rem; }
-
-  /* Projects grid */
-  #projects-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 1rem;
+/* ═══════════════════════════════════════════════════════════════════
+   TABLET (≤900px)
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  /* Navigation */
+  #nav-links-all {
+    display: none !important;
   }
 
-  /* Featured card: full width on mobile */
-  .project-card.featured,
-  .project-card.featured:first-child {
-    grid-column: span 1;
+  .nav-toggle-btn {
+    display: inline-flex !important;
+  }
+
+  .nav-container {
+    padding: 0.45rem 0.75rem;
+  }
+
+  /* Hero Section */
+  .home {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .home-hero-grid {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text-col {
+    align-items: center;
+  }
+
+  .hero-name {
+    font-size: 2.75rem;
+  }
+
+  .hero-capabilities-grid {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .hero-cta-buttons,
+  .hero-social-links {
+    justify-content: center;
+  }
+
+  .hero-photo-box {
+    width: 190px;
+    height: 230px;
+    border-radius: 22px;
+  }
+
+  .hero-photo-halo {
+    width: 230px;
+    height: 230px;
+  }
+
+  .hero-metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .hero-metric-item {
+    justify-content: flex-start;
+  }
+
+  .hero-metric-divider {
+    display: none;
+  }
+
+  /* About Section */
+  .about {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .about .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+  }
+
+  .about .about-content .left {
+    width: 100%;
+  }
+
+  .about-img-wrapper {
+    max-width: 260px;
+    height: 330px;
+    border-radius: 22px;
+    margin: 0 auto;
+  }
+
+  .about-quick-specs {
+    max-width: 260px;
+    margin: 1rem auto 0;
+    justify-content: center;
+  }
+
+  .about-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Projects */
+  #projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* Skills & Services */
+  .skills-content,
+  .services-category {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .skills-group:nth-child(5) {
+    grid-column: span 1 !important;
+  }
+
+  /* Education */
+  .education .education-content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   /* Contact */
-  .contact-content { flex-direction: column; padding: 1.25rem 1rem; }
-  .contact .contact-content .column { width: 100%; }
-  .contact .right form .fields { flex-direction: column; gap: 0; }
-
-  /* Testimonials: 1 per slide */
-  .testimonial-card {
-    flex: 0 0 calc(100% - 0rem);
-    padding: 1.5rem 1.25rem;
+  .contact-content {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2.5rem;
   }
 
-  /* Filter tabs: scrollable row */
+  /* Testimonials */
+  .testimonial-card {
+    flex: 0 0 calc(50% - 0.625rem);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE (≤768px)
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Section Layout & Banners */
+  section {
+    scroll-margin-top: 4.5rem;
+  }
+
+  .section-banner {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 2.5rem 1rem 1.25rem !important;
+  }
+
+  .section-banner h2 {
+    font-size: 1.65rem !important;
+    padding-bottom: 0.45rem !important;
+    letter-spacing: -0.3px;
+  }
+
+  .section-banner p.section-subtitle {
+    font-size: 0.86rem !important;
+    margin-top: 0.35rem !important;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+
+  /* Header / Floating Pill */
+  .site-header {
+    top: 0.65rem;
+    padding: 0 0.85rem;
+  }
+
+  .nav-container {
+    padding: 0.4rem 0.65rem;
+  }
+
+  .brand-name {
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .brand-avatar-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-hire-btn {
+    padding: 0.42rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .mobile-nav-menu {
+    left: 0.85rem;
+    right: 0.85rem;
+    padding: 0.85rem;
+    border-radius: 18px;
+    gap: 0.35rem;
+  }
+
+  .mobile-nav-menu a {
+    min-height: 44px;
+    font-size: 0.88rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  /* Projects Section */
+  .projects {
+    padding: 2rem 1rem 4rem;
+  }
+
   .project-filter-tabs {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
     justify-content: flex-start;
-    padding: 1rem 1rem 0.75rem;
+    padding: 0.5rem 0.5rem 1rem;
+    gap: 0.5rem;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .project-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.8rem;
+    min-height: 38px;
+  }
+
+  #projects-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .project-card {
+    border-radius: 18px;
+  }
+
+  .project-image {
+    height: 160px;
+    padding: 1.25rem;
+  }
+
+  .project-img {
+    max-height: 110px;
+    border-radius: 18px;
+  }
+
+  .project-content {
+    padding: 1.25rem;
+  }
+
+  .project-header h3 {
+    font-size: 1.05rem;
+  }
+
+  .project-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .details-btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+    font-size: 0.84rem;
+    border-radius: var(--radius-pill);
+  }
+
+  /* Native Mobile Bottom Sheet Modal */
+  .project-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .project-modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 88vh !important;
+    border-radius: 24px 24px 0 0 !important;
+    padding: 1.5rem 1.25rem 2.25rem !important;
+    margin: 0 !important;
+    border-bottom: none !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25) !important;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .project-modal.active .project-modal-content {
+    transform: translateY(0) !important;
+  }
+
+  /* Sheet drag handle indicator */
+  .project-modal-content::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 9999px;
+    margin: -0.5rem auto 1.25rem;
+  }
+
+  .modal-action-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-action-bar .modal-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.86rem;
+  }
+
+  /* Skills Section */
+  .skills {
+    padding: 2rem 1rem 3.5rem;
+  }
+
+  .skills-group {
+    padding: 1.35rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .skills-chip {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+
+  /* Services Section */
+  .services {
+    padding: 2rem 1rem 3.5rem;
+  }
+
+  .services-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0.25rem 0.5rem 0.75rem;
     gap: 0.5rem;
     scrollbar-width: none;
   }
-  .project-filter-tabs::-webkit-scrollbar { display: none; }
 
-  .filter-tab {
-    font-size: 0.8rem;
-    padding: 0.45rem 0.9rem;
-    white-space: nowrap;
-    flex-shrink: 0;
+  .services-tabs::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Hero mini stats: 2×2 grid */
-  .hero-mini-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+  .service-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.82rem;
+    min-height: 40px;
+  }
+
+  .service-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-desc {
+    font-size: 0.86rem;
+  }
+
+  .service-cta-btn {
+    min-height: 44px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Testimonials Section */
+  .testimonials-section {
+    padding: 2rem 1rem 3.5rem;
+  }
+
+  .testimonials-carousel {
+    padding: 0.5rem 0.25rem 1.25rem;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100% !important;
+    padding: 1.35rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .testimonial-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .carousel-controls {
+    gap: 1rem;
     margin-top: 1rem;
   }
 
-  .hero-mini-stat:not(:last-child)::after { display: none; }
-
-  /* Footer nav */
-  .footer-nav { gap: 0.85rem; }
-
-  /* Section banner slightly smaller */
-  .section-banner { height: 5rem; }
-  .section-banner h2 { font-size: 1.8rem; }
-
-  /* Why cards: min touch target */
-  .why-card { min-height: 44px; }
-  .icon-box { min-width: 44px; min-height: 44px; }
-
-  /* About image smaller on mobile */
-  .about-img-wrapper img { max-width: 240px; }
-
-  /* Disable hero orbs on mobile (perf) */
-  .hero-orb { display: none; }
-
-  /* Skill items full width */
-  .skills-content .skill-category { width: 100%; }
-
-  /* Carousel controls touch friendly */
-  .carousel-btn { width: 2.75rem; height: 2.75rem; }
-}
-
-/* ═══════════════════════════════════
-   SMALL MOBILE (≤480px)
-   ═══════════════════════════════════ */
-@media (max-width: 480px) {
-
-  /* Section banner */
-  .section-banner { height: 4.5rem; }
-  .section-banner h2 { font-size: 1.5rem; }
-
-  /* Hero name */
-  .home .home-content .text-2 { font-size: 1.85rem; letter-spacing: -1px; }
-
-  /* CTA buttons: full width */
-  .btn-primary, .btn-secondary,
-  .home .home-content .btn-primary,
-  .home .home-content .btn-secondary {
-    width: 100% !important;
-    justify-content: center !important;
-    padding: 0.85rem 1rem !important;
+  .carousel-btn {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
-  /* Profile image */
-  .hero-profile-img-wrap { width: 110px; height: 110px; }
-
-  /* Stats: smaller nums */
-  .hero-mini-stat .num { font-size: 1.25rem; }
-  .hero-mini-stat .lbl { font-size: 0.58rem; }
-
-  /* Modal full-screen feel */
-  .project-modal { padding: 0; }
-  .project-modal-content {
-    max-height: 88vh;
-    border-radius: 1.25rem 1.25rem 0 0;
+  /* Education Section */
+  .education {
+    padding: 2rem 1rem 3.5rem;
   }
 
-  /* Contact info rows */
-  .contact .contact-content .left .icons .row { padding: 0.75rem 0.9rem; }
+  .education-content .card .box {
+    padding: 1.35rem 1rem;
+  }
 
-  /* Education cards */
-  .education-content .card .box { padding: 1.25rem 1rem; }
+  .btn-cert-toggle {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.84rem;
+    margin: 0 auto;
+  }
 
-  /* Certificates toggle button */
-  .btn-cert-toggle { font-size: 0.85rem; padding: 0.65rem 1.1rem; }
+  /* Contact Section */
+  .contact {
+    padding: 2rem 1rem 3.5rem;
+  }
 
-  /* Testimonial card */
-  .testimonial-card { padding: 1.25rem 1rem; }
-  .testimonial-text { font-size: 0.88rem; }
+  .contact-content {
+    padding: 1.5rem 1.15rem;
+    border-radius: 20px;
+    gap: 2rem;
+  }
+
+  .contact .contact-content .text {
+    font-size: 1.35rem;
+  }
+
+  .contact .contact-content .left p {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact .icons {
+    gap: 0.85rem;
+  }
+
+  .contact .icons .row {
+    gap: 0.75rem;
+  }
+
+  .contact .icons .row i {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* Crucial iOS fix: font-size >= 16px prevents mobile auto-zoom */
+  .contact input,
+  .contact textarea,
+  .service-inquiry-form input,
+  .service-inquiry-form textarea {
+    font-size: 16px !important;
+  }
+
+  .contact .right form .fields {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact .right form .field {
+    margin-bottom: 0.85rem;
+  }
+
+  .contact .button-area button {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    font-size: 0.92rem;
+  }
 
   /* Footer */
-  .footer-nav { gap: 0.65rem; }
-  .footer-nav a { font-size: 0.8rem; }
+  .site-footer {
+    padding: 2.5rem 1rem 2rem;
+  }
 
-  /* Services card */
-  .service-card { padding: 1.25rem; }
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem 1rem;
+  }
 
-  /* FAB: slightly smaller on mobile */
-  #linkedin-fab, #whatsapp-fab { width: 2.85rem; height: 2.85rem; font-size: 1.35rem; bottom: 1.25rem; right: 1.25rem; }
+  .footer-nav a {
+    font-size: 0.82rem;
+  }
+
+  /* Floating Action Button */
+  #linkedin-fab,
+  #whatsapp-fab {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.35rem;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  #linkedin-fab .linkedin-tooltip,
+  #whatsapp-fab .whatsapp-tooltip {
+    display: none; /* Hide tooltips on touch devices */
+  }
 }
 
-/* ═══════════════════════════════════
-   SMALL DESKTOP (≤1100px)
-   ═══════════════════════════════════ */
-@media (max-width: 1100px) and (min-width: 901px) {
-  #projects-container {
+/* ═══════════════════════════════════════════════════════════════════
+   COMPACT MOBILE (≤520px)
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 520px) {
+  /* Hero Compact */
+  .home {
+    padding-top: 5.25rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    padding-bottom: 2rem;
+  }
+
+  .home-hero-grid {
+    gap: 1.25rem;
+  }
+
+  .hero-photo-box {
+    width: 140px;
+    height: 165px;
+    border-radius: 20px;
+    border-width: 3px;
+  }
+
+  .hero-photo-halo {
+    width: 170px;
+    height: 170px;
+  }
+
+  .hero-greeting {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .hero-name {
+    font-size: 2.15rem;
+    letter-spacing: -0.75px;
+  }
+
+  .hero-headline-lead {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-bio {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-capabilities-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
   }
-  .project-card.featured:first-child {
-    grid-column: span 2;
+
+  .capability-item {
+    padding: 0.5rem 0.6rem;
+    gap: 0.45rem;
+    border-radius: 12px;
+    min-width: 0;
+  }
+
+  .cap-icon-box {
+    width: 28px;
+    height: 28px;
+    font-size: 0.82rem;
+    border-radius: 7px;
+    flex-shrink: 0;
+  }
+
+  .cap-text {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .cap-title {
+    font-size: 0.74rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .cap-sub {
+    font-size: 0.62rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .hero-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-cta-buttons .btn-primary,
+  .hero-cta-buttons .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+    padding: 0.72rem 1.15rem;
+    min-height: 46px;
+    border-radius: var(--radius-pill);
+  }
+
+  .hero-social-links {
+    gap: 0.65rem;
+    margin-top: 0.85rem;
+  }
+
+  .hero-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  .hero-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    padding: 0.85rem;
+    border-radius: 16px;
+    margin-top: 1.25rem;
+  }
+
+  .hero-metric-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  .hero-metric-num {
+    font-size: 1.3rem;
+  }
+
+  .hero-metric-label {
+    font-size: 0.64rem;
+  }
+
+  /* About Compact */
+  .about-img-wrapper {
+    max-width: 210px;
+    height: 270px;
+    border-radius: 18px;
+  }
+
+  .about-heading {
+    font-size: 1.3rem;
+    line-height: 1.35;
+  }
+
+  .about-narrative p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .about-cta-row {
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .about-btn-resume,
+  .about-btn-contact {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
   }
 }
 
-/* ═══════════════════════════════════
-   TOUCH DEVICES — remove hover effects
-   ═══════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════════
+   VERY NARROW MOBILE (≤380px)
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .nav-brand .brand-name {
+    font-size: 0.86rem;
+  }
+
+  .nav-hire-btn span {
+    display: none;
+  }
+
+  .nav-hire-btn {
+    padding: 0.45rem 0.65rem;
+  }
+
+  .hero-name {
+    font-size: 1.95rem;
+  }
+
+  .hero-capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .capability-item {
+    padding: 0.55rem 0.8rem;
+  }
+
+  .cap-title {
+    font-size: 0.8rem;
+  }
+
+  .cap-sub {
+    font-size: 0.68rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TOUCH DEVICES — Disable hover states & ensure smooth interaction
+   ═══════════════════════════════════════════════════════════════════ */
 @media (hover: none) {
-  .project-overlay { display: none; }
-  .tilt-card:hover { transform: none !important; }
-  .details-btn:hover { background: transparent; color: var(--main-color); }
+  .project-overlay {
+    display: none !important;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: var(--card-shadow) !important;
+  }
+
+  .project-card:hover .project-img {
+    transform: none !important;
+    box-shadow: 0 6px 18px rgba(28, 25, 23, 0.08) !important;
+  }
+
+  .service-card:hover,
+  .skills-group:hover,
+  .testimonial-card:hover {
+    transform: none !important;
+  }
 }
 
-/* ═══════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════
    PREFERS REDUCED MOTION
-   ═══════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .hero-orb, .tech-badge { display: none; }
 }
